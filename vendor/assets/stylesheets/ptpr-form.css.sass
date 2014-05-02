@@ -1,0 +1,138 @@
+// @import "blueprint/reset"
+@import "compass/css3/box-shadow"
+
+body
+  // padding: 30px
+  // font-size: 14px
+  // font-family: Arial, sans-serif
+  // background: #f0f0f0
+  
+  // .field
+  //   float: left
+  //   margin-right: 30px
+  
+.ptpr-select-tag
+  display: inline-block
+  width: 300px
+  position: relative
+  z-index: 500
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  .main
+    position: relative
+    background: #f8f8f8
+    border: 1px solid #cbcbcb
+    z-index: 505
+    cursor: pointer
+    .values
+      height: 14px
+      line-height: 14px
+      padding: 8px 16px
+      margin-right: 30px
+      white-space: nowrap
+      overflow: hidden
+      .placeholder
+        color: #999
+      .number_of_values
+        color: #999
+    .button
+      height: 100%
+      width: 30px
+      border-left: 1px solid #aaa
+      position: absolute
+      top: 0
+      right: 0
+      z-index: 510
+    .mist
+      height: 100%
+      width: 50px
+      position: absolute
+      top: 0
+      right: 31px
+      z-index: 510
+      background: image-url('ptpr-mist.png') 100% 0 repeat-y
+  .drop-down-list
+    position: absolute
+    width: 100%
+    top: 30px
+    left: 0
+    z-index: 510
+    background: #f8f8f8
+    display: none
+    @include box-shadow(0px 2px 2px #aaa)
+    .list_wrapper
+      border: 1px solid #cbcbcb
+      padding: 10px 0
+    ul.options
+      position: relative
+      z-index: 10
+      li.optgroup
+        list-style: none
+        .label
+          font-weight: bold
+          padding: 5px 10px
+        &.hovered
+          background: #eee
+        li.option
+          padding: 5px 20px
+      li.option
+        list-style: none
+        padding: 5px 10px
+        cursor: pointer
+        position: relative
+        z-index: 10
+        .check_box
+          width: 15px
+          height: 15px
+          border: 1px solid #cbcbcb
+          background: #fff
+          position: absolute
+          top: 5px
+          left: 5px
+          z-index: 10
+        .text
+          color: #333
+        &.selected
+          background: #ccc
+          .check_box
+            background: #333
+        &.hovered
+          background: #000
+          .text
+            color: #fff
+  &.multiple
+    .drop-down-list
+      ul.options
+        li.optgroup
+          list-style: none
+          li.option
+            padding-left: 46px
+            .check_box
+              left: 20px
+        li.option
+          padding-left: 31px
+          &.selected
+            background: transparent
+          &.hovered
+            background: #000
+  &.size
+    .drop-down-list
+      .scroll_wrapper
+        overflow: auto
+  &.active
+    z-index: 900
+    .main
+      @include box-shadow(0px 0px 2px #aaa)
+    .drop-down-list
+      display: block
+  &.disabled
+    opacity: 0.6
+    .drop-down-list
+      display: none
+          
+        
+//

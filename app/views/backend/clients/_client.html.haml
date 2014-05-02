@@ -1,0 +1,14 @@
+.well.well-small.client-well
+  .fluid-container
+    %h3.row-fluid.hoverable.client-row
+      .span9.client-name{:id => "client-name-#{client.id}", "data-href" => backend_client_path(client)}
+        = client.name
+      .span1
+        .badge.badge-info
+          = client.time_worked_overall
+      .span2.text-right
+        .client-crud.pull-left
+          %a.btn{id: "edit-client-#{client.id}-btn", href: '#', "data-live-edit" => "client-name-#{client.id}", "data-live-edit-url" => backend_client_path(client)}
+            %i.icon-edit
+          %a.btn.btn-danger{:href => backend_client_path(client), "data-method" => :delete, "data-confirm" => "Czy na pewno chcesz usunąć wszystkie dane klienta"}
+            %i.icon-remove

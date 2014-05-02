@@ -1,0 +1,32 @@
+pl:
+  dupa: kupa
+  weekdays:
+    d1: Poniedziałek
+    d2: Wtorek
+    d3: Środa
+    d4: Czwartek
+    d5: Piątek
+    d6: Sobota
+    d7: Niedziela
+  helpers:
+    label:
+      signup:
+        company_name: Nazwa firmy
+        email: E-mail
+        password: Hasło
+      account:
+        name: Nazwa firmy
+      user:
+        name: Imię i Nazwisko
+        email: E-mail
+        password: Hasło
+        password_confirmation: Powtórz hasło
+  activerecord:
+    errors:
+      models:
+        timelog:
+          attributes:
+            worked_on:
+              invalid_date: niepoprawny format daty
+            clock_duration:
+              too_small: musi być większe od zera

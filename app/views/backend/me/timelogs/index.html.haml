@@ -1,0 +1,38 @@
+.fluid-container
+  .row-fluid
+    .span10.offset1.mt50
+      = render partial: 'form'
+      .row-fluid
+        .span12= current_user.worked_today
+      .row-fluid= current_user.worked_today_progress_bar
+      .row-fluid
+        .span6.text-left
+          %h4 Ostatnie wpisy czasowe
+        .span6.text-right
+          / .btn-group
+          /   %a.btn.btn-inverse.dropdown-toggle{'data-toggle' => 'dropdown'}
+          /     Filtruj po
+          /     %span.caret
+          /   %ul.dropdown-menu.text-center
+          /     %li
+          /       %a Dacie
+          /     %li
+          /       %a Czasie
+          /     %li 
+          /       %a Części
+
+      .row-fluid
+        .span12
+          - @last_day_index = 0
+          .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
+          %table.table.table-hover.table-condensed.table-bordered
+            %thead
+              %tr
+                %th Opis
+                %th Zadanie
+                %th Data
+                %th Czas
+            %tbody
+              = render @timelogs
+          .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
+              

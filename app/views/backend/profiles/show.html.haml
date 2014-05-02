@@ -1,0 +1,8 @@
+.container
+  %h2{style: "padding: 30px 0 15px"} Ustawienia Konta
+  .well.well-small
+    / = form_for current_user, :html => {:class => 'form-horizontal'} do |f|
+    /   .control-group
+    /     = f.label :email
+    /     .controls
+    /       = f.text_field :email

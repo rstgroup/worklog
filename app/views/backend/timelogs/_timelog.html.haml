@@ -1,0 +1,19 @@
+- if @last_day_index != timelog.worked_on.cwday
+  - @last_day_index = timelog.worked_on.cwday
+  %tr.day_separator
+    %td{colspan: 5}
+      %div.text-center
+        %b= t "d#{@last_day_index}", scope: :weekdays
+        %b= timelog.worked_on.strftime "%d.%m.%Y"
+%tr
+  %td{colspan: 2}
+    %i= timelog.name
+    %br
+    = link_to timelog.part.autocomplete_part.calculated_name, backend_client_path(timelog.part.project.client) rescue ""
+  %td= timelog.worked_on
+  %td
+    = image_tag timelog.user.gravatar_url, :class => "img-polaroid img-mini"
+    = timelog.user.name
+  %td= timelog.human_duration
+
+

@@ -1,0 +1,17 @@
+- if @last_day_index != timelog.worked_on.cwday
+  - @last_day_index = timelog.worked_on.cwday
+  %tr.day_separator
+    %td{colspan: 5}
+      %div.text-center
+        %b= t "d#{@last_day_index}", scope: :weekdays
+        %b= timelog.worked_on.strftime "%d.%m.%Y"
+%tr
+  %td= timelog.name
+  %td
+    = link_to timelog.part.autocomplete_part.calculated_name, backend_client_path(timelog.part.project.client) rescue ""
+  %td= timelog.worked_on
+  %td
+    = timelog.human_duration
+    = link_to backend_me_timelog_path(timelog), {:method => :delete, :confirm => 'Czy napewno chcesz usunąć ten wpis?', :class => 'pull-right'} do
+      %i.icon-trash
+

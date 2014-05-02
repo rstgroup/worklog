@@ -1,0 +1,14 @@
+.well.well-small
+  %a.muted.form-toggle{"data-toggle" => "form", :href => "#"}
+    %h4
+      %i.icon-plus
+      Dodaj klienta
+  .form_wrapper
+    = form_for [:backend, @client], html: {:class => 'form-inline'} do |f|
+      .control-group
+        = f.text_field :name, {:placeholder => 'Nazwa klienta', :id => "", :class => "client_name"}
+        %button.btn.action_btn{:type => 'submit'}
+          %i.icon-plus
+          %span.action_text Dodaj klienta
+        %a.cancel{href: "#"}
+          Anuluj

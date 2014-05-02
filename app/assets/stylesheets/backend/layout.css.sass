@@ -1,0 +1,65 @@
+body
+  padding-bottom: 40px
+  table.table
+    tr
+      td
+        vertical-align: middle
+        a
+          color: #555
+          &:hover
+            color: #000
+            text-decoration: none
+    tr.day_separator
+      td
+        background-color: #f5f5f5
+        color: #000
+      &:hover
+        td
+          background-color: #f5f5f5
+          color: #000
+  .mb10
+    margin-bottom: 10px !important
+  .mt25
+    margin-top: 25px !important
+  .mt50
+    margin-top: 50px !important
+  // .main_bg
+    // background: image-url('bg3.png')
+  form .clearfix:before, form .clearfix:after
+    display: inline
+
+  .progress
+    .bar
+      @for $i from 1 through 100
+        &.percent#{$i}
+          width: $i * 1%
+
+  .client-well
+    form
+      margin-bottom: 0
+    h3
+      margin: 0px
+      .span9
+        cursor: pointer
+      .btn-group .client-edit
+        top: 3px
+  .client-row
+    .client-crud
+      display: none
+    &:hover
+      .client-crud
+        display: block
+  .project-row
+    .project-crud
+      display: none
+    &:hover
+      .project-crud
+        display: block
+  .part-row
+    .part-crud
+      display: none
+    &:hover
+      .part-crud
+        display: block
+.img-mini
+  width: 20px

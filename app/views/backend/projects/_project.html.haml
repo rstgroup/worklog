@@ -1,0 +1,16 @@
+.well.well-small
+  %h4.row-fluid.hoverable.project-row
+    .span9{id: "project-name-#{project.id}"}
+      = project.name
+    .span1
+      .badge.badge-info.pull-right= project.time_worked
+    .span2.text-right
+      .project-crud.pull-right
+        %a.btn{:id => "edit-project-#{project.id}-btn", :href => "#", "data-live-edit"=> "project-name-#{project.id}", "data-live-edit-url" => backend_project_path(project)}
+          %i.icon-edit
+        %a.btn.btn-danger{:href => backend_project_path(project, :client_id => project.client_id), "data-method" => :delete, "data-confirm" => "Czy na pewno chcesz usunąć wszystkie dane projektu"}
+          %i.icon-remove
+  %div{:id => "project-#{project.id}-content"}
+    %ul.parts_wrapper
+      = render project.parts
+  = render :partial => "backend/parts/form", :locals => {:project => project}

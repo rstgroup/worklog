@@ -1,0 +1,26 @@
+@import "compass/css3/border-radius"
+$work-timer-bg-color: #000
+$work-timer-text-color: #fff
+
+body
+  .work-timer
+    position: fixed
+    z-index: 1000
+    bottom: 0
+    left: 0
+    right: 0
+    height: 40px
+    padding: 0 20px
+    line-height: 40px
+    background: $work-timer-bg-color
+    font-size: 14px
+    color: $work-timer-text-color
+    a
+      color: shade($work-timer-text-color, 30%)
+      &.timer-button
+        margin-right: 20px
+      &:hover
+        text-decoration: none
+        color: $work-timer-text-color
+      &:focus
+        text-decoration: none

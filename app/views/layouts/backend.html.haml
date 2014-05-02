@@ -1,0 +1,64 @@
+!!!
+%html
+  %head
+    %title KMP WorkLog
+    = stylesheet_link_tag "themes/#{current_user.theme}", media: 'all'
+    = stylesheet_link_tag "backend", :media => "all"
+    = javascript_include_tag "backend"
+    = csrf_meta_tags
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+  %body
+    .navbar.navbar-static-top
+      .navbar-inner
+        = link_to backend_me_timelogs_path, {:class => ' brand'} do
+          KMP WorkLog
+          %i.icon-time
+        .nav-collapse.collapse
+          %ul.nav.pull-left
+            %li{:class => ("active" if current_page?(controller: '/backend/me/timelogs'))}
+              %a{:href => backend_me_timelogs_path} Kokpit
+            %li{:class => ("active" if current_page?(controller: '/backend/timelogs'))}
+              %a{:href => backend_timelogs_path} Wpisy
+            %li{:class => ("active" if current_page?(controller: '/backend/clients'))}
+              %a{:href => backend_clients_path} Klienci
+            %li{:class => ("active" if current_page?(controller: '/backend/users'))}
+              %a{:href => backend_users_path} Pracownicy
+          %ul.nav.pull-right
+            %li.dropdown
+              %a.dropdown-toggle{href: '#', 'data-toggle' => 'dropdown'}
+                %i.icon-user
+                = current_user.name
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => edit_backend_me_path}
+                    %i.icon-cog
+                    Ustawienia konta
+                %li
+                  = link_to destroy_user_session_path, {:method => :delete} do
+                    %i.icon-signout
+                    Wyloguj się
+        %a.btn.btn-navbar{href: '#', 'data-toggle' => 'collapse', 'data-target' => '.nav-collapse'}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+
+    = yield
+    = render 'layouts/work-timer'
+
+    / UserVoice JavaScript SDK (only needed once on a page)
+    :javascript
+      (function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/J4BZiyyMeb7kuJIvRLQhg.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()
+
+    / A tab to launch the Classic Widget
+    :javascript
+      UserVoice = window.UserVoice || [];
+      function giveFeedback() {
+        UserVoice.push(['showLightbox', 'classic_widget', {
+          mode: 'feedback',
+          primary_color: '#000000',
+          link_color: '#007dbf',
+          default_mode: 'support',
+          forum_id: 206209,
+        }]);
+      };

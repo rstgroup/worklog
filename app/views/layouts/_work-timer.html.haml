@@ -1,0 +1,15 @@
+.work-timer
+  / .pull-left
+  /   = link_to start_backend_me_timer_path, :class => 'timer-button' do
+  /     %i.icon-play
+  /     Zacznij pracę
+  /   = link_to pause_backend_me_timer_path, :class => 'timer-button' do
+  /     %i.icon-pause
+  /     Wstrzymaj pracę
+  /   = link_to stop_backend_me_timer_path, :class => 'timer-button' do
+  /     %i.icon-stop
+  /     Zakończ pracę
+  .pull-right
+    %a#give-feedback{href: '#'}
+      %i.icon-comment
+      Powiedz nam co myślisz o Worklog!

@@ -1,0 +1,2 @@
+class UsersDecorator < PaginatingDecorator
+end

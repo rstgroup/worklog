@@ -1,0 +1,68 @@
+.hero-unit.main_bg.text-center
+  %h1
+    KMP WorkLog
+    %i.icon-time
+  %p
+    Proste rozwiązanie, pozwalające na zarządzanie czasem pracy Twoim i Twoich pracowników.
+  .mt50
+    - if current_user.nil?
+      = form_for @signup, html: {:class => 'form-inline'} do |f|
+        = f.text_field :company_name, {:class => 'input-medium', :placeholder => t(:name, scope: 'helpers.label.account')}
+        = f.text_field :email, {:class => 'input-medium', :placeholder => t(:email, scope: 'helpers.label.user')}
+        = f.password_field :password, {:class => 'input-medium', :placeholder => t(:password, scope: 'helpers.label.user')}
+        %button.btn.btn-primary{:type => 'submit'}
+          %i.icon-signin
+          Załóż konto
+    - else
+      = link_to backend_me_timelogs_path, {:class => 'btn btn-large'} do
+        %i.icon-home
+        Przejdź do aplikacji
+.container
+  .row.text-center
+    %h1 Zacznij monitorować czas
+    %h4 Pamiętaj że to dopiero początek
+  .row.mt25.text-center
+    .span4
+      = image_tag ("blank-image.png"), :class => "img-polaroid"
+      %h3 Trzymaj koszty w ryzach
+      %p Monitoruj koszty pracy nad konkretnymi zleceniami i lepiej szacuj przyszłe wydatki
+    .span4
+      = image_tag ("blank-image.png"), :class => "img-polaroid"
+      %h3 Trafnie wyceniaj pracę
+      %p Szybko identyfikuj niedoszacowania oraz przeszacowania w wycenach.
+    .span4
+      = image_tag ("blank-image.png"), :class => "img-polaroid"
+      %h3 Rozwijaj aplikację z nami
+      %p Napisz nam czego potrzebujesz - cały czas dodajemy nowe funkcje.
+  .row.mt25.text-center
+    .span12
+      %h2 Darmowy worklog dla startupów
+    .span10.offset1
+      Worklog tworzymy z pasją i przyjemnością. Wiemy że na samym początku biznesu niskie koszty są bardzo ważne dlatego oferujemy worklog zupełnie za darmo.
+  .row.text-center
+    %h1 Posłuchaj innych użytkowników
+  .row.mt25
+    .span2.offset2
+      = image_tag ("blank-image.png"), :class => "img-polaroid"
+    .span8
+      %p
+        Używamy workloga do mierzenia czasu w naszej firmie. Dzięki niemu wiemy ile czasu zajęła nam praca nad każdym z projektów i
+      %p
+        %b Wojciech Krysiak
+        CTO w KMPgroup
+  .row.mt25
+    .span2.offset2
+      = image_tag ("blank-image.png"), :class => "img-polaroid"
+    .span8
+      %p
+        W Taxi5 Korzystamy z workloga chyba od samego początku. Najbardziej cenię go za to że rozwija się tak jak chcą tego jego użytkownicy.
+      %p
+        %b Karolina Urbańska
+        HOT w Taxi5
+
+.mt25.footer.hero-unit.main_bg
+  .span4
+    %a{href: "http://craftedinwroclaw.pl"} crafted in Wroclaw
+  .span8.text-right
+    %a{href: "kmpgroup.pl"} kmpgroup
+
