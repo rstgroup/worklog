@@ -172,6 +172,7 @@ GEM
       thor (>= 0.14.6, < 2.0)
     rake (10.0.4)
     raphael-rails (2.1.2)
+    rb-readline (0.5.1)
     rdoc (3.12.2)
       json (~> 1.4)
     request_store (1.0.5)
@@ -274,6 +275,7 @@ DEPENDENCIES
   rails-erd
   rails-i18n
   raphael-rails
+  rb-readline
   rspec-rails (~> 2.0)
   rvm-capistrano
   sass-rails (~> 3.2.3)

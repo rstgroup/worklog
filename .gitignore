@@ -1,4 +1,6 @@
 /config/database.yml
+/log
+/tmp
 *.rbc
 *.sassc
 .sass-cache

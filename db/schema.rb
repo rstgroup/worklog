@@ -24,19 +24,9 @@ ActiveRecord::Schema.define(:version => 20130511180835) do
     t.integer  "account_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.index ["account_id"], :name => "fk__clients_account_id"
     t.index ["account_id"], :name => "index_clients_on_account_id"
-  end
-
-  create_table "parts", :force => true do |t|
-    t.string   "name"
-    t.integer  "project_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "account_id"
-    t.index ["project_id"], :name => "index_parts_on_project_id"
-    t.index ["account_id"], :name => "fk__parts_account_id"
-    t.index ["account_id"], :name => "index_parts_on_account_id"
-    t.foreign_key ["account_id"], "accounts", ["id"], :on_update => :restrict, :on_delete => :restrict, :name => "fk_parts_account_id"
+    t.foreign_key ["account_id"], "accounts", ["id"], :on_update => :restrict, :on_delete => :restrict, :name => "fk_clients_account_id"
   end
 
   create_table "projects", :force => true do |t|
@@ -45,6 +35,20 @@ ActiveRecord::Schema.define(:version => 20130511180835) do
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
     t.index ["client_id"], :name => "index_projects_on_client_id"
+  end
+
+  create_table "parts", :force => true do |t|
+    t.string   "name"
+    t.integer  "project_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "account_id"
+    t.index ["project_id"], :name => "fk__parts_project_id"
+    t.index ["project_id"], :name => "index_parts_on_project_id"
+    t.index ["account_id"], :name => "fk__parts_account_id"
+    t.index ["account_id"], :name => "index_parts_on_account_id"
+    t.foreign_key ["account_id"], "accounts", ["id"], :on_update => :restrict, :on_delete => :restrict, :name => "fk_parts_account_id"
+    t.foreign_key ["project_id"], "projects", ["id"], :on_update => :restrict, :on_delete => :restrict, :name => "fk_parts_project_id"
   end
 
   create_view "autocomplete_parts", "select concat(`c`.`name`,' - ',`pj`.`name`,' - ',`p`.`name`) AS `calculated_name`,`p`.`id` AS `part_id`,`c`.`account_id` AS `account_id` from ((`clients` `c` join `projects` `pj` on((`pj`.`client_id` = `c`.`id`))) join `parts` `p` on((`p`.`project_id` = `pj`.`id`)))", :force => true
@@ -94,8 +98,12 @@ ActiveRecord::Schema.define(:version => 20130511180835) do
     t.text    "name"
     t.integer "duration"
     t.date    "worked_on"
+    t.index ["part_id"], :name => "fk__timelogs_part_id"
+    t.index ["user_id"], :name => "fk__timelogs_user_id"
     t.index ["part_id"], :name => "index_timelogs_on_part_id"
     t.index ["user_id"], :name => "index_timelogs_on_user_id"
+    t.foreign_key ["part_id"], "parts", ["id"], :on_update => :restrict, :on_delete => :restrict, :name => "fk_timelogs_part_id"
+    t.foreign_key ["user_id"], "users", ["id"], :on_update => :restrict, :on_delete => :restrict, :name => "fk_timelogs_user_id"
   end
 
 end
