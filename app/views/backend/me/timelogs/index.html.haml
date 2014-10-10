@@ -18,7 +18,7 @@
           /       %a Dacie
           /     %li
           /       %a Czasie
-          /     %li 
+          /     %li
           /       %a Części
 
       .row-fluid
@@ -35,4 +35,3 @@
             %tbody
               = render @timelogs
           .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
-              

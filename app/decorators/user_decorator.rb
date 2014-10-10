@@ -5,6 +5,10 @@ class UserDecorator < ApplicationDecorator
     UsersDecorator
   end
 
+  def has_invitations_left?
+    true
+  end
+
   def worked_today
     time = source.present_as_time source.worked_today
     h.content_tag :h4, "Przepracowany dzisiaj czas: #{time}"

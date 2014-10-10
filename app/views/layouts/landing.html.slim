@@ -1,0 +1,63 @@
+doctype html
+html
+  head
+    title RST-IT Worklog
+    = stylesheet_link_tag "landing", :media => "all"
+    = csrf_meta_tags
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+  body
+    header
+      .upper-header
+        .container
+            .row
+              .col-md-4
+                a.f-left href="https://github.com/rstgroup"
+                  | Check out our other open source projects
+              .col-md-4.col-md-offset-4
+                a.f-right href="https://github.com/rstgroup"
+                  | Check out our github profile and collaborate with us!
+      .lower-header
+        .container
+          .row
+            .col-md-3
+              #id_brandlogo
+                | WORKLOG by
+                br
+                small
+                  | RST SOFTWARE HOUSE
+            .col-md-9
+              .f-right
+                - if current_user.nil?
+                  ul.logged-in
+                    li
+                      a href='backend_me_timelogs_path' KOKPIT
+                    li
+                      a href='backend_timelogs_path' WPISY
+                    li
+                      a href='backend_clients_path' KLIENCI
+                    li
+                      a href='backend_users_path' PRACOWNICY
+                    li.userpanel
+                      a href='userpanel_path' PANEL UZYTKOWNIKA
+                - else
+                  ul.not-logged-in
+                    li
+                      | button log in
+                    li
+                      | button register
+
+    section
+      =yield
+  footer
+    .container
+      .row
+        .col-md-5
+          | This project is part of
+          |  RST Softwarehouse
+          |  Open Source something.
+          br
+          | RST Softwarehouse is a part of RST Group
+        .col-md-5.col-md-offset-2
+          a.f-right href="https://github.com/rstgroup"
+            | Check out our github profile and collaborate with us!

@@ -20,7 +20,7 @@
         .control-group{:class => ("error" if @tl.errors[:clock_duration].any?)}
           .controls.bootstrap-timepicker
             = f.text_field :clock_duration, {:class => 'input-block-level', :placeholder => 'HH:SS'}
-            
+
     .control-row.mt25
       %button.btn.btn-primary.btn-block{:type => 'submit'}
         %i.icon-plus

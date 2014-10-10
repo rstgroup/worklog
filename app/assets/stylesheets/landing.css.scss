@@ -1,0 +1,21 @@
+// globals
+@import 'normalize-rails';
+@import 'landing/vars';
+
+
+
+// gems
+@import 'compass/css3/border-radius';
+
+
+// vendor
+@import 'bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+// assets
+@import 'landing/layout';
+@import 'landing/typo';
+@import 'landing/buttons';
+@import 'landing/forms';
+@import 'landing/components/*';

@@ -1,0 +1,94 @@
+/***********************************
+HEADER
+************************************/
+
+header {
+  margin: 0 ;
+  border: 0 ;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  width: 0;
+}
+
+.upper-header {
+  font-family: "Roboto Regular" ;
+  background-color: #38424c ;
+  color: #fff;
+  padding: 10px 0 10px 15px;
+  font-size: 12px;
+  margin: 0;
+}
+
+.lower-header {
+  font-family: "Roboto Bold" ;
+  color: #fff;
+  background-color: #3498db;
+  height: 82px;
+  font-size: 14px;
+  #id_brandlogo{
+    padding: 14px 0 4px  ;
+    small {
+      font-size: 12px;
+      color: #1f6a9c ;
+    }
+  }
+  .col-md-9 {
+    ul li {
+      list-style: none;
+      display: inline-block;
+      padding: 16px 10px 28px 10px;
+    }
+  }
+
+  .logged-in {
+    padding: 10px 10px;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.userpanel {
+  padding: 30px;
+}
+
+
+
+
+
+
+
+
+/***********************************
+BODY
+************************************/
+
+body {
+  background: #2c81ba;
+}
+
+
+/***********************************
+FOOTER
+************************************/
+
+footer {
+  bottom: 0;
+}
