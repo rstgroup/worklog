@@ -14,8 +14,6 @@
         .control-group{:class => ("error" if @tl.errors[:worked_on].any?)}
           .controls
             = f.text_field :worked_on, {value: Time.now.strftime('%d.%m.%Y'), :class => 'input-block-level', :placeholder => 'Data'}
-
-
       .span3
         .control-group{:class => ("error" if @tl.errors[:clock_duration].any?)}
           .controls.bootstrap-timepicker

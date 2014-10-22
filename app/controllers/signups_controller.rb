@@ -1,7 +1,7 @@
 class SignupsController < ApplicationController
   before_filter :user_signed_in?
   before_filter :find_account, only: [:edit, :update]
-  layout 'devise'
+  layout 'landing'
 
   def new
     @signup = Signup.new

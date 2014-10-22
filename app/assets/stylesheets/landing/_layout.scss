@@ -3,6 +3,20 @@ header {
 }
 
 body {
-  width: 1920px;
+  background: image-url('background-image.png') center top no-repeat;
+  margin: 0 0 104px; /* bottom = footer height */
+}
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+.container {
+  width: 970px;
+}
+
+::-webkit-input-placeholder {
+   color: #7f8c8d;
 }

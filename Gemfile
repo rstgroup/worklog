@@ -13,7 +13,6 @@ gem 'coffee-rails', '~> 3.2.1'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'compass-rails'
   gem 'bootstrap-sass', '~> 3.2.0'
   gem 'turbo-sprockets-rails3'
   gem 'uglifier', '>= 1.0.3'
@@ -39,7 +38,8 @@ gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'slim-rails', '~> 2.1.5'
 gem 'normalize-rails'
-gem 'font-awesome-sass', '~> 4.2.0'
+gem 'font-awesome-sass'
+gem 'boxmodel-rails'
 
 group :development do
   gem "rails-erd"

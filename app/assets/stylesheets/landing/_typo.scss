@@ -9,7 +9,9 @@ header {
 
 a {
   color: #fff;
-  text-decoration: none;
+  &, &:hover {
+    text-decoration: none;
+  }
 }
 
 .f-left {
@@ -29,49 +31,63 @@ a {
 }
 
 .upper-header {
-  font-family: "Roboto Regular" ;
+  font-weight: $fontSizeLight;
   background-color: #38424c ;
-  color: #fff;
-  padding: 10px 0 10px 15px;
+  padding: 10px 0px 10px 0;
   font-size: 12px;
+  color: #fff;
   margin: 0;
 }
 
+.id_right-link {
+  a {
+    color: #3587be;
+    text-decoration: none;
+  }
+}
+
+
 .lower-header {
-  font-family: "Roboto Bold" ;
+  text-decoration: none;
+  font-weight: $fontSizeBold;
   color: #fff;
   background-color: #3498db;
   height: 82px;
   font-size: 14px;
-  #id_brandlogo{
-    padding: 14px 0 4px  ;
+  .brand-logo {
+    width: 170px;
+    padding: 27px 0px 31px 0;
+    margin-left: 0;
+    line-height: 14px;
     small {
+      line-height: 4px;
       font-size: 12px;
       color: #1f6a9c ;
-    }
-  }
-  .col-md-9 {
-    ul li {
-      list-style: none;
-      display: inline-block;
-      padding: 16px 10px 28px 10px;
+      margin-top: 0;
+      padding: 0;
     }
   }
 
-  .logged-in {
-    padding: 10px 10px;
-    margin: 0;
-    text-align: center;
+  .nav {
+    ul {
+      li{
+        list-style:none;
+        display: inline-block;
+        padding: 30px 0 20px 40px;
+        .dropdown {
+          font-weight: $fontSizeLight;
+          .dropdown-menu li {
+            padding: 0;
+            margin: 0;
+          }
+        }
+        .dropdown:hover .dropdown-menu {
+          display: block;
+        }
+      }
+    }
   }
 }
-
-.userpanel {
-  padding: 30px;
-}
-
-
-
-
 
 
 
@@ -81,8 +97,124 @@ BODY
 ************************************/
 
 body {
-  background: #2c81ba;
+  font-family: $robotoFont;
 }
+
+h1 {
+  width: 100%;
+  font-family: $robotoFont;
+  font-weight: $fontSizeLight;
+  color: #fff;
+  text-align: center;
+  padding: 100px 0 100px 0;
+  font-size: 42px;
+  line-height: 52px;
+  .bold {
+    font-weight: 700;
+  }
+}
+
+p {
+  padding: 118px 0;
+}
+
+.span {
+  h2 {
+    font-size: 36px;
+    line-height: 10px;
+    font-family: $robotoFont;
+    font-weight: $fontSizeLight ;
+    text-align: center;
+  }
+
+  h4 {
+    margin-top: 0;
+    font-size: 14px;
+    font-family: $robotoFont;
+    font-weight: $fontSizeBold ;
+    text-align: center;
+    color: #95a5a6;
+    padding: 0 0 48px 0;
+  }
+}
+
+.col-md-4 {
+  img {
+    padding: 30px 0;
+  }
+  h5 {
+    font-family: $robotoFont;
+    font-weight: $fontSizeMedium;
+    font-size: 16px;
+  }
+
+  h6 {
+    font-size: 14px;
+    font-family: $robotoFont;
+    font-weight: $fontSizeLight;
+    color: #7f8c8d;
+    padding: 26px 0 100px;
+  }
+}
+
+.lower-container {
+  background: #f2f5f7;
+  height: 420px;
+  .container {
+    padding: 75px 0 0;
+    .row {
+      .col-md-4 {
+        img {
+          padding: 0;
+        }
+        padding: 54px 32px 62px 22px;
+        font-size: 16px;
+        color: #7f8c8d;
+        font-weight: $fontSizeLight;
+        background: image-url('text-cloud.png') center top no-repeat;
+        ul {
+          list-style: none;
+          padding: 70px 0 0 20px;
+
+          li {
+            display: inline;
+          }
+          li:first-child {
+            margin-right: 20px;
+          }
+          li:last-child {
+            font-size: 16px;
+            // line-height: 4px;
+            font-weight: $fontSizeBold;
+            small {
+              font-size: 14px;
+              font-weight: $fontSizeLight
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.second-register {
+  background: #3498db;
+  height: 318px;
+  .container {
+    h2 {
+      margin: 0;
+      padding: 58px 0 44px;
+      color: #fff;
+      padding: 58px 0 54px;
+      font-weight: $fontSizeLight;
+      font-size: 30px;
+    }
+  }
+}
+
+
+
 
 
 /***********************************
@@ -90,5 +222,28 @@ FOOTER
 ************************************/
 
 footer {
+  font-family: $robotoFont;
+  font-weight: $fontSizeRegular;
+  height: 104px;
   bottom: 0;
+  background-color: #f0f4f7;
+  color: #95a5a6;
+  font-size: 13px;
+  padding: 40px;
+  .bold-text {
+    font-weight: 700;
+  }
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
+
+.right-footer {
+  a {
+    color: #95a5a6;
+    text-decoration: none;
+  }
+}
+
+

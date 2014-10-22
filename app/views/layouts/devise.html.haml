@@ -2,12 +2,8 @@
 %html
   %head
     %title KMP WorkLog
-    - if current_user
-      = stylesheet_link_tag "themes/#{current_user.theme}", media: 'all'
-    - else
-      = stylesheet_link_tag "themes/cerulean", media: 'all'
-    = stylesheet_link_tag    "frontend", :media => "all"
-    = javascript_include_tag "frontend"
+    = stylesheet_link_tag "landing", :media => "all"
+
     = csrf_meta_tags
   %body
     .navbar.navbar-static-top

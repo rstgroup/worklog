@@ -1,0 +1,62 @@
+
+#myregisterform {
+  margin-bottom: 30px;
+  .column {
+    float: left;
+    height: 70px;
+    border: 0px solid;
+    .my-label{
+      color: #bdc3c7;
+      padding: 17px 0 0 16px;
+      font-size: 12px;
+      font-weight: $fontSizeBold;
+    }
+    &.my-border {
+      border-right: 1px solid;
+      border-color: #e2eef0;
+    }
+    &.white {
+      background: #fff;
+    }
+    &.company-column {
+      width: 23%;
+    }
+    &.email-column {
+      width: 22%;
+    }
+    &.password-column {
+      width: 26%;
+    }
+    &.submit-column {
+      width: 29%;
+      [type="submit"] {
+        width: 100%;
+        display: block;
+        border: none;
+        height: 100%;
+      }
+    }
+  }
+
+  .input-medium {
+    padding: 0 0 0 16px;
+    border: none;
+    width: 200px;
+  }
+
+  .registering-rules {
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    color: #fff;
+    font-weight: $fontSizeLight;
+    a {
+      font-weight: $fontSizeBold;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+
+

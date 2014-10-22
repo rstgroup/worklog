@@ -1,0 +1,39 @@
+.pure-button {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+
+.border {
+  padding: 14px 30px 14px 30px;
+  border: 2px solid #2980b9;
+}
+
+.reg-now-button{
+  background-color: #68ba2e;
+  border: 0;
+  color: #fff;
+
+}
+
+.learn-more-btn{
+  display: inline-block;
+  border: 2px solid #fff;
+  text-decoration: none;
+  padding: 18px 78px;
+  @include transition(background 500ms, color 500ms);
+  .fa:first-child {
+    margin-right: 18px
+  }
+  .fa:last-child {
+    margin-left: 18px
+  }
+  &:hover {
+    color: #2c81ba;
+    background: #fff;
+  }
+}
+
+
+
+

@@ -64,8 +64,8 @@ module KmpWorklog
       Devise::SessionsController.layout "devise"
       Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "backend" : "devise" }
       Devise::ConfirmationsController.layout "devise"
-      Devise::UnlocksController.layout "devise"            
-      Devise::PasswordsController.layout "devise"        
+      Devise::UnlocksController.layout "devise"
+      Devise::PasswordsController.layout "devise"
     end
 
     ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
