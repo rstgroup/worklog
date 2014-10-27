@@ -39,7 +39,7 @@ a {
   margin: 0;
 }
 
-.id_right-link {
+.right-link {
   a {
     color: #3587be;
     text-decoration: none;
@@ -70,10 +70,12 @@ a {
 
   .nav {
     ul {
+      margin-bottom: 0;
+      margin-top: 10px;
       li{
         list-style:none;
         display: inline-block;
-        padding: 30px 0 20px 40px;
+        padding: 22px 0 20px 40px;
         .dropdown {
           font-weight: $fontSizeLight;
           .dropdown-menu li {
@@ -89,6 +91,11 @@ a {
   }
 }
 
+#id_log-in-register {
+  ul {
+    margin-top: 0;
+  }
+}
 
 
 
@@ -120,6 +127,7 @@ p {
 
 .span {
   h2 {
+    margin-top: 60px;
     font-size: 36px;
     line-height: 10px;
     font-family: $robotoFont;
@@ -212,6 +220,8 @@ p {
     }
   }
 }
+
+input:focus, textarea:focus, select:focus {outline:0 none;}
 
 
 

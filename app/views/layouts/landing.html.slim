@@ -66,13 +66,16 @@ html
                             | Wyloguj sie
 
               - else
-                ul.visiblecontent.f-right
-                  li
-                    #id_no-decoration-link
-                      a.pure-button href='users/sign_in' LOG IN
-                  li
-                    #id_no-decoration-link
-                      a.pure-button.border href='users/sign_up' REGISTER
+                #id_log-in-register
+                  ul
+                    li
+                      .pure-button.log-in-btn
+                        = link_to new_user_session_path
+                          | LOG IN
+                    li
+                      .pure-button.register-btn
+                        = link_to registration_path
+                          | REGISTER
   =yield
 
   footer
@@ -90,4 +93,6 @@ html
             a href="https://github.com/rstgroup"
               i.fa.fa-github github
             |  profile and collaborate with us!
+
+
 

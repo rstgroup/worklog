@@ -3,4 +3,5 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 #= require jquery
 #= require jquery_ujs
+#= require custom
 #= require bootstrap

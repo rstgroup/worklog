@@ -4,6 +4,7 @@ KmpWorklog::Application.routes.draw do
   devise_for :users, :controllers => { :invitations => 'invitations' }
   root to: 'landing#index'
   resources :signups
+  get '/registration', to: 'signups#new'
   namespace :backend do
     namespace :me do
       resources :timelogs

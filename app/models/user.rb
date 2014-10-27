@@ -38,7 +38,6 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :theme, :company_name
   # attr_accessible :title, :body
   validates :name, presence: true, allow_blank: false, length: {within: 5..255}
-
   belongs_to :account
   has_many :timelogs
   has_many :partial_timelogs

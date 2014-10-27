@@ -3,7 +3,7 @@ class Signup
   extend ActiveModel::Naming
   include ActiveModel::Conversion
   include ActiveModel::Validations
-  
+
   attr_accessor :account
   attr_accessor :user
 

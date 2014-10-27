@@ -57,6 +57,123 @@
   }
 }
 
+#id_devise-log-in {
+  margin-top: 200px;
+  width: 374px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  .my-label {
+    color: #bdc3c7;
+  }
+
+  .my-placeholder {
+    @include transition(background 500ms);
+    color: #7f8c8d;
+    font-size: 14px;
+    border: none;
+  }
+
+  .title-line {
+    font-weight: $fontSizeRegular;
+    font-size: 18px;
+    text-align: left;
+    padding: 30px 0 24px 16px;
+    border: 1px solid #efefef;
+
+  }
+
+  .input-line {
+    @include transition(background 500ms);
+    font-weight: $fontSizeRegular;
+    font-size: 12px;
+    text-align: left;
+    padding: 15px 16px;
+    border: 1px solid #efefef;
+    border-top: none;
+    &:hover {
+      background: #b7bab4;
+      .my-placeholder {
+        background: #b7bab4;
+      }
+    }
+  }
+
+  .buttons-line {
+    font-size: 14px;
+    font-weight: $fontSizeBold;
+    border: 1px solid #efefef;
+    border-top: none;
+  }
+
+}
+
+#id_register {
+  background: #fff;
+  margin-top: 200px;
+  width: 374px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  .my-label {
+    color: #bdc3c7;
+  }
+
+  .my-placeholder {
+    @include transition(background 500ms);
+    color: #7f8c8d;
+    font-size: 14px;
+    border: none;
+  }
+
+  .title-line {
+    font-weight: $fontSizeRegular;
+    font-size: 18px;
+    text-align: left;
+    padding: 30px 0 24px 16px;
+    border: 1px solid #efefef;
+
+  }
+
+  .input-line {
+    @include transition(background 500ms);
+    font-weight: $fontSizeRegular;
+    font-size: 12px;
+    text-align: left;
+    padding: 15px 16px;
+    border: 1px solid #efefef;
+    border-top: none;
+    &:hover {
+      background: #b7bab4;
+      .my-placeholder {
+        background: #b7bab4;
+      }
+    }
+  }
+
+  .buttons-line {
+    font-size: 14px;
+    font-weight: $fontSizeBold;
+    border: 1px solid #efefef;
+    border-top: none;
+  }
+  .registering-rules {
+    padding: 10px;
+    margin: 0;
+    font-size: 10px;
+    color: #929491;
+    font-weight: $fontSizeLight;
+    a {
+      color: #929491;
+      font-weight: $fontSizeBold;
+      text-decoration: underline;
+    }
+  }
+
+}
+
 
 
 

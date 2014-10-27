@@ -4,9 +4,14 @@
   text-decoration: none;
 }
 
-.border {
-  padding: 14px 30px 14px 30px;
+.register-btn {
+  padding: 12px 30px 12px 30px;
   border: 2px solid #2980b9;
+  font-size: 16px;
+  line-height: 14px;
+}
+.log-in-btn {
+  font-size: 16px;
 }
 
 .reg-now-button{
@@ -31,6 +36,35 @@
   &:hover {
     color: #2c81ba;
     background: #fff;
+  }
+}
+
+.col-xs-6 {
+  .btn {
+    border: none;
+    width:100%;
+    background: #fff;
+    font-weight: $fontSizeBold;
+    border-radius: 0;
+  }
+
+
+  &.log-in {
+    padding-right: 0;
+    .btn {
+      padding: 30px 0px 26px;
+      background: #68ba2e;
+      color: #fff;
+    }
+  }
+
+  &.forgot-pw {
+    padding-left: 0;
+    .btn {
+      color: #7f8c8d;
+      padding: 30px 0px 26px;
+      background: #fff;
+    }
   }
 }
 

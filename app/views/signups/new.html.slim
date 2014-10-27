@@ -1,0 +1,36 @@
+#id_register
+  = form_for @signup, class: 'form-inline' do |f|
+    .title-line
+      = f.label 'Register new account'
+      br
+
+    .input-line
+      = f.label :company_name, 'COMPANY NAME', class: 'my-label'
+      br
+      = f.text_field :company_name, placeholder: 'Example', class: 'my-placeholder'
+
+    .input-line
+      = f.label :email, 'YOUR E-MAIL ADDRESS', class: 'my-label'
+      br
+      = f.text_field :email, placeholder: 'example@example.com', class: 'my-placeholder'
+
+    .input-line
+      = f.label :password, 'YOUR PASSWORD', class: 'my-label'
+      br
+      = f.password_field :password, placeholder: 'Type-in your password', class: 'my-placeholder'
+
+    .buttons-line
+      .row
+        .col-xs-6.log-in
+          = f.submit 'Register', class: 'btn btn-block'
+        .col-xs-6.forgot-pw
+          .registering-rules
+            | By registering you agree that you have read
+            br
+            | and accepted our 
+            a.privacy-policy href='#'
+              | Privacy Policy 
+            | and 
+            a.privacy-policy href='#'
+              | Terms of Use
+br

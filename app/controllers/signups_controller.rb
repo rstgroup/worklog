@@ -26,6 +26,7 @@ class SignupsController < ApplicationController
 
   end
 
+
   private
   def user_signed_in?
     current_user.nil? ? true : redirect_to(backend_me_timelogs_path)
