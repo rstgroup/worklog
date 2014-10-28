@@ -3,10 +3,13 @@ header {
 }
 
 body {
-  background: image-url('background-image.png') center top no-repeat;
+  background: #ebf0f3;
   margin: 0 0 104px; /* bottom = footer height */
-  &.devise {
-    background: #fff;
+  // &.devise {
+  //   background: #ebf0f3;
+  // }
+  &.bg-img {
+    background: image-url('background-image.png') center top no-repeat;
   }
 }
 

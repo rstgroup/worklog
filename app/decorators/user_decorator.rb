@@ -11,7 +11,7 @@ class UserDecorator < ApplicationDecorator
 
   def worked_today
     time = source.present_as_time source.worked_today
-    h.content_tag :h4, "Przepracowany dzisiaj czas: #{time}"
+    h.content_tag :h4, "Dzisiejsza aktywność: #{time}"
   end
 
   def worked_today_progress_bar

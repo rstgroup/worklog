@@ -2,6 +2,7 @@
 #myregisterform {
   margin-bottom: 30px;
   .column {
+    @include transition(background 600ms);
     float: left;
     height: 70px;
     border: 0px solid;
@@ -18,17 +19,23 @@
     &.white {
       background: #fff;
     }
-    &.company-column {
+    &.details-column {
       width: 23%;
+      &.focused {
+        background-color: transparent;
+        .my-input {
+          background-color: transparent;
+        }
+      }
     }
-    &.email-column {
-      width: 22%;
-    }
-    &.password-column {
-      width: 26%;
-    }
+    // &.email-column {
+    //   width: 22%;
+    // }
+    // &.password-column {
+    //   width: 26%;
+    // }
     &.submit-column {
-      width: 29%;
+      width: 31%;
       [type="submit"] {
         width: 100%;
         display: block;
@@ -38,7 +45,8 @@
     }
   }
 
-  .input-medium {
+  .my-input {
+    @include transition(background 600ms);
     padding: 0 0 0 16px;
     border: none;
     width: 200px;
@@ -58,6 +66,7 @@
 }
 
 #id_devise-log-in {
+  background: #fff;
   margin-top: 200px;
   width: 374px;
   margin-left: auto;
@@ -92,10 +101,10 @@
     padding: 15px 16px;
     border: 1px solid #efefef;
     border-top: none;
-    &:hover {
-      background: #b7bab4;
+    &.focused {
+      background: #f2f6fa;
       .my-placeholder {
-        background: #b7bab4;
+        background: #f2f6fa;
       }
     }
   }
@@ -145,10 +154,10 @@
     padding: 15px 16px;
     border: 1px solid #efefef;
     border-top: none;
-    &:hover {
-      background: #b7bab4;
+    &.focused {
+      background: #f2f6fa;
       .my-placeholder {
-        background: #b7bab4;
+        background: #f2f6fa;
       }
     }
   }
@@ -174,6 +183,52 @@
 
 }
 
+#id_kokpit {
+  background: #fff;
+  margin-top: 16px;
 
+  .my-label {
+    color: #bdc3c7;
+  }
+
+  .my-input {
+    @include transition(background 500ms);
+    color: #7f8c8d;
+    font-size: 14px;
+    border: none;
+  }
+
+  .input-line {
+    @include transition(background 500ms);
+    font-weight: $fontSizeRegular;
+    font-size: 12px;
+    text-align: left;
+    padding: 10px 14px;
+    border: 1px solid #efefef;
+    border-top: none;
+    &.focused {
+      background: #f2f6fa;
+      .my-input {
+        background: #f2f6fa;
+      }
+    }
+    .row {
+      .col-md-6:first-child {
+        border-right: 1px solid #efefef;
+      }
+    }
+  }
+
+  .submit-line {
+    height: 100%;
+    width: 100%;
+    font-size: 12px;
+    font-weight: $fontSizeBold;
+    border: 1px solid #efefef;
+    border-top: none;
+  }
+
+
+}
 
 
