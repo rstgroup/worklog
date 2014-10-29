@@ -55,6 +55,9 @@ a {
   height: 82px;
   font-size: 14px;
   .brand-logo {
+    a, a:hover {
+      color: #fff;
+    }
     width: 170px;
     padding: 27px 0px 31px 0;
     margin-left: 0;
@@ -123,26 +126,31 @@ h1 {
 
 p {
   padding: 118px 0;
+  margin-bottom: 0;
 }
+.middle-container {
+  background: #fff;
+  .span {
+    h2 {
+      padding-top: 60px;
+      font-size: 36px;
+      line-height: 10px;
+      font-family: $robotoFont;
+      font-weight: $fontSizeLight ;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
 
-.span {
-  h2 {
-    margin-top: 60px;
-    font-size: 36px;
-    line-height: 10px;
-    font-family: $robotoFont;
-    font-weight: $fontSizeLight ;
-    text-align: center;
-  }
-
-  h4 {
-    margin-top: 0;
-    font-size: 14px;
-    font-family: $robotoFont;
-    font-weight: $fontSizeBold ;
-    text-align: center;
-    color: #95a5a6;
-    padding: 0 0 48px 0;
+    h4 {
+      margin-top: 0;
+      font-size: 14px;
+      font-family: $robotoFont;
+      font-weight: $fontSizeBold ;
+      text-align: center;
+      color: #95a5a6;
+      padding: 0 0 48px 0;
+    }
   }
 }
 
@@ -230,7 +238,6 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   text-align: left;
   margin-top: 30px;
 }
-
 
 
 

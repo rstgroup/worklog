@@ -19,7 +19,7 @@
         .col-md-6.p-v-10
           = f.label :worked_on, 'DZIEŃ', class: 'my-label'
           br
-          = f.text_field :worked_on, value: Time.now.strftime('%d.%m.%Y'), class: 'my-input'
+          = f.text_field :worked_on, value: Time.now.strftime('%m/%d/%Y'), class: 'my-input datepicker'
         .col-md-6.p-v-10
           = f.label :clock_duration, 'PRZEPRACOWANYCH GODZIN', class: 'my-label'
           br

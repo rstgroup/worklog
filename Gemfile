@@ -19,6 +19,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem "haml-rails"
 gem 'pry'
 gem 'devise',           '>= 2.0.0'

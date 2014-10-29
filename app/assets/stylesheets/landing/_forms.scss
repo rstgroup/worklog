@@ -22,18 +22,12 @@
     &.details-column {
       width: 23%;
       &.focused {
-        background-color: transparent;
+        background: #f2f6fa;
         .my-input {
-          background-color: transparent;
+          background: #f2f6fa;
         }
       }
     }
-    // &.email-column {
-    //   width: 22%;
-    // }
-    // &.password-column {
-    //   width: 26%;
-    // }
     &.submit-column {
       width: 31%;
       [type="submit"] {

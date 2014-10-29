@@ -7,6 +7,7 @@ html
     = csrf_meta_tags
     meta name="viewport" content="width=device-width, initial-scale=1.0"
 
+
   body class="#{'bg-img' if params[:action] == 'index' && params[:controller] == 'landing'}"
     header
       .upper-header
@@ -17,7 +18,7 @@ html
                   | Check out our other open source projects
                 i.fa.fa-chevron-down
               .f-right
-                .id_right-link
+                .right-link
                   | Check out our 
                   a href="https://github.com/rstgroup"
                     i.fa.fa-github github

@@ -1,72 +1,75 @@
-.container
-  .first-register
-    h1
-      | Proste rozwiązanie, pozwalające na 
-      strong
-        | zarządzanie 
-        br
-        | czasem pracy 
-      | Twoim i Twoich pracowników
-    - if current_user.nil?
-      #myregisterform
-        = form_for @signup, class: 'form-inline' do |f|
-          .column.white.details-column.my-border
-            = f.label :company_name, 'COMPANY NAME', class: 'my-label'
-            = f.text_field :company_name, class: 'my-input', placeholder: 'Example'
-          .column.white.details-column.my-border
-            = f.label :email, 'E-MAIL', class: 'my-label'
-            = f.text_field :email, class: 'my-input', placeholder: 'example@example.com'
-          .column.white.details-column
-            = f.label :password, 'PASSWORD', class: 'my-label'
-            = f.password_field :password, class: 'my-input', placeholder: 'password'
-          .column.submit-column
-            = f.button 'REGISTER NOW!', class: 'reg-now-button', type: "submit"
-            br
-            .registering-rules
-              | By registering you agree that you have read
+.top-container.bg-img
+  .container
+    .first-register
+      h1
+        | Proste rozwiązanie, pozwalające na 
+        strong
+          | zarządzanie 
+          br
+          | czasem pracy 
+        | Twoim i Twoich pracowników
+      - if current_user.nil?
+        #myregisterform
+          = form_for @signup, class: 'form-inline' do |f|
+            .column.white.details-column.my-border
+              = f.label :company_name, 'COMPANY NAME', class: 'my-label'
+              = f.text_field :company_name, class: 'my-input', placeholder: 'Example'
+            .column.white.details-column.my-border
+              = f.label :email, 'E-MAIL', class: 'my-label'
+              = f.text_field :email, class: 'my-input', placeholder: 'example@example.com'
+            .column.white.details-column
+              = f.label :password, 'PASSWORD', class: 'my-label'
+              = f.password_field :password, class: 'my-input', placeholder: 'password'
+            .column.submit-column
+              = f.button 'REGISTER NOW!', class: 'reg-now-button', type: "submit"
               br
-              | and accepted our 
-              a.privacy-policy href='#'
-                | Privacy Policy 
-              | and 
-              a.privacy-policy href='#'
-                | Terms of Use
-          br.clear
+              .registering-rules
+                | By registering you agree that you have read
+                br
+                | and accepted our 
+                a.privacy-policy href='#'
+                  | Privacy Policy 
+                | and 
+                a.privacy-policy href='#'
+                  | Terms of Use
+            br.clear
 
   p.text-center
-    a.learn-more-btn href="#"
+    a.learn-more-btn.to-section href="#benefits_section"
       i.fa.fa-caret-down
       | LEARN MORE
       i.fa.fa-caret-down
-.span
-  h2 Zacznij monitorować czas!
-  br
-  h4 PAMIĘTAJ, ŻE TO DOPIERO POCZĄTEK
+#benefits_section.middle-container
+  .span
+    h2 Zacznij monitorować czas!
+    br
+    h4 PAMIĘTAJ, ŻE TO DOPIERO POCZĄTEK
 
-.container
-  .row
-    .col-md-4.text-center
-      = image_tag("ico-layouts.png", class: 'three-icons')
-      h5 Trzymaj koszty w ryzach
-      h6
-        | Monitoruj koszty pracy nad konkretnymi
-        br
-        | zleceniami i lepiej szacuj przyszłe wydatki.
 
-    .col-md-4.text-center
-      = image_tag("ico-ruler.png", class: 'three-icons')
-      h5 Trafnie wyceniaj pracę
-      h6
-        | Szybko identyfikuj niedoszacowania oraz
-        br
-        | przeszacowania w wycenach.
-    .col-md-4.text-center
-      = image_tag("ico-cloudheart.png", class: 'three-icons')
-      h5 Rozwijaj aplikację z nami
-      h6
-        | Napisz nam czego potrzebujesz - cały czas
-        br
-        | dodajemy nowe funkcje.
+  .container
+    .row
+      .col-md-4.text-center
+        = image_tag("ico-layouts.png", class: 'three-icons')
+        h5 Trzymaj koszty w ryzach
+        h6
+          | Monitoruj koszty pracy nad konkretnymi
+          br
+          | zleceniami i lepiej szacuj przyszłe wydatki.
+
+      .col-md-4.text-center
+        = image_tag("ico-ruler.png", class: 'three-icons')
+        h5 Trafnie wyceniaj pracę
+        h6
+          | Szybko identyfikuj niedoszacowania oraz
+          br
+          | przeszacowania w wycenach.
+      .col-md-4.text-center
+        = image_tag("ico-cloudheart.png", class: 'three-icons')
+        h5 Rozwijaj aplikację z nami
+        h6
+          | Napisz nam czego potrzebujesz - cały czas
+          br
+          | dodajemy nowe funkcje.
 
 .lower-container
   .container
@@ -130,15 +133,15 @@
       h2.text-center Register today!
       #myregisterform
         = form_for @signup, class: 'form-inline' do |f|
-          .column.white.company-column.my-border
+          .column.white.details-column.my-border
             = f.label :company_name, 'COMPANY NAME', class: 'my-label'
-            = f.text_field :company_name, class: 'input-medium', placeholder: 'Example'
-          .column.white.email-column.my-border
+            = f.text_field :company_name, class: 'my-input', placeholder: 'Example'
+          .column.white.details-column.my-border
             = f.label :email, 'E-MAIL', class: 'my-label'
-            = f.text_field :email, class: 'input-medium', placeholder: 'example@example.com'
-          .column.white.password-column
+            = f.text_field :email, class: 'my-input', placeholder: 'example@example.com'
+          .column.white.details-column
             = f.label :password, 'PASSWORD', class: 'my-label'
-            = f.password_field :password, class: 'input-medium', placeholder: 'password'
+            = f.password_field :password, class: 'my-input', placeholder: 'password'
           .column.submit-column
             = f.button 'REGISTER NOW!', class: 'reg-now-button', type: "submit"
             br

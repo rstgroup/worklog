@@ -1,0 +1,11 @@
+.well.well-small
+  a.muted
+    h4
+      i.icon-plus
+      | Dodaj klienta
+  .form_wrapper
+    = form_for [:backend, @client], html: { class: 'form-inline'} do |f|
+      .control-group
+        = f.text_field :name, placeholder: 'Nazwa klienta', id: "", class: "client_name"
+        = f.button 'Dodaj klienta', class: 'btn action_btn', type: 'submit'
+
