@@ -22,7 +22,32 @@ $ ->
     false
 
 
-  $(".datepicker").datepicker()
+  $(".datetimepicker1").datetimepicker({pickTime: false})
+  $(".datetimepicker4").datetimepicker({
+    pickDate: false
+    minuteStepping:5
+    format: 'HH:mm'
+    pick12HourFormat: false
+    defaultTime: '00:00'
+  })
+
+  $(".add-client-btn").click (e) ->
+    unless $('.sliding-field-client').hasClass('active')
+      e.preventDefault()
+    $(".sliding-field-client").addClass 'active'
+
+  $(".add-project-btn").click (e) ->
+    unless $('.sliding-field-project').hasClass('active')
+      e.preventDefault()
+    $(".sliding-field-project").addClass 'active'
+
+  $(".add-part-btn").click (e) ->
+    unless $(this).parent().find('.sliding-field-part').hasClass('active')
+      e.preventDefault()
+    $(this).parent().find(".sliding-field-part").addClass 'active'
+
+
+
 
 
 

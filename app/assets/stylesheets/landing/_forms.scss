@@ -180,9 +180,11 @@
 #id_kokpit {
   background: #fff;
   margin-top: 16px;
-
   .my-label {
     color: #bdc3c7;
+  }
+  .bordered-top {
+    border-top: 1px solid #efefef;
   }
 
   .my-input {
@@ -226,3 +228,22 @@
 }
 
 
+#id_add-client-form {
+  .row{
+    position: relative;
+    padding: 0;
+  }
+}
+
+#id_edit-account {
+
+}
+
+#id_add-project-form {
+  padding: 15px 15px;
+  .row{
+    position: relative;
+    padding: 0;
+ }
+
+}

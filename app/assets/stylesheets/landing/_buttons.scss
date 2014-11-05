@@ -78,6 +78,42 @@
   color: #fff;
 }
 
+.add-client-btn {
+  height: 38px;
+  border: none;
+  background: #68ba2e;
+  padding: 0;
+  color: #fff;
+  width: 132px;
+  &:focus {
+    outline: none;
+  }
+}
 
+.btn-remove {
+  color: #7f8c8d;
+}
 
+.add-project-btn {
+  height: 38px;
+  border: none;
+  background: #3498db;
+  padding: 0;
+  color: #fff;
+  width: 132px;
+  &:focus {
+    outline: none;
+  }
+}
 
+.add-part-btn {
+  height: 38px;
+  border: none;
+  background: #68ba2e;
+  padding: 0;
+  color: #fff;
+  width: 132px;
+  &:focus {
+    outline: none;
+  }
+}

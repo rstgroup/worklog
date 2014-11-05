@@ -1,14 +1,17 @@
-.well.well-small.client-well
-  .fluid-container
-    %h3.row-fluid.hoverable.client-row
-      .span9.client-name{:id => "client-name-#{client.id}", "data-href" => backend_client_path(client)}
+.container
+  .col-md-12
+    .client-name.pull-left
+      %a{:id => "client-name-#{client.id}", "href" => backend_client_path(client)}
         = client.name
-      .span1
-        .badge.badge-info
-          = client.time_worked_overall
-      .span2.text-right
-        .client-crud.pull-left
-          %a.btn{id: "edit-client-#{client.id}-btn", href: '#', "data-live-edit" => "client-name-#{client.id}", "data-live-edit-url" => backend_client_path(client)}
-            %i.icon-edit
-          %a.btn.btn-danger{:href => backend_client_path(client), "data-method" => :delete, "data-confirm" => "Czy na pewno chcesz usunąć wszystkie dane klienta"}
-            %i.icon-remove
+      %br
+      .client-details
+        = "#{client.projects.count} #{Project.model_name.human(count: client.projects.count)}"
+    .side-buttons.p-t-15
+      .client-crud.pull-right
+        %a.btn.btn-remove{id: "edit-client-#{client.id}-btn", href: '#', "data-live-edit" => "client-name-#{client.id}", "data-live-edit-url" => backend_client_path(client)}
+          %i.fa.fa-pencil-square-o.fa-lg
+        %a.btn.btn-remove{:href => backend_client_path(client), "data-method" => :delete, "data-confirm" => "Czy na pewno chcesz usunąć wszystkie dane klienta"}
+          %i.fa.fa-remove.fa-lg
+      .timer-badge.pull-right.m-r-20
+        %i.fa.fa-clock-o.m-r-5
+        = client.time_worked_overall

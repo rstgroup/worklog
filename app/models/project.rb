@@ -19,6 +19,7 @@ class Project < ActiveRecord::Base
 
   include TimeFormattable
 
+
   def name_with_client
     "#{client.name} - #{name}"
   end

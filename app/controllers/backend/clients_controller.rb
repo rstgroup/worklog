@@ -18,7 +18,8 @@ class Backend::ClientsController < BackendController
       find_clients
       initialize_forms
     else
-      render :status => 406, :text => ""
+      render 'create_failure'
+      # render :status => 406, :text => ""
     end
   end
 

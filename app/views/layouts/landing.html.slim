@@ -8,7 +8,7 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1.0"
 
 
-  body class="#{'bg-img' if params[:action] == 'index' && params[:controller] == 'landing'}"
+  body class="#{'bg-img' if params[:action] == 'index' && params[:controller] == 'landing'}#{'grey-bgrd' if params[:controller] == 'devise/sessions' || params[:controller] == 'signups' || params[:controller] == 'backend/me/timelogs'}"
     header
       .upper-header
         .container
@@ -58,7 +58,7 @@ html
                         strong.caret
                       ul.dropdown-menu aria-labelledby="dropdownMenu1" role="menu"
                         li
-                          = link_to backend_me_path
+                          = link_to edit_backend_me_path
                             i.fa.fa-cog
                             | Ustawienia konta
                         li

@@ -59,7 +59,7 @@ a {
       color: #fff;
     }
     width: 170px;
-    padding: 27px 0px 31px 0;
+    padding: 27px 0 0;
     margin-left: 0;
     line-height: 14px;
     small {
@@ -78,7 +78,7 @@ a {
       li{
         list-style:none;
         display: inline-block;
-        padding: 22px 0 20px 40px;
+        padding: 22px 20px 20px;
         .dropdown {
           font-weight: $fontSizeLight;
           .dropdown-menu li {
@@ -89,6 +89,9 @@ a {
         .dropdown:hover .dropdown-menu {
           display: block;
         }
+      }
+      li:last-child {
+        padding-right: 0;
       }
     }
   }
@@ -239,6 +242,84 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   margin-top: 30px;
 }
 
+.clients-container {
+  h5 {
+  }
+  .row {
+    padding: 36px 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .container {
+    .col-md-12 {
+      border-bottom: 1px solid #f0f4f7;
+      padding: 26px 15px 22px;
+    }
+  }
+}
+
+.client-name {
+  a {
+    text-decoration: none;
+    color: #3498db;
+    font-size: 28px;
+  }
+}
+
+.no-border {
+  border: none !important ;
+}
+
+
+.client-details {
+  color: #bdc3c7;
+  font-size: 12px;
+}
+
+.timer-badge {
+  width: 78px;
+  background: #68ba2e;
+  font-size: 14px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 6px;
+  color: #fff;
+}
+
+
+.client-add-project-container {
+  .link-to-clients {
+    color: #3498db;
+  }
+  padding: 40px 15px;
+  h3 {
+    color: #3498db;
+    font-size: 23px;
+    font-weight: $fontSizeBold;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+.grey-text-color {
+  color: #bdc3c7;
+}
+
+.project-row {
+  .col-md-12 {
+    background: #eaf1f5;
+    height: 38px;
+    padding-right: 0;
+    .project-name {
+    }
+  }
+}
+
+.blue-timer {
+  background: none;
+  color: #95c7e9;
+  font-weight: $fontSizeBold;
+}
 
 
 

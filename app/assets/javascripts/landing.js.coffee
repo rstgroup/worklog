@@ -4,6 +4,9 @@
 #= require jquery
 #= require jquery.ui.all
 #= require jquery_ujs
-#= require custom
-#= require jquery-timepicker
 #= require bootstrap
+#= require moment
+#= require bootstrap-datetimepicker
+#= require custom
+#= require backend
+

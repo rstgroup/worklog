@@ -1,0 +1,47 @@
+.sliding-field-client {
+  position: absolute;
+  right: 132px;
+  max-width: 0px;
+  width: 230px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid #fff;
+  @include transition(all, 500ms);
+  &.active {
+    border-color: #e1ebf1;
+    padding-left: 16px;
+    max-width: 230px;
+  }
+}
+
+.sliding-field-project {
+  position: absolute;
+  right: 132px;
+  max-width: 0px;
+  width: 230px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid #fff;
+  @include transition(all, 500ms);
+  &.active {
+    border-color: #e1ebf1;
+    padding-left: 16px;
+    max-width: 230px;
+  }
+}
+
+.sliding-field-part {
+  background: none;
+  max-width: 0px;
+  width: 230px;
+  height: 38px;
+  padding: 0;
+  // border: 1px solid #fff;
+  border: 0;
+  @include transition(all, 500ms);
+  &.active {
+    border-color: #e1ebf1;
+    padding-left: 16px;
+    max-width: 230px;
+  }
+}
