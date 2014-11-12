@@ -1,0 +1,12 @@
+.row
+  .col-md-9 id="part-name-#{part.id}"
+    = part.name
+  .col-md-3
+    .f-right
+      a.btn.btn-remove id="edit-part-#{part.id}-btn" href="#" data-live-edit="part-name-#{part.id}" data-live-edit-url=backend_part_path(part)
+        i.fa.fa-pencil-square-o.fa-lg
+      a.btn.btn-remove href=backend_part_path(part) data-method="delete" data-confirm="Czy na pewno chcesz usunąć wszystkie dane zadania"
+        i.fa.fa-remove.fa-lg
+    .grey-no-bg-timer.pull-right
+      i.fa.fa-clock-o.p-r-5
+      = part.time_worked

@@ -1,5 +1,5 @@
 .new-activity Dodaj nową aktywność
-#id_kokpit
+#cockpit
   = form_for [:backend, :me, @tl], html: {class: 'form-horizontal'} do |f|
     / .control-group.mb10{:class => ("error" if @tl.errors[:name].any?)}
       / .controls

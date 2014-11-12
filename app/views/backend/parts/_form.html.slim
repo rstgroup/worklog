@@ -1,0 +1,15 @@
+/ a.muted.form-toggle data-toggle='form' href="#"
+/   i.fa.fa-plus
+/   | Dodaj zadanie
+.form_wrapper
+  = form_for [:backend, @part], remote:true, html: {class: 'form-inline'} do |f|
+    div class=("error" if @part.errors[:name].any?)
+      = hidden_field_tag :client_id, project.client_id
+      = hidden_field_tag :project_id, project.id
+      = f.text_field :name, placeholder: 'Nazwa zadania', class: "sliding-field-part"
+      button.add-part-btn
+        i.icon-plus
+        | Dodaj zadanie
+      / a.cancel href="#"
+      /   | Anuluj
+

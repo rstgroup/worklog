@@ -306,11 +306,15 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 }
 
 .project-row {
-  .col-md-12 {
+  .col-md-5, .col-md-7 {
     background: #eaf1f5;
     height: 38px;
     padding-right: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
     .project-name {
+      color: #3498db;
+      padding-left: 10px;
     }
   }
 }
@@ -319,6 +323,20 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   background: none;
   color: #95c7e9;
   font-weight: $fontSizeBold;
+}
+
+.grey-no-bg-timer {
+  background: none;
+  color: #7f8c8d;
+}
+
+.parts-ul {
+  padding: 20px 0 0px 26px;
+  color: #7f8c8d;
+  font-weight: $fontSizeLight;
+  .btn-remove {
+    padding: 0 0 20px 22px;
+  }
 }
 
 
