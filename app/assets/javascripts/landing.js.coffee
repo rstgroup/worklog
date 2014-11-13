@@ -5,6 +5,7 @@
 #= require jquery.ui.all
 #= require jquery_ujs
 #= require bootstrap
+#= require bs-typeahead
 #= require moment
 #= require bootstrap-datetimepicker
 #= require custom

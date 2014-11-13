@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     aasm (3.0.17)
     actionmailer (3.2.12)
@@ -184,6 +185,12 @@ GEM
       activesupport (= 3.2.12)
       bundler (~> 1.0)
       railties (= 3.2.12)
+    rails-assets-bootstrap (3.3.1)
+      rails-assets-jquery (>= 1.9.0)
+    rails-assets-bs-typeahead (0.0.3)
+      rails-assets-bootstrap (>= 3.0.0)
+      rails-assets-jquery (>= 1.9.0)
+    rails-assets-jquery (2.1.1)
     rails-erd (1.1.0)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
@@ -321,6 +328,7 @@ DEPENDENCIES
   pry
   quiet_assets
   rails (= 3.2.12)
+  rails-assets-bs-typeahead
   rails-erd
   rails-i18n
   raphael-rails

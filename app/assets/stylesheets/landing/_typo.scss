@@ -339,6 +339,17 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   }
 }
 
+/***** select2 *****/
+.select2-container .select2-choice .select2-arrow {
+  display: none;
+}
+
+.select2-container .select2-choice {
+  background-image: none;
+  border: 0;
+  width: 450px;
+}
+
 
 
 /***********************************

@@ -1,7 +1,11 @@
 class AutocompletePartSerializer < ActiveModel::Serializer
-  attributes :value
+  attributes :id, :text
 
-  def value
+  def id
+    object.part_id
+  end
+
+  def text
     object.calculated_name
   end
 end

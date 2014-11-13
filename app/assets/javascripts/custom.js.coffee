@@ -1,5 +1,6 @@
 $ ->
   currentHeight = $('.top-container').height()
+  currentDate = new Date()
 
   setTopContainerHeight(currentHeight)
   $(window).resize -> setTopContainerHeight(currentHeight)
@@ -22,7 +23,10 @@ $ ->
     false
 
 
-  $(".datetimepicker1").datetimepicker({pickTime: false})
+  $(".datetimepicker1").datetimepicker({
+    pickTime: false
+    todayBtn: true
+  })
   $(".datetimepicker4").datetimepicker({
     pickDate: false
     minuteStepping:5
@@ -47,8 +51,14 @@ $ ->
     $(this).parent().find(".sliding-field-part").addClass 'active'
 
 
-
-
+  $("#timelog_full_part_name").typeahead
+    ajax:
+      url: '/backend/parts/autocomplete'
+      timeout: 500
+      displayField: "text"
+      triggerLength: 1
+      method: "get"
+      loadingClass: "loading-circle"
 
 
 setTopContainerHeight = (currentHeight)->

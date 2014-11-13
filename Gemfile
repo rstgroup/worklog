@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 gem 'rails', '3.2.12'
 gem "rb-readline"
@@ -44,6 +45,7 @@ gem 'normalize-rails'
 gem 'font-awesome-sass'
 gem 'boxmodel-rails'
 gem 'compass-rails'
+gem 'rails-assets-bs-typeahead'
 
 group :development do
   gem "rails-erd"

@@ -1,5 +1,5 @@
 class Backend::PartsController < BackendController
-  respond_to :js, :html
+  respond_to :js, :html, :json
 
   before_filter :find_parents, :only => [:create]
   before_filter :find_part, :only => [:destroy, :update]
@@ -16,7 +16,7 @@ class Backend::PartsController < BackendController
   end
 
   def autocomplete
-    @parts = current_user.account.autocomplete_parts.where('LOWER(calculated_name) LIKE LOWER(?)', "%#{params[:term]}%")
+    @parts = current_user.account.autocomplete_parts.where('LOWER(calculated_name) LIKE LOWER(?)', "%#{params[:query]}%")
     render json: @parts, each_serializer: AutocompletePartSerializer, root: false
   end
 

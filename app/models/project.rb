@@ -13,7 +13,7 @@ class Project < ActiveRecord::Base
   attr_accessible :name
 
   belongs_to :client
-  has_many :parts
+  has_many :parts , dependent: :destroy
 
   validates_presence_of :name
 

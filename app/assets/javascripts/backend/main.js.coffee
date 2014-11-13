@@ -1,6 +1,9 @@
 $ ->
-  $('#timelog_full_part_name').autocomplete
-    source: '/backend/parts/autocomplete'
+  # $('#timelog_full_part_name').autocomplete
+  #   source: '/backend/parts/autocomplete'
+  # $('select#timelog_full_part_name').select2()
+  #   source: '/backend/parts/autocomplete'
+
   # $('#timelog_worked_on').datepicker
   #   dateFormat: 'dd.mm.yy'
   $('.dropdown-toggle').dropdown()
