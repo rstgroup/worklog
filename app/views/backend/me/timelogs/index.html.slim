@@ -19,17 +19,11 @@
       /     %li
       /       %a Części
 
-  .row-fluid
-    .span12
-      - @last_day_index = 0
-      .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
-      table.table.table-hover.table-condensed.table-bordered
-        thead
-          tr
-            th Opis
-            th Zadanie
-            th Data
-            th Czas
-        tbody
-          = render @timelogs
-      .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
+.timelogs-container
+  .container
+    .row
+      .col-md-12
+        - @last_day_index = 0
+        .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
+        = render @timelogs
+        .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"

@@ -1,0 +1,36 @@
+.timelogs-container
+  .container
+    .row
+      .col-md-12
+        .f-left.p-v-30.other-grey-text
+          | Ostatnie wpisy czasowe
+        .f-right.p-v-30
+          .btn-group
+            .dropdown-toggle.workers-btn
+              | Pracownicy
+              i.fa.fa-caret-down.p-l-10
+            ul.dropdown-menu.clearfix
+              li
+                = link_to backend_timelogs_path do
+                  | Wszyscy
+                  - if params[:sort]
+                    i.icon-circle-blank
+                  - else
+                    i.icon-circle
+              - current_user.account.users.each do |user|
+                li
+                  = link_to backend_timelogs_path(sort: {user_id: user.id}) do
+                    = user.name
+                    - if params[:sort] and user.id == params[:sort][:user_id].to_i
+                      i.fa.fa-circle
+                    - else
+                      i.fa.fa-circle-blank
+
+    .row
+      .col-md-12
+        - @last_day_index = 0
+        .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
+        table.table.table-condensed
+          tbody
+            = render @timelogs
+        .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"

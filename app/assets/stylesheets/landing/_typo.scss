@@ -304,6 +304,9 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 .grey-text-color {
   color: #bdc3c7;
 }
+.other-grey-text {
+  color: #95a5a6;
+}
 
 .project-row {
   .col-md-5, .col-md-7 {
@@ -350,6 +353,47 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   width: 450px;
 }
 
+.table > tbody > tr > td {
+  border: none;
+}
+
+.timelogs-container {
+  background: #fff;
+  color: #99a9a9;
+  a {
+    color: #99a9a9;
+    font-size: 10px;
+  }
+  .col-md-6 , .col-md-5, .col-md-1 {
+    border-bottom: none;
+  }
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.rounded-gravatar {
+  display: inline;
+  img {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+  }
+}
+
+.timelog-day {
+  color: #3498db;
+  font-weight: $fontSizeBold;
+}
+
+.border-bot {
+  border-bottom: 1px #dbe5eb solid;
+}
 
 
 /***********************************

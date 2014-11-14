@@ -22,6 +22,6 @@ class UserDecorator < ApplicationDecorator
   end
 
   def gravatar_url
-    "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest source.email.downcase}?s=140"
+    "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest source.email.downcase}?s=30"
   end
 end

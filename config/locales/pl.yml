@@ -1,13 +1,13 @@
 pl:
   dupa: kupa
   weekdays:
-    d1: Poniedziałek
-    d2: Wtorek
-    d3: Środa
-    d4: Czwartek
-    d5: Piątek
-    d6: Sobota
-    d7: Niedziela
+    d1: Poniedziałek 
+    d2: Wtorek 
+    d3: Środa 
+    d4: Czwartek 
+    d5: Piątek 
+    d6: Sobota 
+    d7: Niedziela 
   helpers:
     label:
       signup:
