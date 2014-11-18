@@ -13,23 +13,18 @@
 .container
   .row
     .col-md-12
-      .projects_wrapper
+      .projects_wrapper.border-bot.p-b-30
         = render @client.projects
-.container
-  .row
-    .col-md-12
-      h3 Pracownicy
-      #users_division_chart
-      .users_wrapper_above_chart=render :collection => @client.users, :partial => "user", :locals => {:client => @client}
-.container
-  .row
+
+.timelogs-container
+  .container.p-t-20
     .col-md-6
-      h3 Wpisy czasowe
+      | Wpisy czasowe
     .col-md-6
-      .btn-group
-        button.btn.dropdown-toggle.btn-primary
-          Pracownicy
-          span.caret
+      .btn-group.f-right
+        .select-workers-btn.dropdown-toggle.p-t-8
+          | Pracownicy
+          i.fa.fa-caret-down.p-l-5
         ul.dropdown-menu.clearfix
           li
             = link_to backend_client_path(@client) do
@@ -47,18 +42,15 @@
                 - else
                   i.icon-circle-blank
     .clearfix
-  .row
     .col-md-12
-      - @last_day_index = 0
+      - @last_day = nil
       .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
-      table.table.table-hover.table-condensed.table-bordered
-        thead
-          tr
-            th Opis
-            th Zadanie
-            th Data
-            th Pracownik
-            th Czas
-        tbody
-          = render @timelogs
+      = render @timelogs
       .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
+
+/ .container
+/   .row
+/     .col-md-12
+/       h3 Pracownicy
+/       #users_division_chart
+/       .users_wrapper_above_chart=render :collection => @client.users, :partial => "user", :locals => {:client => @client}

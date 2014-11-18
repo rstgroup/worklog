@@ -1,29 +1,33 @@
 .new-activity Dodaj nową aktywność
 #cockpit
   = form_for [:backend, :me, @tl], html: {class: 'form-horizontal'} do |f|
-    / .control-group.mb10{:class => ("error" if @tl.errors[:name].any?)}
-      / .controls
-    .input-line.bordered-top
-      = f.label :name, 'CZYNNOŚĆ', class: 'my-label'
-      br
-      = f.text_field :name, class: 'my-input', style: 'width: 900px;'
+    .control-group.mb10 class=("error" if @tl.errors[:name].any?)
+      .controls
+        .input-line.bordered-top
+          = f.label :name, 'CZYNNOŚĆ', class: 'my-label'
+          br
+          = f.text_field :name, class: 'my-input', style: 'width: 900px;'
 
-    / .control-group.mb10{:class => ("error" if @tl.errors[:full_part_name].any?)}
-      / .controls
-    .input-line
-      = f.label :full_part_name, 'PROJEKT', class: 'my-label'
-      br
-      = f.text_field :full_part_name, class: 'my-input', style: 'width: 900px;'
+    .control-group.mb10 class=("error" if @tl.errors[:full_part_name].any?)
+      .controls
+        .input-line
+          = f.label :full_part_name, 'PROJEKT', class: 'my-label'
+          br
+          = f.text_field :full_part_name, autocomplete: "off", class: 'my-input', style: 'width: 900px;'
     .input-line.n-p-v
       .row
         .col-md-6.p-v-10
-          = f.label :worked_on, 'DZIEŃ', class: 'my-label'
-          br
-          = f.text_field :worked_on, value: Time.now.strftime('%m/%d/%Y'), class: 'my-input datetimepicker1'
+          .control-group.mb10 class=("error" if @tl.errors[:worked_on].any?)
+            .controls
+              = f.label :worked_on, 'DZIEŃ', class: 'my-label'
+              br
+              = f.text_field :worked_on, value: Time.now.strftime('%d.%m.%Y'), class: 'my-input datepicker'
         .col-md-6.p-v-10
-          = f.label :clock_duration, 'PRZEPRACOWANYCH GODZIN', class: 'my-label'
-          br
-          = f.text_field :clock_duration, class: 'my-input datetimepicker4', placeholder: '00:00', value: '00:00'
+          .control-group.mb10 class=("error" if @tl.errors[:clock_duration].any?)
+            .controls
+              = f.label :clock_duration, 'PRZEPRACOWANYCH GODZIN', class: 'my-label'
+              br
+              = f.text_field :clock_duration, class: 'my-input timepicker', placeholder: '00:00', value: '00:00'
 
     .submit-line
       = f.submit 'DODAJ AKTYWNOŚĆ', class: 'btn btn-my-submit'

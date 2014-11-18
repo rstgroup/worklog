@@ -15,12 +15,14 @@ gem 'coffee-rails', '~> 3.2.1'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'bootstrap-sass', '~> 3.2.0'
-  gem 'momentjs-rails', '>= 2.8.1'
-  gem 'bootstrap3-datetimepicker-rails', '~> 3.1.3'
   gem 'turbo-sprockets-rails3'
   gem 'uglifier', '>= 1.0.3'
+  gem 'momentjs-rails', '>= 2.8.1'
+  gem 'bootstrap3-datetimepicker-rails', '~> 3.1.3'
 end
 
+
+gem 'groupdate'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem "haml-rails"

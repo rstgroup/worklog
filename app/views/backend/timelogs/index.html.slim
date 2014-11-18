@@ -1,7 +1,7 @@
 .timelogs-container
   .container
-    .row
-      .col-md-12
+    .col-md-12
+      .row
         .f-left.p-v-30.other-grey-text
           | Ostatnie wpisy czasowe
         .f-right.p-v-30
@@ -26,11 +26,11 @@
                     - else
                       i.fa.fa-circle-blank
 
-    .row
-      .col-md-12
-        - @last_day_index = 0
-        .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
-        table.table.table-condensed
-          tbody
-            = render @timelogs
-        .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
+      .row
+        .col-md-12
+          - @last_day_index = 0
+          .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
+          table.table.table-condensed
+            tbody
+              = render @timelogs
+          .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"

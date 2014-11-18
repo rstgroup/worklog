@@ -108,7 +108,9 @@ a {
 /***********************************
 BODY
 ************************************/
-
+.error {
+  color: #bd4247;
+}
 body {
   font-family: $robotoFont;
 }
@@ -309,6 +311,18 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 }
 
 .project-row {
+  .project-collapse {
+    .fa.fa-caret-down {
+      @include transform(rotate(-90deg) translateX(2px));
+      @include transition(all 300ms);
+    }
+    &.collapsed {
+      .fa.fa-caret-down {
+        @include transform(rotate(0deg) translateX(0px));
+        @include rotate(0deg);
+      }
+    }
+  }
   .col-md-5, .col-md-7 {
     background: #eaf1f5;
     height: 38px;
@@ -342,30 +356,23 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   }
 }
 
-/***** select2 *****/
-.select2-container .select2-choice .select2-arrow {
-  display: none;
-}
-
-.select2-container .select2-choice {
-  background-image: none;
-  border: 0;
-  width: 450px;
-}
-
-.table > tbody > tr > td {
-  border: none;
-}
 
 .timelogs-container {
   background: #fff;
   color: #99a9a9;
+  padding-bottom: 30px;
   a {
     color: #99a9a9;
     font-size: 10px;
   }
   .col-md-6 , .col-md-5, .col-md-1 {
     border-bottom: none;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .dropdown-menu {
+    min-width: 0;
+    width: 132px;
   }
 }
 
@@ -375,6 +382,10 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 
 .align-right {
   text-align: right;
+}
+
+.align-center {
+  text-align: center;
 }
 
 .rounded-gravatar {
@@ -395,6 +406,53 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   border-bottom: 1px #dbe5eb solid;
 }
 
+.progress {
+  height: 40px;
+  background: #fff;
+}
+
+.bar-warning {
+  height: 40px;
+  background: #000;
+}
+
+.bar-success {
+  background: #3498db;
+  height: 40px;
+}
+
+.progress {
+  .bar {
+    @for $i from 1 through 100 {
+      &.percent#{$i} {
+        width: $i * 1%
+      }
+    }
+  }
+}
+
+
+
+
+/***** select2 *****/
+.select2-container .select2-choice .select2-arrow {
+  display: none;
+}
+
+.select2-container .select2-choice {
+  background-image: none;
+  border: 0;
+  width: 450px;
+}
+
+.table > tbody > tr > td {
+  border: none;
+}
+
+/****************/
+
+
+
 
 /***********************************
 FOOTER
@@ -407,8 +465,18 @@ footer {
   bottom: 0;
   background-color: #f0f4f7;
   color: #95a5a6;
+  .brand {
+    white-space: nowrap;
+  }
+  .brand2 {
+    color: #7f8c8d;
+  }
   font-size: 13px;
   padding: 40px;
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
   .bold-text {
     font-weight: 700;
   }

@@ -21,9 +21,8 @@
 
 .timelogs-container
   .container
-    .row
-      .col-md-12
-        - @last_day_index = 0
-        .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
-        = render @timelogs
-        .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
+    .col-md-12
+      - @last_day = nil
+      .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
+      = render @timelogs
+      .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"

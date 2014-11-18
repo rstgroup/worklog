@@ -23,11 +23,12 @@ $ ->
     false
 
 
-  $(".datetimepicker1").datetimepicker({
+  $(".datepicker").datetimepicker({
     pickTime: false
-    todayBtn: true
+    format: "DD.MM.YYYY"
   })
-  $(".datetimepicker4").datetimepicker({
+
+  $(".timepicker").datetimepicker({
     pickDate: false
     minuteStepping:5
     format: 'HH:mm'

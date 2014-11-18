@@ -1,23 +1,22 @@
-
 .row
   .align-left.timelog-day
-    - if @last_day_index != timelog.worked_on.cwday
-      - @last_day_index = timelog.worked_on.cwday
-      .border-bot.p-v-10
-        b= t "d#{@last_day_index}", scope: :weekdays
-        |  
+    - if @last_day != timelog.worked_on
+      - @last_day = timelog.worked_on
+      .border-bot.p-t-30.p-b-10
+        b= t "d#{@last_day.cwday}", scope: :weekdays
+        '
         b= timelog.worked_on.strftime "%d.%m.%Y"
   .col-md-6.p-t-15
-    i= timelog.name
+    = timelog.name
     br
     = link_to timelog.part.autocomplete_part.calculated_name, backend_client_path(timelog.part.project.client) rescue ""
 
-  .col-md-5.p-t-15
+  .col-md-5.p-t-12
     .rounded-gravatar.p-r-15
       = image_tag timelog.user.gravatar_url
     = timelog.user.email
 
-  .col-md-1.p-t-20
+  .col-md-1.align-right.p-t-15
     i.fa.fa-clock-o.p-r-3
     = timelog.human_duration
 
