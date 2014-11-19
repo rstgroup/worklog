@@ -406,14 +406,11 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   border-bottom: 1px #dbe5eb solid;
 }
 
-.progress {
-  height: 40px;
-  background: #fff;
-}
+
 
 .bar-warning {
   height: 40px;
-  background: #000;
+  background: #bd4247;
 }
 
 .bar-success {
@@ -422,8 +419,15 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 }
 
 .progress {
+  border-radius: 0;
+  margin-bottom: 0;
+  border: 1px #dee5ea solid;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  height: 40px;
+  background: #fff;
   .bar {
-    @for $i from 1 through 100 {
+    @for $i from 0 through 100 {
       &.percent#{$i} {
         width: $i * 1%
       }
@@ -431,8 +435,42 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   }
 }
 
+.cockpit-container {
+  padding-bottom: 48px;
+}
+
+.progress-bar-container {
+  background: #f0f4f7;
+  padding: 34px 0;
+}
+
+.todays-activity {
+  font-size: 14px;
+  color: #9baaab;
+  font-weight: $fontSizeLight;
+}
+
+.todays-act {
+  display: inline;
+  font-size: 14px;
+  color: #3498db;
+  white-space: nowrap;
+  h4 {
+    margin: 0;
+  }
+}
 
 
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+
+:focus, :active {outline:0 none !important;}
 
 /***** select2 *****/
 .select2-container .select2-choice .select2-arrow {

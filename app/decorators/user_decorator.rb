@@ -9,9 +9,13 @@ class UserDecorator < ApplicationDecorator
     true
   end
 
+  def decrement_invitation_limit!
+    return true
+  end
+
   def worked_today
     time = source.present_as_time source.worked_today
-    h.content_tag :h4, "Dzisiejsza aktywność: #{time}"
+    h.content_tag :h4, "#{time}", class: 'todays-act'
   end
 
   def worked_today_progress_bar

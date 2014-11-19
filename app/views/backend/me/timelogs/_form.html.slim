@@ -27,7 +27,7 @@
             .controls
               = f.label :clock_duration, 'PRZEPRACOWANYCH GODZIN', class: 'my-label'
               br
-              = f.text_field :clock_duration, class: 'my-input timepicker', placeholder: '00:00', value: '00:00'
+              = f.text_field :clock_duration, autocomplete: "off", class: 'my-input', placeholder: '00:00', value: '00:00'
 
     .submit-line
       = f.submit 'DODAJ AKTYWNOŚĆ', class: 'btn btn-my-submit'

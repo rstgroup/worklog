@@ -3,5 +3,7 @@
     .row
       = f.text_field :name, placeholder: 'Wpisz nazwę', class: "sliding-field-client"
       button.add-client-btn
-        i.fa.fa-plus.m-r-5
-        | Dodaj klienta
+        .default-invisible.invisible
+          i.fa.fa-plus.m-r-5
+        .default-visible
+          | Dodaj klienta

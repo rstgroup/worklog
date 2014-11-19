@@ -8,8 +8,8 @@
       = hidden_field_tag :project_id, project.id
       = f.text_field :name, placeholder: 'Nazwa zadania', class: "sliding-field-part"
       button.add-part-btn
-        i.icon-plus
-        | Dodaj zadanie
-      / a.cancel href="#"
-      /   | Anuluj
+        .default-invisible.invisible
+          i.fa.fa-plus.p-r-3
+        .default-visible
+          | Dodaj zadanie
 

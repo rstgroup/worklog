@@ -1,26 +1,19 @@
-.container
-  = render partial: 'form'
-  .row-fluid
-    .span12= current_user.worked_today
-  .row-fluid= current_user.worked_today_progress_bar
-  .row-fluid
-    .span6.text-left
-      h4 Ostatnie wpisy czasowe
-    .span6.text-right
-      / .btn-group
-      /   %a.btn.btn-inverse.dropdown-toggle{'data-toggle' => 'dropdown'}
-      /     Filtruj po
-      /     %span.caret
-      /   %ul.dropdown-menu.text-center
-      /     %li
-      /       %a Dacie
-      /     %li
-      /       %a Czasie
-      /     %li
-      /       %a Części
+.cockpit-container
+  .container
+    = render partial: 'form'
+
+.progress-bar-container
+  .container
+    .todays-activity.p-b-10
+      | Dzisiejsza aktywność: 
+      .todays-act
+        .i.fa.fa-clock-o.p-r-3
+        = current_user.worked_today
+    = current_user.worked_today_progress_bar
 
 .timelogs-container
   .container
+    .p-t-25 Ostatnie wpisy czasowe
     .col-md-12
       - @last_day = nil
       .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
