@@ -1,7 +1,7 @@
 .row.project-row.p-h-15
   .col-md-5.project-collapse.collapsed aria-controls="demo" aria-expanded="false" data-target="#project-#{project.id}-content" data-toggle="collapse"
     .project-name.pull-left.p-t-10 id="project-name-#{project.id}"
-      i.fa.fa-caret-down.p-r-3
+      i.fa.fa-caret-down.black-color.p-h-10
       = project.name
   .col-md-7
     .pull-right= render :partial => "backend/parts/form", :locals => {:project => project}

@@ -15,12 +15,12 @@
 }
 
 .reg-now-button{
-  background-color: #68ba2e;
+  background-color: $mainGreen;
   border: 0;
   color: #fff;
   @include transition(background 500ms);
   &:hover {
-    background: lighten(#68ba2e, 10);
+    background: lighten($mainGreen, 10);
   }
 
 }
@@ -57,11 +57,11 @@
     padding-right: 0;
     .btn {
       padding: 30px 0px 26px;
-      background: #68ba2e;
+      background: $mainGreen;
       color: #fff;
       @include transition(background 500ms);
       &:hover {
-        background: lighten(#68ba2e, 10);
+        background: lighten($mainGreen, 10);
       }
     }
 
@@ -80,14 +80,14 @@
 .btn-my-submit {
   width: 100%;
   border-radius: 0;
-  background: #68ba2e;
+  background: $mainGreen;
   height: 62px;
   font-weight: $fontSizeBold;
   font-size: 12px;
   color: #fff;
   @include transition(background 500ms);
   &:hover {
-    background: lighten(#68ba2e, 10);
+    background: lighten($mainGreen, 10);
     color: #fff;
   }
 }
@@ -95,7 +95,7 @@
 .add-client-btn {
   height: 38px;
   border: none;
-  background: #68ba2e;
+  background: $mainBlue;
   padding: 0;
   color: #fff;
   width: 132px;
@@ -104,7 +104,7 @@
   }
   @include transition(background 500ms);
   &:hover {
-    background: lighten(#68ba2e, 10);
+    background: lighten($mainBlue, 10);
   }
 }
 
@@ -116,7 +116,7 @@
 .add-project-btn {
   height: 38px;
   border: none;
-  background: #3498db;
+  background: $mainBlue;
   padding: 0;
   color: #fff;
   width: 132px;
@@ -125,7 +125,7 @@
   }
   @include transition(background 500ms);
   &:hover {
-    background: lighten(#3498db, 10);
+    background: lighten($mainBlue, 10);
   }
 }
 
@@ -133,7 +133,7 @@
   text-align: center;
   height: 38px;
   border: none;
-  background: #3498db;
+  background: $mainBlue;
   padding: 0;
   color: #fff;
   width: 132px;
@@ -142,14 +142,14 @@
   }
   @include transition(background 500ms);
   &:hover {
-    background: lighten(#3498db, 10);
+    background: lighten($mainBlue, 10);
   }
 }
 
 .add-part-btn {
   height: 38px;
   border: none;
-  background: #68ba2e;
+  background: $mainGreen;
   padding: 0;
   color: #fff;
   width: 132px;
@@ -158,7 +158,7 @@
   }
   @include transition(background 500ms);
   &:hover {
-    background: lighten(#68ba2e, 10);
+    background: lighten($mainGreen, 10);
   }
 }
 
@@ -167,7 +167,7 @@
   font-family: $robotoFont;
   width: 132px;
   height: 38px;
-  background: #68ba2e;
+  background: $mainGreen;
   color: #fff;
   border-radius: 0;
   text-align: center;
@@ -175,6 +175,6 @@
   font-weight: $fontSizeLight;
   @include transition(background 500ms);
   &:hover {
-    background: lighten(#68ba2e, 10);
+    background: lighten($mainGreen, 10);
   }
 }

@@ -31,13 +31,13 @@
 }
 
 .sliding-field-part {
-  background: none;
+  // background: none;
   max-width: 0px;
   width: 230px;
   height: 38px;
   padding: 0;
-  // border: 1px solid #fff;
-  border: 0;
+  border: 1px solid #eaf1f5;
+  background: #fff;
   @include transition(all, 500ms);
   &.active {
     border-color: #e1ebf1;
@@ -45,6 +45,13 @@
     max-width: 230px;
   }
 }
+
+
+
+
+
+
+
 
 /***********************************
 bootstrap timepicker

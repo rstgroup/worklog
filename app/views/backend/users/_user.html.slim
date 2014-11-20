@@ -1,0 +1,27 @@
+br
+.container.flex.p-v-10
+  .col-md-3 id="user-name-#{user.id}"
+    = user.name
+  .col-md-4.text-center
+    = image_tag user.gravatar_url , class: 'rounded-gravatar'
+    '
+    = user.email
+  .col-md-5
+    table.pull-right
+      tr
+        th.align-center Dzisiaj:
+        th.align-center W tygodniu:
+        th.align-center W miesiącu:
+      tr
+        td
+          .timer-badge
+            i.fa.fa-clock-o.p-r-3
+            = user.time_worked_today
+        td.p-l-3
+          .timer-badge
+            i.fa.fa-clock-o.p-r-3
+            = user.time_worked_week
+        td.p-l-3
+          .timer-badge
+            i.fa.fa-clock-o.p-r-3
+            = user.time_worked_month

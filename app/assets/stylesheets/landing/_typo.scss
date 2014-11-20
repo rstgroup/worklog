@@ -51,7 +51,7 @@ a {
   text-decoration: none;
   font-weight: $fontSizeBold;
   color: #fff;
-  background-color: #3498db;
+  background-color: $mainBlue;
   height: 82px;
   font-size: 14px;
   .brand-logo {
@@ -70,11 +70,21 @@ a {
       padding: 0;
     }
   }
+  .nav .open > a {
+    background: inherit;
+    text-decoration: none;
+  }
+
+  .dropdown-menu > li > a {
+    padding: 3px 0;
+    padding-left: 5px;
+  }
 
   .nav {
     ul {
-      margin-bottom: 0;
-      margin-top: 10px;
+      .dropdown-menu {
+        min-width: 0;
+      }
       li{
         list-style:none;
         display: inline-block;
@@ -86,7 +96,7 @@ a {
             margin: 0;
           }
         }
-        .dropdown:hover .dropdown-menu {
+        .dropdown:select .dropdown-menu {
           display: block;
         }
       }
@@ -220,7 +230,7 @@ p {
 }
 
 .second-register {
-  background: #3498db;
+  background: $mainBlue;
   height: 318px;
   .container {
     h2 {
@@ -263,7 +273,7 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 .client-name {
   a {
     text-decoration: none;
-    color: #3498db;
+    color: $mainBlue;
     font-size: 28px;
   }
 }
@@ -280,7 +290,7 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 
 .timer-badge {
   width: 78px;
-  background: #68ba2e;
+  background: $mainGreen;
   font-size: 14px;
   border-radius: 3px;
   text-align: center;
@@ -291,11 +301,11 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 
 .client-add-project-container {
   .link-to-clients {
-    color: #3498db;
+    color: $mainBlue;
   }
   padding: 40px 15px;
   h3 {
-    color: #3498db;
+    color: $mainBlue;
     font-size: 23px;
     font-weight: $fontSizeBold;
     margin-bottom: 0;
@@ -327,11 +337,12 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
     background: #eaf1f5;
     height: 38px;
     padding-right: 0;
+    padding-left: 0;
     margin-top: 15px;
     margin-bottom: 15px;
     .project-name {
-      color: #3498db;
-      padding-left: 10px;
+      color: $mainBlue;
+      padding-left: 0px;
     }
   }
 }
@@ -390,6 +401,9 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 
 .rounded-gravatar {
   display: inline;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
   img {
     border-radius: 50%;
     -moz-border-radius: 50%;
@@ -398,7 +412,7 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 }
 
 .timelog-day {
-  color: #3498db;
+  color: $mainBlue;
   font-weight: $fontSizeBold;
 }
 
@@ -414,7 +428,7 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 }
 
 .bar-success {
-  background: #3498db;
+  background: $mainBlue;
   height: 40px;
 }
 
@@ -453,7 +467,7 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 .todays-act {
   display: inline;
   font-size: 14px;
-  color: #3498db;
+  color: $mainBlue;
   white-space: nowrap;
   h4 {
     margin: 0;
@@ -468,6 +482,37 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 .visible {
   display: block;
 }
+
+.green-bg {
+  background: $mainGreen !important;
+}
+
+.black-color {
+  color: #738088;
+}
+
+
+.workers-container {
+  font-size:14px;
+  .container {
+    .flex {
+      display: flex;
+      align-items: center;
+    }
+    padding-left: 0;
+    padding-right: 0;
+    .col-md-4 {
+      img {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.users-mail {
+  font-size: 18px;
+}
+
 
 
 :focus, :active {outline:0 none !important;}

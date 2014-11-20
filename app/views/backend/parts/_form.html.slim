@@ -1,7 +1,7 @@
 / a.muted.form-toggle data-toggle='form' href="#"
 /   i.fa.fa-plus
 /   | Dodaj zadanie
-.form_wrapper
+.form_wrapper.parts-wrapper
   = form_for [:backend, @part], remote:true, html: {class: 'form-inline'} do |f|
     div class=("error" if @part.errors[:name].any?)
       = hidden_field_tag :client_id, project.client_id
