@@ -5,3 +5,4 @@ $(".sliding-field-client").val('')
 $(".default-invisible").removeClass 'visible'
 $(".default-invisible").addClass 'invisible'
 $(".default-visible").removeClass 'invisible'
+$('.add-client-btn').removeClass 'green-bg'

@@ -58,11 +58,12 @@ $ ->
     $('.add-project-btn').addClass('green-bg')
 
   $(".add-part-btn").click (e) ->
-    $(".add-part-btn").parent().find(".sliding-field-part").removeClass('active')
-    $(".add-part-btn").parent().find(".default-visible").removeClass('invisible')
-    $(".add-part-btn").parent().find(".default-invisible").addClass('invisible')
     unless $(this).parent().find('.sliding-field-part').hasClass('active')
       e.preventDefault()
+    $(".add-part-btn").parent().find(".sliding-field-part").removeClass('active') 
+    $(".add-part-btn").parent().find(".default-visible").removeClass('invisible')
+    $(".add-part-btn").parent().find(".default-invisible").addClass('invisible')
+    
     $(this).parent().find(".sliding-field-part").addClass 'active'
     $(this).parent().find(".default-invisible").removeClass 'invisible'
     $(this).parent().find(".default-visible").addClass 'invisible'

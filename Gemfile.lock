@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     aasm (3.0.17)
     actionmailer (3.2.12)

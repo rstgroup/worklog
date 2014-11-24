@@ -1,5 +1,5 @@
 class Signup
-  include Virtus
+  include Virtus.model
   extend ActiveModel::Naming
   include ActiveModel::Conversion
   include ActiveModel::Validations

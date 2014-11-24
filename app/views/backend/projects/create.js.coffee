@@ -5,4 +5,5 @@ $(".sliding-field-project").val ('')
 $(".default-invisible").removeClass 'visible'
 $(".default-invisible").addClass 'invisible'
 $(".default-visible").removeClass 'invisible'
+$('.add-project-btn').removeClass('green-bg')
 

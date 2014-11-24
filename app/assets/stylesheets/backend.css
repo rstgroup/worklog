@@ -12,7 +12,6 @@
  *= require bootstrap-responsive
  *= require bootstrap-timepicker
  *= require jquery-ui-1.9.2.custom
- *= require font-awesome
  *= require morris
  *= require_tree ./backend
  */
