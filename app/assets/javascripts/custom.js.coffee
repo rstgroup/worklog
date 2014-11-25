@@ -5,8 +5,14 @@ $ ->
   setTopContainerHeight(currentHeight)
   $(window).resize -> setTopContainerHeight(currentHeight)
 
-  $("input").focus ->
+  $('.input-line').on 'focus', 'input', ->
     $(this).parent(".input-line").addClass('focused')
+
+  $('.input-line').on 'focus', 'input', ->
+    $(this).parent(".clearfix").parent(".input-line").parent(".controls").addClass('focused')
+
+  $('input').blur ->
+    $(this).parent(".clearfix").parent(".input-line").parent(".controls").removeClass('focused')
 
   $('input').blur ->
     $(this).parent(".input-line").removeClass('focused')
@@ -60,10 +66,10 @@ $ ->
   $(".add-part-btn").click (e) ->
     unless $(this).parent().find('.sliding-field-part').hasClass('active')
       e.preventDefault()
-    $(".add-part-btn").parent().find(".sliding-field-part").removeClass('active') 
+    $(".add-part-btn").parent().find(".sliding-field-part").removeClass('active')
     $(".add-part-btn").parent().find(".default-visible").removeClass('invisible')
     $(".add-part-btn").parent().find(".default-invisible").addClass('invisible')
-    
+
     $(this).parent().find(".sliding-field-part").addClass 'active'
     $(this).parent().find(".default-invisible").removeClass 'invisible'
     $(this).parent().find(".default-visible").addClass 'invisible'
@@ -88,6 +94,9 @@ $ ->
         $addProjectBtnInv.addClass('invisible')
         $addProjectBtnVis.removeClass('invisible')
         $('.add-project-btn').removeClass('green-bg')
+        if $('.sliding-field-project').hasClass('create-fail')
+          $('.sliding-field-project').removeClass('create-fail')
+        $('.sliding-field-project').attr 'placeholder', 'Nazwa projektu'
 
   # Hiding 'add parts field', when clicking outside of it
   $addPartBtnInv = $('.parts-wrapper .default-invisible')
@@ -99,6 +108,9 @@ $ ->
         $partNameInput.removeClass('active')
         $addPartBtnInv.addClass('invisible')
         $addPartBtnVis.removeClass('invisible')
+        if $('.sliding-field-part').hasClass('create-fail')
+          $('.sliding-field-part').removeClass('create-fail')
+        $('.sliding-field-part').attr 'placeholder', 'Nazwa zadania'
 
   # Hiding 'add clients field', when clicking outside of it
   $addClientBtnInv = $('#id_add-client-form .default-invisible')
@@ -111,6 +123,9 @@ $ ->
         $addClientBtnInv.addClass('invisible')
         $addClientBtnVis.removeClass('invisible')
         $('.add-client-btn').removeClass('green-bg')
+        if $('.sliding-field-client').hasClass('create-fail')
+          $('.sliding-field-client').removeClass('create-fail')
+        $('.sliding-field-client').attr 'placeholder', 'Wpisz nazwę'
 
 
   $("#timelog_full_part_name").typeahead

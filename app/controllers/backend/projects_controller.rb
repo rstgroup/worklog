@@ -10,7 +10,8 @@ class Backend::ProjectsController < BackendController
     if @project.save
       @part = Part.new
     else
-      render :status => 406, :text => ""
+      render 'create_failure'
+      # render :status => 406, :text => ""
     end
   end
 

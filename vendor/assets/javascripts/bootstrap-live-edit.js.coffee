@@ -9,6 +9,10 @@ $ ->
       </div>
     </form>
     """
+  oldUrl = ''
+
+  preventClickDuringEditing = (e) ->
+    e.preventDefault()
 
   methods = {
     init: (options) ->
@@ -16,6 +20,8 @@ $ ->
         element = $(this)
         element.click () ->
           wrapper = $("#"+$(this).attr("data-live-edit"))
+          oldUrl = wrapper.attr('href')
+          wrapper.attr 'href', null
           url = $(this).attr("data-live-edit-url")
           wrapper.data("during-editing", true)
           wrapper.data("live-edit-old-name", $.trim(wrapper.text()))
@@ -40,6 +46,7 @@ $ ->
     destroy: (options) ->
       this.each () ->
         wrapper = $("#"+$(this).attr("data-live-edit"))
+        wrapper.attr 'href', oldUrl
         wrapper.find("*").remove()
         wrapper.text(if options?["value"] then options["value"] else wrapper.data("live-edit-old-name"))
         wrapper.data("during-editing", null)

@@ -9,19 +9,16 @@ br
   .col-md-5
     table.pull-right
       tr
-        th.align-center Dzisiaj:
-        th.align-center W tygodniu:
-        th.align-center W miesiącu:
-      tr
-        td
-          .timer-badge
-            i.fa.fa-clock-o.p-r-3
-            = user.time_worked_today
-        td.p-l-3
-          .timer-badge
-            i.fa.fa-clock-o.p-r-3
-            = user.time_worked_week
-        td.p-l-3
-          .timer-badge
-            i.fa.fa-clock-o.p-r-3
-            = user.time_worked_month
+        th.align-center Dzisiaj: 
+        th.align-center.p-l-5 W tygodniu: 
+        th.align-center.p-l-5 W miesiącu: 
+      tr.p-t-5
+        td.align-center
+          i.fa.fa-clock-o.p-r-3
+          = user.time_worked_today
+        td.align-center.p-l-3
+          i.fa.fa-clock-o.p-r-3
+          = user.time_worked_week
+        td.align-center.p-l-3
+          i.fa.fa-clock-o.p-r-3
+          = user.time_worked_month

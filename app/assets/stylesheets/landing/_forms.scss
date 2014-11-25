@@ -178,10 +178,18 @@
 }
 
 #cockpit {
+  position: relative;
   background: #fff;
   margin-top: 16px;
   .my-label {
     color: #bdc3c7;
+    display: block;
+  }
+
+  .clearfix.error {
+    .my-label {
+      color: #bd4247;
+    }
   }
   .bordered-top {
     border-top: 1px solid #efefef;
@@ -192,6 +200,18 @@
     color: #7f8c8d;
     font-size: 14px;
     border: none;
+    background: transparent;
+  }
+
+  .controls {
+    position: relative;
+  }
+  .help-inline {
+    position: absolute;
+    top: 11px;
+    right: 25px;
+    font-size: 12px;
+    text-align: right;
   }
 
   .input-line {
@@ -202,11 +222,10 @@
     padding: 10px 14px;
     border: 1px solid #efefef;
     border-top: none;
+    max-height: 64px;
+
     &.focused {
       background: #f2f6fa;
-      .my-input {
-        background: #f2f6fa;
-      }
     }
     .row {
       .col-md-6:first-child {
@@ -223,8 +242,21 @@
     border: 1px solid #efefef;
     border-top: none;
   }
+}
+
+#cockpit .control-group.error {
+  background: #fff1f1;
+}
+#cockpit .controls {
+  // background: #fff1f1;
+  &.focused {
+    background: #fccdcd;
+  }
+}
 
 
+#cockpit .control-group.error .col-md-6 {
+  background: #fff1f1;
 }
 
 
@@ -236,7 +268,18 @@
 }
 
 #id_edit-account {
-
+  background: #EBF0F3;
+  width: 300px;
+  .control-label {
+    padding: 10px 10px;
+    color: #bdc3c7;
+  }
+  .my-input {
+    background: #EBF0F3;
+    padding: 5px 10px;
+    color: #7f8c8d;
+    border: none;
+  }
 }
 
 #id_add-project-form {

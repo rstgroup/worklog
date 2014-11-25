@@ -1,5 +1,5 @@
-.container
-  %h2{style: "padding: 30px 0 15px"} Ustawienia Konta
+.container.edit-acc-container
+  %h2{style: "padding: 30px 0 15px; color: #9ea5a6"} Ustawienia Konta
   #id_edit-account
     = form_for @user, {url: backend_me_path, :html => {:class => 'form-horizontal'}} do |f|
       .control-group{:class => ('error' if @user.errors[:name].any?)}
@@ -16,4 +16,4 @@
           = f.password_field :password, {:class => 'my-input'}
       .control-group
         .controls
-          = f.submit :save, {:class => 'btn btn-primary'}
+          = f.submit :save, {:class => 'btn btn-primary edit-acc-save-btn'}

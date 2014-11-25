@@ -12,6 +12,9 @@
     padding-left: 16px;
     max-width: 230px;
   }
+  &.create-fail {
+    background: #fccdcd;
+  }
 }
 
 .sliding-field-project {
@@ -27,6 +30,9 @@
     border-color: #e1ebf1;
     padding-left: 16px;
     max-width: 230px;
+  }
+  &.create-fail {
+    background: #fccdcd;
   }
 }
 
@@ -44,13 +50,36 @@
     padding-left: 16px;
     max-width: 230px;
   }
+  &.create-fail {
+    background: #fccdcd;
+  }
 }
 
 
+.parts_wrapper {
+  .control-group {
+    .form_name {
+      height: 20px;
+    }
+    a {
+      color: $mainGray;
+      font-size: 12px;
+    }
+  }
+  .action_btn {
+    font-size: 12px;
+    margin-left: -4px;
+    height: 20px;
+    padding: 0 8px;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
 
 
-
-
+.edit-acc-container {
+}
 
 
 /***********************************

@@ -7,7 +7,8 @@ class Backend::PartsController < BackendController
   def create
     @part = @project.parts.build params[:part]
     unless @part.save
-      render :status => 406, :text => ""
+      render 'create_failure'
+      # render :status => 406, :text => ""
     end
   end
 

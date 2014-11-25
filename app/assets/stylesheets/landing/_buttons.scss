@@ -178,3 +178,23 @@
     background: lighten($mainGreen, 10);
   }
 }
+
+.action_btn {
+  border-radius: 0;
+  background: $mainBlue;
+  color: #fff;
+  &:hover {
+    color: #fff;
+    background: lighten($mainBlue, 10);
+  }
+}
+
+.edit-acc-save-btn {
+  width: 100%;
+  border-radius: 0;
+  background-color: $mainBlue;
+  border: 0;
+  &:hover {
+    background-color: lighten($mainBlue, 10);
+  }
+}
