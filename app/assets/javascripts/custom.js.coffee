@@ -5,6 +5,19 @@ $ ->
   setTopContainerHeight(currentHeight)
   $(window).resize -> setTopContainerHeight(currentHeight)
 
+  $('#new_user .input-lines .input-line').click ->
+    $(this).find('.my-placeholder').focus()
+
+  $('#new_signup .input-line').click ->
+    $(this).find('.my-input').focus()
+
+  $('#new_timelog .control-group').click ->
+    console.log 'dupa'
+    $(this).find('.my-input').focus()
+
+  $('#new_signup .details-column').click ->
+    $(this).find('.my-input').focus()
+
   $('.input-line').on 'focus', 'input', ->
     $(this).parent(".input-line").addClass('focused')
 
@@ -13,6 +26,15 @@ $ ->
 
   $('input').blur ->
     $(this).parent(".clearfix").parent(".input-line").parent(".controls").removeClass('focused')
+
+  $('#id_register .input-line').on 'focus', 'input', ->
+    $(this).parent(".clearfix").parent(".input-line").addClass('focused')
+
+  $('#id_register .input-line').on 'blur', 'input', ->
+    $(this).parent(".clearfix").parent(".input-line").removeClass('focused')
+
+  $('input').focus ->
+    $(this).parent(".input-line").addClass('focused')
 
   $('input').blur ->
     $(this).parent(".input-line").removeClass('focused')
@@ -23,10 +45,18 @@ $ ->
   $('input').blur ->
     $(this).parent(".details-column").removeClass('focused')
 
+  $('#id_register .input-lines').focus ->
+    $(this).addClass('focused')
+
+  $('#id_register .input-line').blur ->
+    $(this).removeClass('focused')
+
+
   $('.to-section').click (e)->
     e.preventDefault()
     $('html, body').stop().animate({'scrollTop': $($(this).attr('href')).offset().top},{duration: 800})
     false
+
 
 
   $(".datepicker").datetimepicker({
@@ -66,6 +96,8 @@ $ ->
   $(".add-part-btn").click (e) ->
     unless $(this).parent().find('.sliding-field-part').hasClass('active')
       e.preventDefault()
+    $('.parts-wrapper #part_name').removeClass('create-fail')
+    $('.parts-wrapper #part_name').attr 'placeholder', 'Nazwa zadania'
     $(".add-part-btn").parent().find(".sliding-field-part").removeClass('active')
     $(".add-part-btn").parent().find(".default-visible").removeClass('invisible')
     $(".add-part-btn").parent().find(".default-invisible").addClass('invisible')
@@ -136,6 +168,14 @@ $ ->
       triggerLength: 1
       method: "get"
       loadingClass: "loading-circle"
+
+
+  # Adding error message class if error-message.any?
+  $logInDevise = $("#id_devise-log-in .error-messages")
+  unless ($logInDevise).is(':empty')
+    $logInDevise.parent('.input-line').parent('.input-lines').addClass('error')
+
+
 
 
 setTopContainerHeight = (currentHeight)->

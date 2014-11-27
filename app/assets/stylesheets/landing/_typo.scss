@@ -416,8 +416,9 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 }
 
 .parts-ul {
-  padding: 20px 0 0px 26px;
+  padding: 10px 0 0px 26px;
   color: #7f8c8d;
+  margin-bottom: 0;
   font-weight: $fontSizeLight;
   .btn-remove {
     padding: 0 0 20px 22px;
@@ -477,7 +478,11 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   border-bottom: 1px #dbe5eb solid;
 }
 
-
+.blue {
+  a {
+    color: $mainBlue;
+  }
+}
 
 .bar-warning {
   height: 40px;
@@ -570,7 +575,13 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   font-size: 18px;
 }
 
-
+.error-messages {
+  position: absolute;
+  top: 22px;
+  right: 16px;
+  font-size:12px;
+  color: #bd4247;
+}
 
 :focus, :active {outline:0 none !important;}
 

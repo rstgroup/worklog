@@ -10,7 +10,6 @@ class SignupsController < ApplicationController
   def create
     @signup = Signup.new(params[:signup])
     if @signup.save
-      # binding.pry
       sign_in(:user, @signup.user)
       redirect_to backend_me_timelogs_path
     else

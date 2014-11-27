@@ -60,6 +60,7 @@
 }
 
 #id_devise-log-in {
+  position: relative;
   background: #fff;
   margin-top: 200px;
   width: 374px;
@@ -72,10 +73,10 @@
   }
 
   .my-placeholder {
-    @include transition(background 500ms);
     color: #7f8c8d;
     font-size: 14px;
     border: none;
+    background: transparent;
   }
 
   .title-line {
@@ -95,10 +96,21 @@
     padding: 15px 16px;
     border: 1px solid #efefef;
     border-top: none;
+    position: relative;
     &.focused {
       background: #f2f6fa;
-      .my-placeholder {
-        background: #f2f6fa;
+    }
+  }
+
+  .input-lines.error {
+    .my-label {
+      // color: 
+    }
+    // @include transition(background 500ms);
+    background: #fff1f1;
+    .input-line {
+      &.focused {
+        background: #fccdcd;
       }
     }
   }
@@ -113,6 +125,7 @@
 }
 
 #id_register {
+  position: relative;
   background: #fff;
   margin-top: 200px;
   width: 374px;
@@ -124,11 +137,12 @@
     color: #bdc3c7;
   }
 
-  .my-placeholder {
+  .my-input {
     @include transition(background 500ms);
     color: #7f8c8d;
     font-size: 14px;
     border: none;
+    background: transparent;
   }
 
   .title-line {
@@ -148,6 +162,7 @@
     padding: 15px 16px;
     border: 1px solid #efefef;
     border-top: none;
+    position: relative;
     &.focused {
       background: #f2f6fa;
       .my-placeholder {
@@ -175,6 +190,30 @@
     }
   }
 
+  .controls {
+    position: relative;
+  }
+  .help-inline {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    font-size: 9px;
+    text-align: right;
+  }
+  .clearfix.error {
+    .my-label {
+      color: #bd4247;
+    }
+  }
+
+}
+
+
+#id_register .input-line.error {
+  background: #fff1f1;
+  &.focused {
+    background: #fccdcd;
+  }
 }
 
 #cockpit {

@@ -9,7 +9,7 @@
   .col-md-6.p-t-15
     = timelog.name
     br
-    = link_to timelog.part.autocomplete_part.calculated_name, backend_client_path(timelog.part.project.client) rescue ""
+    .blue= link_to timelog.part.autocomplete_part.calculated_name, backend_client_path(timelog.part.project.client) rescue ""
 
   .col-md-5.p-t-12
     .rounded-gravatar.p-r-15
