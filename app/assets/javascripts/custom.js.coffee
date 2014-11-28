@@ -12,7 +12,6 @@ $ ->
     $(this).find('.my-input').focus()
 
   $('#new_timelog .control-group').click ->
-    console.log 'dupa'
     $(this).find('.my-input').focus()
 
   $('#new_signup .details-column').click ->
@@ -22,16 +21,16 @@ $ ->
     $(this).parent(".input-line").addClass('focused')
 
   $('.input-line').on 'focus', 'input', ->
-    $(this).parent(".clearfix").parent(".input-line").parent(".controls").addClass('focused')
+    $(this).parents(".clearfix").addClass('focused')
 
   $('input').blur ->
-    $(this).parent(".clearfix").parent(".input-line").parent(".controls").removeClass('focused')
+    $(this).parents(".clearfix").removeClass('focused')
 
   $('#id_register .input-line').on 'focus', 'input', ->
-    $(this).parent(".clearfix").parent(".input-line").addClass('focused')
+    $(this).parents(".clearfix").addClass('focused')
 
   $('#id_register .input-line').on 'blur', 'input', ->
-    $(this).parent(".clearfix").parent(".input-line").removeClass('focused')
+    $(this).parents(".clearfix").removeClass('focused')
 
   $('input').focus ->
     $(this).parent(".input-line").addClass('focused')
@@ -85,15 +84,7 @@ $ ->
     $(".default-visible").addClass 'invisible'
     $('.add-client-btn').addClass 'green-bg'
 
-  $(".add-project-btn").click (e) ->
-    unless $('.sliding-field-project').hasClass('active')
-      e.preventDefault()
-    $(".sliding-field-project").addClass 'active'
-    $(this).parent().find(".default-invisible").removeClass 'invisible'
-    $(this).parent().find(".default-visible").addClass 'invisible'
-    $('.add-project-btn').addClass('green-bg')
-
-  $(".add-part-btn").click (e) ->
+  $('body').on 'click', '.add-part-btn', (e) ->
     unless $(this).parent().find('.sliding-field-part').hasClass('active')
       e.preventDefault()
     $('.parts-wrapper #part_name').removeClass('create-fail')
@@ -101,10 +92,17 @@ $ ->
     $(".add-part-btn").parent().find(".sliding-field-part").removeClass('active')
     $(".add-part-btn").parent().find(".default-visible").removeClass('invisible')
     $(".add-part-btn").parent().find(".default-invisible").addClass('invisible')
-
     $(this).parent().find(".sliding-field-part").addClass 'active'
     $(this).parent().find(".default-invisible").removeClass 'invisible'
     $(this).parent().find(".default-visible").addClass 'invisible'
+
+  $('body').on 'click', '.add-project-btn', (e) ->
+    unless $('.sliding-field-project').hasClass('active')
+      e.preventDefault()
+    $(".sliding-field-project").addClass 'active'
+    $(this).parent().find(".default-invisible").removeClass 'invisible'
+    $(this).parent().find(".default-visible").addClass 'invisible'
+    $('.add-project-btn').addClass('green-bg')
 
 
   # Workers dropdown
@@ -116,45 +114,49 @@ $ ->
       btnGroup.removeClass('open')
 
   # Hiding 'add project field', when clicking outside of it
-  $addProjectBtnInv = $('#id_add-project-form .default-invisible')
-  $addProjectBtnVis = $('#id_add-project-form .default-visible')
-  $projectNameInput = $('#id_add-project-form #project_name')
-  $(document).click (e) ->
+  $(document).on 'click', 'body', (e) ->
+    $addProjectBtnInv = $('#id_add-project-form .default-invisible')
+    $addProjectBtnVis = $('#id_add-project-form .default-visible')
+    $projectNameInput = $('#id_add-project-form #project_name')
     if $(e.target).parents('#id_add-project-form').length is 0
       if $projectNameInput.hasClass('active')
         $projectNameInput.removeClass('active')
         $addProjectBtnInv.addClass('invisible')
         $addProjectBtnVis.removeClass('invisible')
         $('.add-project-btn').removeClass('green-bg')
+        $('.sliding-field-project').val ''
         if $('.sliding-field-project').hasClass('create-fail')
           $('.sliding-field-project').removeClass('create-fail')
         $('.sliding-field-project').attr 'placeholder', 'Nazwa projektu'
 
   # Hiding 'add parts field', when clicking outside of it
-  $addPartBtnInv = $('.parts-wrapper .default-invisible')
-  $addPartBtnVis = $('.parts-wrapper .default-visible')
-  $partNameInput = $('.parts-wrapper #part_name')
-  $(document).click (e) ->
+  $(document).on 'click', 'body', (e) ->
+    $addPartBtnInv = $('.parts-wrapper .default-invisible')
+    $addPartBtnVis = $('.parts-wrapper .default-visible')
+    $partNameInput = $('.parts-wrapper #part_name')
     if $(e.target).parents('.parts-wrapper').length is 0
+      # debugger
       if $partNameInput.hasClass('active')
         $partNameInput.removeClass('active')
         $addPartBtnInv.addClass('invisible')
         $addPartBtnVis.removeClass('invisible')
+        $('.sliding-field-part').val ''
         if $('.sliding-field-part').hasClass('create-fail')
           $('.sliding-field-part').removeClass('create-fail')
         $('.sliding-field-part').attr 'placeholder', 'Nazwa zadania'
 
   # Hiding 'add clients field', when clicking outside of it
-  $addClientBtnInv = $('#id_add-client-form .default-invisible')
-  $addClientBtnVis = $('#id_add-client-form .default-visible')
-  $clientNameInput = $('#id_add-client-form #client_name')
   $(document).click (e) ->
+    $addClientBtnInv = $('#id_add-client-form .default-invisible')
+    $addClientBtnVis = $('#id_add-client-form .default-visible')
+    $clientNameInput = $('#id_add-client-form #client_name')
     if $(e.target).parents('#id_add-client-form').length is 0
       if $clientNameInput.hasClass('active')
         $clientNameInput.removeClass('active')
         $addClientBtnInv.addClass('invisible')
         $addClientBtnVis.removeClass('invisible')
         $('.add-client-btn').removeClass('green-bg')
+        $('.sliding-field-client').val ''
         if $('.sliding-field-client').hasClass('create-fail')
           $('.sliding-field-client').removeClass('create-fail')
         $('.sliding-field-client').attr 'placeholder', 'Wpisz nazwę'
