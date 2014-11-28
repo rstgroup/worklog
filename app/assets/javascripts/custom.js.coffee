@@ -5,58 +5,28 @@ $ ->
   setTopContainerHeight(currentHeight)
   $(window).resize -> setTopContainerHeight(currentHeight)
 
-  $('#new_user .input-lines .input-line').click ->
-    $(this).find('.my-placeholder').focus()
-
-  $('#new_signup .input-line').click ->
+# Adding focus on input-field, when clicking on its wrapper
+  $('.input-line').click ->
     $(this).find('.my-input').focus()
 
-  $('#new_timelog .control-group').click ->
-    $(this).find('.my-input').focus()
 
-  $('#new_signup .details-column').click ->
-    $(this).find('.my-input').focus()
-
+# Adding/removing class 'focused' on focused '.input-line'
   $('.input-line').on 'focus', 'input', ->
-    $(this).parent(".input-line").addClass('focused')
+    $(this).parents(".input-line").addClass('focused')
+  $('.input-line').on 'blur', 'input', ->
+    $(this).parents(".input-line").removeClass('focused')
 
-  $('.input-line').on 'focus', 'input', ->
-    $(this).parents(".clearfix").addClass('focused')
+  $('#cockpit .col-md-6').on 'focus', 'input', ->
+    $(this).parents('.col-md-6').addClass('focused')
+  $('#cockpit .col-md-6').on 'blur', 'input', ->
+    $(this).parents('.col-md-6').removeClass('focused')
 
-  $('input').blur ->
-    $(this).parents(".clearfix").removeClass('focused')
-
-  $('#id_register .input-line').on 'focus', 'input', ->
-    $(this).parents(".clearfix").addClass('focused')
-
-  $('#id_register .input-line').on 'blur', 'input', ->
-    $(this).parents(".clearfix").removeClass('focused')
-
-  $('input').focus ->
-    $(this).parent(".input-line").addClass('focused')
-
-  $('input').blur ->
-    $(this).parent(".input-line").removeClass('focused')
-
-  $("input").focus ->
-    $(this).parent(".details-column").addClass('focused')
-
-  $('input').blur ->
-    $(this).parent(".details-column").removeClass('focused')
-
-  $('#id_register .input-lines').focus ->
-    $(this).addClass('focused')
-
-  $('#id_register .input-line').blur ->
-    $(this).removeClass('focused')
 
 
   $('.to-section').click (e)->
     e.preventDefault()
     $('html, body').stop().animate({'scrollTop': $($(this).attr('href')).offset().top},{duration: 800})
     false
-
-
 
   $(".datepicker").datetimepicker({
     pickTime: false
@@ -105,7 +75,7 @@ $ ->
     $('.add-project-btn').addClass('green-bg')
 
 
-  # Workers dropdown
+# Workers dropdown
   $(document).click (e) ->
     btnGroup = $(".dropdown-menu").parents('.btn-group')
     workersBtn = btnGroup.find('*').andSelf().not('.select-workers-btn')
@@ -113,7 +83,7 @@ $ ->
     if $.inArray(target, workersBtn) < 0 && btnGroup.hasClass('open')
       btnGroup.removeClass('open')
 
-  # Hiding 'add project field', when clicking outside of it
+# Hiding 'add project field', when clicking outside of it
   $(document).on 'click', 'body', (e) ->
     $addProjectBtnInv = $('#id_add-project-form .default-invisible')
     $addProjectBtnVis = $('#id_add-project-form .default-visible')
@@ -129,7 +99,7 @@ $ ->
           $('.sliding-field-project').removeClass('create-fail')
         $('.sliding-field-project').attr 'placeholder', 'Nazwa projektu'
 
-  # Hiding 'add parts field', when clicking outside of it
+# Hiding 'add parts field', when clicking outside of it
   $(document).on 'click', 'body', (e) ->
     $addPartBtnInv = $('.parts-wrapper .default-invisible')
     $addPartBtnVis = $('.parts-wrapper .default-visible')
@@ -145,7 +115,7 @@ $ ->
           $('.sliding-field-part').removeClass('create-fail')
         $('.sliding-field-part').attr 'placeholder', 'Nazwa zadania'
 
-  # Hiding 'add clients field', when clicking outside of it
+# Hiding 'add clients field', when clicking outside of it
   $(document).click (e) ->
     $addClientBtnInv = $('#id_add-client-form .default-invisible')
     $addClientBtnVis = $('#id_add-client-form .default-visible')
@@ -172,10 +142,18 @@ $ ->
       loadingClass: "loading-circle"
 
 
-  # Adding error message class if error-message.any?
+# Adding error message class if error-message.any?
   $logInDevise = $("#id_devise-log-in .error-messages")
   unless ($logInDevise).is(':empty')
-    $logInDevise.parent('.input-line').parent('.input-lines').addClass('error')
+    $logInDevise.parents('.input-lines').addClass('error')
+
+# Adding error class to input-line in cockpit form, if there are any errors , #cockpit, .input-line
+  $(".clearfix.error").parents('.input-line').addClass('error')
+  $(".clearfix.error").parents('.col-md-6').addClass('error')
+
+  # $forgotPw = $("#new_user .clearfix.error")
+  # console.log $forgotPw
+  # $forgotPw.parent('.input-line').addClass('error')
 
 
 

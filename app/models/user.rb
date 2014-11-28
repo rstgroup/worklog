@@ -39,8 +39,8 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   validates :name, presence: true, allow_blank: false, length: {within: 5..255}
   belongs_to :account
-  has_many :timelogs
-  has_many :partial_timelogs
+  has_many :timelogs, dependent: :destroy
+  has_many :partial_timelogs, dependent: :destroy
 
   include TimeFormattable
 

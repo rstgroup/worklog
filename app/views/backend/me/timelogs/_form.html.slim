@@ -1,29 +1,19 @@
 .new-activity Dodaj nową aktywność
 #cockpit
   = form_for [:backend, :me, @tl], html: {class: 'form-horizontal'} do |f|
-    .control-group.mb10 class=("error" if @tl.errors[:name].any?)
-      .controls
-        .input-line.bordered-top
-          = f.label :name, 'CZYNNOŚĆ', class: 'my-label'
-          = f.text_field :name, class: 'my-input', style: 'width: 900px;'
-
-    .control-group.mb10 class=("error" if @tl.errors[:full_part_name].any?)
-      .controls
-        .input-line
-          = f.label :full_part_name, 'PROJEKT', class: 'my-label'
-          = f.text_field :full_part_name, autocomplete: "off", class: 'my-input', style: 'width: 900px;'
-    .input-line.n-p-v
+    .input-line.bordered-top
+      = f.label :name, 'CZYNNOŚĆ', class: 'my-label'
+      = f.text_field :name, class: 'my-input', style: 'width: 900px;'
+    .input-line
+      = f.label :full_part_name, 'PROJEKT', class: 'my-label'
+      = f.text_field :full_part_name, autocomplete: "off", class: 'my-input', style: 'width: 900px;'
+    .input-line2.n-p-v
       .row
-        .control-group.mb10 class=("error" if @tl.errors[:worked_on].any?)
-          .controls
-            .col-md-6.p-v-10
-              = f.label :worked_on, 'DZIEŃ', class: 'my-label'
-              = f.text_field :worked_on, value: Time.now.strftime('%d.%m.%Y'), class: 'my-input datepicker'
-        .control-group.mb10 class=("error" if @tl.errors[:clock_duration].any?)
-          .controls
-            .col-md-6.p-v-10
-              = f.label :clock_duration, 'PRZEPRACOWANYCH GODZIN', class: 'my-label'
-              = f.text_field :clock_duration, autocomplete: "off", class: 'my-input', placeholder: '00:00', value: '00:00'
-
+        .col-md-6.p-v-10
+          = f.label :worked_on, 'DZIEŃ', class: 'my-label', style: 'width: 100%;'
+          = f.text_field :worked_on, value: Time.now.strftime('%d.%m.%Y'), class: 'my-input2 datepicker', style: 'width: 100%;'
+        .col-md-6.p-v-10
+          = f.label :clock_duration, 'PRZEPRACOWANYCH GODZIN', class: 'my-label', style: 'width: 100%;'
+          = f.text_field :clock_duration, autocomplete: "off", class: 'my-input2', placeholder: '00:00', value: '00:00', style: 'width: 100%;'
     .submit-line
       = f.submit 'DODAJ AKTYWNOŚĆ', class: 'btn btn-my-submit'

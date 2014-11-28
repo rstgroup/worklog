@@ -6,13 +6,13 @@
 
     .input-lines
       .input-line
-        = f.label :email, 'YOUR E-MAIL ADDRESS', class: 'my-label control-label'
-        = f.text_field :email, placeholder: 'example@example.com', class: 'my-placeholder'
+        = f.label :email, 'YOUR E-MAIL ADDRESS', class: 'my-label'
+        = f.text_field :email, placeholder: 'example@example.com', class: 'my-input'
         .error-messages= flash[:alert]
 
       .input-line
-        = f.label :password, 'YOUR PASSWORD', class: 'my-label control-label'
-        = f.password_field :password, placeholder: 'Type-in your password', class: 'my-placeholder'
+        = f.label :password, 'YOUR PASSWORD', class: 'my-label'
+        = f.password_field :password, placeholder: 'Type-in your password', class: 'my-input'
 
     .buttons-line
       .row

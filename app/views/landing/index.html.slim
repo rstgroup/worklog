@@ -11,13 +11,13 @@
       - if current_user.nil?
         #myregisterform
           = form_for @signup, class: 'form-inline' do |f|
-            .column.white.details-column.my-border
+            .column.white.input-line.my-border
               = f.label :company_name, 'COMPANY NAME', class: 'my-label'
               = f.text_field :company_name, class: 'my-input', placeholder: 'Example'
-            .column.white.details-column.my-border
+            .column.white.input-line.my-border
               = f.label :email, 'E-MAIL', class: 'my-label'
               = f.text_field :email, class: 'my-input', placeholder: 'example@example.com'
-            .column.white.details-column
+            .column.white.input-line
               = f.label :password, 'PASSWORD', class: 'my-label'
               = f.password_field :password, class: 'my-input', placeholder: 'password'
             .column.submit-column
