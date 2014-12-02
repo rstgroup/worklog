@@ -42,15 +42,18 @@
                 - else
                   .pull-right.i.fa.fa-check-blank
     .clearfix
-    .col-md-12
+    .col-md-12.border-bot.p-b-15
       - @last_day = nil
       .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
       = render @timelogs
       .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
 
-/ .container
-/   .row
-/     .col-md-12
-/       h3 Pracownicy
-/       #users_division_chart
-/       .users_wrapper_above_chart=render :collection => @client.users, :partial => "user", :locals => {:client => @client}
+
+
+.container.division-chart-container
+  .row.m-t-30
+    .col-md-6
+      | Statystyki
+      #users_division_chart
+    .col-md-6.right.p-t-20
+      .users_wrapper_above_chart=render :collection => @client.users, :partial => "user", locals: { client: @client }

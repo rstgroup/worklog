@@ -1,3 +1,60 @@
+.create-password-btn {
+  @include transition(background 500ms);
+  background: $mainGreen;
+  color: #fff;
+  text-align: center;
+  border: 0;
+  width: 100%;
+  height: 76px;
+  &:hover {
+    color: #fff;
+    background: lighten($mainGreen, 10);
+  }
+}
+
+.add-coworker-btn {
+  @include transition(background 500ms);
+  background: $mainBlue;
+  height: 38px;
+  width: 132px;
+  color: #fff;
+  text-align: center;
+  padding-top: 9px;
+  border-radius: 0;
+  &:hover {
+    color: #fff;
+    background: lighten($mainBlue, 10);
+  }
+}
+
+.final-add-btn {
+  @include transition(background 500ms);
+  width: 38px;
+  padding-top: 6px;
+  margin-top: -2px;
+  border: 0;
+  &:hover {
+    color: #fff;
+    background: lighten($mainBlue, 10);
+  }
+  &:focus {
+    color: #fff;
+  }
+}
+.cancel-adding-btn {
+  @include transition(background 500ms);
+  background: #e74c3c;
+  width: 96px;
+  height: 38px;
+  color: #fff;
+  text-align: center;
+  padding: 11px 28px 11px;
+  &:hover {
+    color: #fff;
+    background: lighten(#e74c3c, 10);
+  }
+}
+
 .pure-button {
   position: relative;
   font-family: "Roboto", sans-serif;
@@ -171,7 +228,7 @@
   color: #fff;
   border-radius: 0;
   text-align: center;
-  padding: 10px;
+  padding: 8px;
   font-weight: $fontSizeLight;
   @include transition(background 500ms);
   &:hover {
@@ -180,6 +237,7 @@
 }
 
 .action_btn {
+  height: 38px;
   border-radius: 0;
   background: $mainBlue;
   color: #fff;
@@ -190,11 +248,15 @@
 }
 
 .edit-acc-save-btn {
-  width: 100%;
-  border-radius: 0;
-  background-color: $mainBlue;
+  @include transition(background 500ms);
+  background: $mainGreen;
+  color: #fff;
+  text-align: center;
   border: 0;
+  width: 100%;
+  height: 76px;
   &:hover {
-    background-color: lighten($mainBlue, 10);
+    color: #fff;
+    background: lighten($mainGreen, 10);
   }
 }

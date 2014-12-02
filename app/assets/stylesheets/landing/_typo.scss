@@ -323,6 +323,12 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   color: #fff;
 }
 
+.timer {
+  font-size: 14px;
+  color: #99a9a9;
+  margin-top: 4px;
+}
+
 
 .client-add-project-container {
   .link-to-clients {
@@ -429,7 +435,7 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 .timelogs-container {
   background: #fff;
   color: #99a9a9;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   a {
     color: #99a9a9;
     font-size: 10px;
@@ -557,6 +563,7 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 .workers-container {
   font-size:14px;
   .container {
+    @include transition(display 500ms);
     .flex {
       display: flex;
       align-items: center;
@@ -568,6 +575,12 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
         padding: 0;
       }
     }
+    .col-md-3 {
+      padding-left: 0px;
+    }
+    .col-md-5 {
+      padding-right: 30px;
+    }
   }
 }
 
@@ -577,11 +590,12 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 
 .error-messages {
   position: absolute;
-  top: 14px;
-  right: 16px;
+  top: 0;
+  right: 0;
   font-size:12px;
   color: #bd4247;
 }
+
 
 :focus, :active {outline:0 none !important;}
 

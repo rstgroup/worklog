@@ -1,3 +1,87 @@
+.invitations-form {
+  position: relative;
+  background: #fff;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  width: 374px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  #error_explanation {
+    display: none;
+  }
+  .my-label {
+    color: #bdc3c7;
+  }
+
+  .my-input {
+    color: #7f8c8d;
+    font-size: 14px;
+    border: none;
+    background: transparent;
+  }
+
+  .title-line {
+    font-weight: $fontSizeRegular;
+    font-size: 18px;
+    text-align: left;
+    padding: 30px 0 24px 16px;
+    border: 1px solid #efefef;
+
+  }
+
+  .input-line {
+    @include transition(background 500ms);
+    font-weight: $fontSizeRegular;
+    font-size: 12px;
+    text-align: left;
+    padding: 15px 16px;
+    border: 1px solid #efefef;
+    border-top: none;
+    position: relative;
+    &.focused {
+      background: #f2f6fa;
+    }
+  }
+
+  .input-line.error {
+    .my-label {
+      color: #bd4247;
+    }
+    background: #fff1f1;
+    &.focused {
+      background: #fccdcd;
+    }
+  }
+
+  .submit-line {
+    font-size: 14px;
+    font-weight: $fontSizeBold;
+    border: 1px solid #efefef;
+    border-top: none;
+  }
+
+  .help-inline {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+  }
+}
+
+
+
+#id_add-coworker-text-field {
+  height: 38px;
+  border: 1px #e0d3cf solid;
+  padding-left: 10px;
+  color: #7f8c8d;
+  border-right: 0;
+}
+
+
+
 .forgot-pw-form {
   position: relative;
   height: 100%;
@@ -14,7 +98,7 @@
     font-weight: $fontSizeBold;
     text-align: left;
     color: #2b2d2e;
-    padding: 30px 20px;
+    padding: 26px 14px;
     border-bottom: 1px #ebf0f3 solid;
     font-size: 18px;
   }
@@ -24,6 +108,7 @@
   }
 
   .input-line {
+    @include transition(background 500ms);
     position: relative;
     padding: 15px;
     color: $mainGray;
@@ -47,7 +132,7 @@
     width: 100%;
     border-radius: 0;
     background: $mainGreen;
-    height: 62px;
+    height: 76px;
     font-weight: $fontSizeBold;
     font-size: 14px;
     color: #fff;
@@ -62,8 +147,8 @@
 
   .help-inline {
     position: absolute;
-    top: 16px;
-    right: 15px;
+    top: 0;
+    right: 0;
     font-size: 11px;
   }
 
@@ -273,8 +358,8 @@
   }
   .help-inline {
     position: absolute;
-    top: 15px;
-    right: 18px;
+    top: 0;
+    right: 0;
     font-size: 10px;
     text-align: right;
   }
@@ -323,8 +408,8 @@
 
   .help-inline {
     position: absolute;
-    top: 11px;
-    right: 25px;
+    top: 0;
+    right: 0;
     font-size: 12px;
     text-align: right;
   }
@@ -341,11 +426,6 @@
     position: relative;
     &.focused {
       background: #f2f6fa;
-    }
-    .row {
-      .col-md-6:first-child {
-        border-right: 1px solid #efefef;
-      }
     }
     &.error {
       background: #fff1f1;
@@ -366,6 +446,9 @@
     position: relative;
     @include transition(background 500ms);
     .row
+      .col-md-6:first-child {
+        border-right: 1px solid #efefef;
+      }
       .col-md-6 {
         @include transition(background 500ms);
         .focused {
@@ -401,17 +484,76 @@
 }
 
 #id_edit-account {
-  background: #EBF0F3;
-  width: 300px;
-  .control-label {
-    padding: 10px 10px;
-    color: #bdc3c7;
+  position: relative;
+  background: #fff;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  width: 374px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  #error_explanation {
+    display: none;
   }
+  .my-label {
+    color: #bdc3c7;
+    display: block;
+  }
+
   .my-input {
-    background: #EBF0F3;
-    padding: 5px 10px;
     color: #7f8c8d;
+    font-size: 14px;
     border: none;
+    background: transparent;
+  }
+
+  .title-line {
+    font-weight: $fontSizeRegular;
+    font-size: 18px;
+    text-align: left;
+    padding: 30px 0 24px 16px;
+    border: 1px solid #efefef;
+
+  }
+
+  .input-line {
+    @include transition(background 500ms);
+    font-weight: $fontSizeRegular;
+    font-size: 12px;
+    text-align: left;
+    padding: 15px 16px;
+    border: 1px solid #efefef;
+    border-top: none;
+    position: relative;
+
+    &.focused {
+      background: #f2f6fa;
+    }
+  }
+
+  .input-line.error {
+    .my-label {
+      color: #bd4247;
+    }
+    background: #fff1f1;
+    &.focused {
+      background: #fccdcd;
+    }
+  }
+
+  .submit-line {
+    font-size: 14px;
+    font-weight: $fontSizeBold;
+    border: 1px solid #efefef;
+    border-top: none;
+  }
+
+  .help-inline {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
   }
 }
 

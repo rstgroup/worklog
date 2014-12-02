@@ -8,7 +8,7 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1.0"
 
 
-  body class="#{'bg-img' if params[:action] == 'index' && params[:controller] == 'landing'}#{'grey-bgrd' if params[:controller] == 'devise/sessions' || params[:controller] == 'signups' || params[:controller] == 'backend/me/timelogs'}"
+  body class="#{'bg-img' if params[:action] == 'index' && params[:controller] == 'landing'}#{'grey-bgrd' if params[:controller] == 'devise/sessions' || params[:controller] == 'signups' || params[:controller] == 'backend/me/timelogs' || (params[:controller] == 'backend/me' && params[:action] == 'edit')}"
     header
       .upper-header
         .container

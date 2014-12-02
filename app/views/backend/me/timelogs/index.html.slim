@@ -13,7 +13,7 @@
 
 .timelogs-container
   .container
-    .p-t-25 Ostatnie wpisy czasowe
+    .p-t-25 Moje ostatnie wpisy czasowe
     .col-md-12
       - @last_day = nil
       .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"

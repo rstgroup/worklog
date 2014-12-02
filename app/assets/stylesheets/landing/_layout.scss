@@ -33,6 +33,19 @@ html {
   }
 }
 
+
 ::-webkit-input-placeholder {
-   color: #7f8c8d;
+   color: #C1C3C7;
+}
+
+:-moz-placeholder {
+   color: #C1C3C7;
+}
+
+::-moz-placeholder {
+   color: #C1C3C7;
+}
+
+:-ms-input-placeholder {
+   color: #C1C3C7;
 }
