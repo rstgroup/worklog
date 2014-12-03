@@ -5,4 +5,4 @@
         h5.other-grey-text Klienci:
       .f-right
         = render partial: 'form'
-  .clients_wrapper= render @clients
+  .clients_wrapper= render(@clients) || render(partial: 'empty')

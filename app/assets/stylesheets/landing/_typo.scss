@@ -448,6 +448,14 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+  .alert {
+    margin-left: -15px;
+    margin-right: -15px;
+    a {
+      font-size: 14px;
+      color: lighten($mainBlue, 10);
+    }
+  }
 }
 
 .align-left {

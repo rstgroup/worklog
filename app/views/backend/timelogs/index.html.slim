@@ -32,5 +32,5 @@
           .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
           table.table.table-condensed
             tbody
-              = render @timelogs
+              = render(@timelogs) || render(partial: "empty")
           .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
