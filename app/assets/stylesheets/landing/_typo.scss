@@ -80,6 +80,8 @@ a {
     width: 145px;
     font-size: 13px;
     color: $mainGray;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .dropdown-menu > li:hover {
     background-color: #f5f5f5;
@@ -444,10 +446,6 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
     border-bottom: none;
     padding-left: 0 !important;
     padding-right: 0 !important;
-  }
-  .dropdown-menu {
-    min-width: 0;
-    width: 132px;
   }
 }
 

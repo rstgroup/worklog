@@ -123,6 +123,17 @@
   }
 }
 
+.dropdown-menu {
+  max-width: 200px;
+  left: auto;
+  right: 0;
+}
+
+.dropdown-menu > li > a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 .edit-acc-container {
 }

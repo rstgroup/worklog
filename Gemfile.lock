@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   remote: http://rails-assets.org/
   specs:
     aasm (3.0.17)

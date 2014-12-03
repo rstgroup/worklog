@@ -34,7 +34,7 @@
               - else
                 .pull-right.i.fa.fa-check
           - current_user.account.users.each do |user|
-            li
+            li title="#{user.name}"
               = link_to backend_client_path(@client, sort: {user_id: user.id}) do
                 = user.name
                 - if params[:sort] and user.id == params[:sort][:user_id].to_i
