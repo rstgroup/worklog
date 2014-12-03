@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
+source 'http://rails-assets.org'
 
 gem 'rails', '3.2.12'
 gem "rb-readline"
@@ -22,7 +22,6 @@ group :assets do
 end
 
 
-gem 'groupdate'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem "haml-rails"
@@ -48,6 +47,7 @@ gem 'font-awesome-sass'
 gem 'boxmodel-rails'
 gem 'compass-rails'
 gem 'rails-assets-bs-typeahead'
+
 
 group :development do
   gem "rails-erd"

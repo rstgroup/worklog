@@ -12,6 +12,16 @@ development:
   encoding: utf8
   collation: utf8_polish_ci
 
+production:
+  adapter: mysql2
+  host: 127.0.0.1
+  database: worklog_dev
+  username: root
+  password: local
+  encoding: utf8
+  collation: utf8_polish_ci
+
+
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.

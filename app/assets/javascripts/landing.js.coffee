@@ -8,6 +8,11 @@
 #= require bs-typeahead
 #= require moment
 #= require bootstrap-datetimepicker
+#= require ptpr-form
+#= require raphael
+#= require morris
+#= require bootstrap-togglers
+#= require bootstrap-live-edit
 #= require custom
-#= require backend
+#= require_tree ./backend
 
