@@ -1,1 +1,0 @@
-(function(){$(function(){return $("#give-feedback").click(function(){return giveFeedback(),!1})})}).call(this);
