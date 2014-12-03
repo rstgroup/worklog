@@ -1,12 +1,12 @@
 br
 .container.flex.p-v-10
-  .col-md-3 id="user-name-#{user.id}"
+  .col-md-4 id="user-name-#{user.id}"
     = user.name
-  .col-md-4.text-center
+  .col-md-4
     = image_tag user.gravatar_url , class: 'rounded-gravatar'
     '
     = user.email
-  .col-md-5
+  .col-md-4
     table.pull-right
       tr
         th.align-center Dzisiaj: 
