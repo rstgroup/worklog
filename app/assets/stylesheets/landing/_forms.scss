@@ -78,6 +78,7 @@
   padding-left: 10px;
   color: #7f8c8d;
   border-right: 0;
+  float: left;
 }
 
 
@@ -483,6 +484,9 @@
   .row{
     position: relative;
     padding: 0;
+  }
+  .my-buttons {
+    overflow: hidden;
   }
 }
 

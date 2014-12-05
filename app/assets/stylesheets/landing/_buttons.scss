@@ -31,7 +31,6 @@
   @include transition(background 500ms);
   width: 38px;
   padding-top: 6px;
-  margin-top: -2px;
   border: 0;
   &:hover {
     color: #fff;
@@ -44,11 +43,33 @@
 .cancel-adding-btn {
   @include transition(background 500ms);
   background: #e74c3c;
-  width: 96px;
+  width: 94px;
   height: 38px;
+  border: 0;
   color: #fff;
   text-align: center;
-  padding: 11px 28px 11px;
+  padding: 10px 28px 12px;
+  &:hover {
+    color: #fff;
+    background: lighten(#e74c3c, 10);
+  }
+}
+
+a.cancel-adding-btn2 {
+  display: block;
+  @include transition(all, 500ms);
+  background: #e74c3c;
+  max-width: 0;
+  width: 94px;
+  height: 38px;
+  border: 0;
+  color: #fff;
+  text-align: center;
+  padding: 9px 0;
+  float: right;
+  &.active {
+    max-width: 94px;
+  }
   &:hover {
     color: #fff;
     background: lighten(#e74c3c, 10);
@@ -149,17 +170,34 @@
   }
 }
 
+.smaller-btn {
+    @include transition(all, 500ms);
+    max-width: 38px;
+    height: 38px;
+    max-height: 38px;
+    white-space: nowrap;
+}
+
 .add-client-btn {
+  @include transition(all, 500ms);
   height: 38px;
   border: none;
   background: $mainBlue;
   padding: 0;
   color: #fff;
   width: 132px;
+  float: left;
+  max-width: 132px;
+  &.smaller-btn {
+    @include transition(all, 500ms);
+    max-width: 38px;
+    height: 38px;
+    max-height: 38px;
+    white-space: nowrap;
+  }
   &:focus {
     outline: none;
   }
-  @include transition(background 500ms);
   &:hover {
     background: lighten($mainBlue, 10);
   }
@@ -171,16 +209,25 @@
 }
 
 .add-project-btn {
+  @include transition(all, 500ms);
   height: 38px;
   border: none;
   background: $mainBlue;
   padding: 0;
   color: #fff;
   width: 132px;
+  float: left;
+  max-width: 132px;
+  &.smaller-btn {
+    @include transition(all, 500ms);
+    max-width: 38px;
+    height: 38px;
+    max-height: 38px;
+    white-space: nowrap;
+  }
   &:focus {
     outline: none;
   }
-  @include transition(background 500ms);
   &:hover {
     background: lighten($mainBlue, 10);
   }
@@ -204,18 +251,28 @@
 }
 
 .add-part-btn {
+  @include transition(all, 500ms);
   height: 38px;
   border: none;
   background: $mainGreen;
   padding: 0;
   color: #fff;
+  max-width: 132px;
   width: 132px;
+  float: left;
   &:focus {
     outline: none;
   }
-  @include transition(background 500ms);
+
   &:hover {
     background: lighten($mainGreen, 10);
+  }
+  &.smaller-btn {
+    @include transition(all, 500ms);
+    max-width: 38px;
+    height: 38px;
+    max-height: 38px;
+    white-space: nowrap;
   }
 }
 

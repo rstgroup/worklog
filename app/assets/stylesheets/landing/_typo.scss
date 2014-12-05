@@ -270,23 +270,25 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 }
 
 .clients-container {
-  .control-group {
-    a {
-      color: $mainGray;
-      font-size: 14px;
-      position: relative;
-      left: 70px;
-      top: -3px;
-      padding: 10px 0;
+  .client-name {
+    .form-inline {
+      .control-group {
+        a {
+          vertical-align: middle;
+          color: $mainGray;
+          font-size: 14px;
+          padding: 10px;
+        }
+      }
     }
   }
   .action_btn {
     height: 40px;
-    margin-left: -7px;
-    padding-top: 10px;
-    position: absolute;
+    border: 0;
+    float: left;
   }
   .form_name {
+    float: left;
     padding-left: 5px;
     height: 40px;
     border: 1px $mainGray solid;
@@ -397,24 +399,18 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   }
   .control-group {
     width: 360px;
-    a {
-      position: relative;
-      left: 4px;
-      padding: 10px 0;
-    }
   }
   .action_btn {
     height: 38px;
     padding: 0px 10px;
     font-size: 12px;
-    margin-top: -1px;
-    margin-left: -3px;
+    border: 0;
     &:hover {
       color: #fff;
     }
   }
   .form_name {
-
+    float: left;
     padding-left: 5px !important;
     width: 260px;
     border: 0;
@@ -442,7 +438,9 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   margin-bottom: 0;
   font-weight: $fontSizeLight;
   .btn-remove {
-    padding: 0 0 20px 22px;
+    padding: 0;
+    margin-left: 22px;
+    margin-bottom: 20px;
   }
 }
 
@@ -572,6 +570,11 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 
 .green-bg {
   background: $mainGreen !important;
+
+}
+
+.smaller-btn {
+  width: 38px;
 }
 
 .black-color {
