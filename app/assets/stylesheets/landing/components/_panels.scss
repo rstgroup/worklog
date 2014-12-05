@@ -10,8 +10,14 @@
         padding: 5px;
         color: #fff;
         font-size: 12px;
+        &:hover {
+          background: lighten($mainGreen, 10);
+        }
         &.disabled {
           background: #e74c3c;
+          &:hover {
+            background: lighten(#e74c3c, 10);
+          }
         }
         a {
           color: #fff;
