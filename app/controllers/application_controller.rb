@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    backend_me_path
+    backend_me_timelogs_path
   end
 
 

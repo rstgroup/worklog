@@ -5,4 +5,3 @@ $(".sliding-field-part").val('')
 $(".default-invisible").removeClass 'visible'
 $(".default-invisible").addClass 'invisible'
 $(".default-visible").removeClass 'invisible'
-$(".collapse").addClass 'in'

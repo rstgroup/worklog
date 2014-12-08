@@ -8,7 +8,7 @@
     .pull-right= render :partial => "backend/parts/form", :locals => {:project => project}
 
     .project-crud.f-right.p-t-3
-      a.btn.btn-remove id="edit-project-#{project.id}-btn" href="#" data-live-edit="project-name-#{project.id}" data-live-edit-url=backend_project_path(project)
+      a.btn.btn-remove.edit-btn id="edit-project-#{project.id}-btn" href="#" data-live-edit="project-name-#{project.id}" data-live-edit-url=backend_project_path(project)
 
         i.fa.fa-pencil-square-o.fa-lg
       a.btn.btn-remove data-method="delete" data-confirm="Czy na pewno chcesz usunąć wszystkie dane projektu" href=backend_project_path(project, :client_id => project.client_id)

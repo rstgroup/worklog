@@ -291,7 +291,7 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
     float: left;
     padding-left: 5px;
     height: 40px;
-    border: 1px $mainGray solid;
+    border: 1px $grayBorderColor solid;
   }
   .row {
     padding: 36px 0;
@@ -383,7 +383,7 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
     }
   }
   .col-md-5, .col-md-7 {
-    background: #eaf1f5;
+    background: $grayBorderColor;
     height: 38px;
     padding-right: 0;
     padding-left: 0;
@@ -394,6 +394,7 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
       padding-left: 0px;
       a {
         color: $mainGray;
+        padding: 10px 5px;
       }
     }
   }
@@ -402,8 +403,7 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   }
   .action_btn {
     height: 38px;
-    padding: 0px 10px;
-    font-size: 12px;
+    font-size: 14px;
     border: 0;
     &:hover {
       color: #fff;
@@ -412,12 +412,12 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   .form_name {
     float: left;
     padding-left: 5px !important;
-    width: 260px;
+    width: 240px;
     border: 0;
     padding: 0;
     color: $mainGray;
     height:38px;
-    border: 1px #eaf1f5 solid;
+    border: 1px $grayBorderColor solid;
   }
 }
 
