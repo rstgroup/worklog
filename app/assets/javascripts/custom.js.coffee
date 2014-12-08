@@ -196,7 +196,7 @@ $ ->
         $addClientBtnVis.text('')
         $addClientBtnVis.removeClass('invisible')
         $('.add-client-btn').removeClass('green-bg')
-        $(this).parent().find('.sliding-field-client').val ''
+        $('.sliding-field-client').val ''
         if $('.sliding-field-client').hasClass('create-fail')
           $('.sliding-field-client').removeClass('create-fail')
         $('.sliding-field-client').attr 'placeholder', 'Wpisz nazwę'

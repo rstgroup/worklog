@@ -161,6 +161,10 @@ bootstrap timepicker
   font-size: 10px;
 }
 
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  width: 230px;
+}
+
 .only-timepicker.dropdown-menu {
   min-width: 0;
 }
