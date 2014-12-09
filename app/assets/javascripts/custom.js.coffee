@@ -70,7 +70,7 @@ $ ->
     $(this).parent().find(".default-invisible").removeClass 'invisible'
     $(this).parent().find(".default-visible").addClass 'invisible'
     $(this).parent().find(".add-part-btn").addClass 'smaller-btn'
-    $(this).parent().find('.cancel-adding-btn2').addClass 'active'
+    $(this).siblings('.cancel-adding-btn2').addClass 'active'
     $(this).parent().find('.cancel-adding-btn2').text 'Anuluj'
 
   $('body').on 'click', '.add-project-btn', (e) ->
@@ -79,9 +79,9 @@ $ ->
     $(".sliding-field-project").addClass 'active'
     $(this).parent().find(".default-invisible").removeClass 'invisible'
     $(this).parent().find(".default-visible").addClass 'invisible'
-    $('.add-project-btn').addClass('green-bg smaller-btn')
-    $(this).parent().find('.cancel-adding-btn2').addClass 'active'
-    $(this).parent().find('.cancel-adding-btn2').text 'Anuluj'
+    $(".add-project-btn").addClass 'green-bg smaller-btn'
+    $(this).parent('.add-project-row').find('.cancel-adding-btn2').addClass 'active'
+    $(this).parent('.add-project-row').find('.cancel-adding-btn2').text 'Anuluj'
 
 
 # Workers dropdown
@@ -97,98 +97,106 @@ $ ->
     $addProjectBtnInv = $('#id_add-project-form .default-invisible')
     $addProjectBtnVis = $('#id_add-project-form .default-visible')
     $projectNameInput = $('#id_add-project-form #project_name')
-    if $(e.target).parents('#id_add-project-form').length is 0
+    # if $(e.target).parents('#id_add-project-form').length is 0 && $(e.target).parents('.parts-wrapper').length is 0
+    #   if $projectNameInput.hasClass('active')
+    #     $projectNameInput.removeClass('active')
+    #     $('.add-project-btn').removeClass('green-bg')
+    #     if $('.sliding-field-project').hasClass('create-fail')
+    #       $('.sliding-field-project').removeClass('create-fail')
+    #     $('.sliding-field-project').attr 'placeholder', 'Nazwa projektu'
+    #     $('.cancel-adding-btn2.project-cancel').removeClass 'active'
+    #     $('.add-project-btn').removeClass 'smaller-btn'
+    #     setTimeout (->
+    #       $addProjectBtnInv.addClass('invisible')
+    #     ), 700
+    #     setTimeout (->
+    #       $addProjectBtnVis.removeClass('invisible')
+    #     ), 700
+    if $(e.target).is('.cancel-adding-btn2.project-cancel')
       if $projectNameInput.hasClass('active')
         $projectNameInput.removeClass('active')
-        $addProjectBtnInv.addClass('invisible')
-        $addProjectBtnVis.text('')
-        $addProjectBtnVis.removeClass('invisible')
-        $('.add-project-btn').removeClass('green-bg')
-        # $('.sliding-field-project').val ''
-        if $('.sliding-field-project').hasClass('create-fail')
-          $('.sliding-field-project').removeClass('create-fail')
-        $('.sliding-field-project').attr 'placeholder', 'Nazwa projektu'
-        $('.cancel-adding-btn2').removeClass 'active'
-        $('.add-project-btn').removeClass 'smaller-btn'
-        setTimeout (->
-          $addProjectBtnVis.text('Dodaj projekt')
-        ), 400
-    if $(e.target).is('.cancel-adding-btn2')
-      if $projectNameInput.hasClass('active')
-        $projectNameInput.removeClass('active')
-        $addProjectBtnInv.addClass('invisible')
-        $addProjectBtnVis.text('')
-        $addProjectBtnVis.removeClass('invisible')
         $('.add-project-btn').removeClass('green-bg')
         $('.sliding-field-project').val ''
         if $('.sliding-field-project').hasClass('create-fail')
           $('.sliding-field-project').removeClass('create-fail')
         $('.sliding-field-project').attr 'placeholder', 'Nazwa projektu'
-        $('.cancel-adding-btn2').removeClass 'active'
+        $('.cancel-adding-btn2.project-cancel').removeClass 'active'
         $('.add-project-btn').removeClass 'smaller-btn'
         setTimeout (->
-          $addProjectBtnVis.text('Dodaj projekt')
-        ), 400
+          $addProjectBtnInv.addClass('invisible')
+        ), 700
+        setTimeout (->
+          $addProjectBtnVis.removeClass('invisible')
+        ), 700
 
 # Hiding 'add parts field', when clicking outside of it
   $(document).on 'click', 'body', (e) ->
-    $addPartBtnInv = $(this).parent().find('.parts-wrapper .default-invisible')
-    $addPartBtnVis = $(this).parent().find('.parts-wrapper .default-visible')
-    $partNameInput = $(this).parent().find('.parts-wrapper #part_name')
-    if $(e.target).parents('.parts-wrapper').length is 0
-      if $partNameInput.hasClass('active')
-        $(this).parent().find('.cancel-adding-btn2').removeClass 'active'
+    # $addPartBtnInv = $(this).find('.parts-wrapper .default-invisible')
+    # $addPartBtnVis = $(this).find('.parts-wrapper .default-visible')
+    # $partNameInput = $(this).find('.parts-wrapper #part_name')
+    # $cancelAdding = $(this).find('.cancel-adding-btn2.part-cancel')
+    # if $(e.target).parents('.parts-wrapper').length is 0 && $(e.target).parents('#id_add-project-form').length is 0
+    #   if $(this).find('.parts-wrapper #part_name').hasClass('active')
+    #     $(this).find('.parts-wrapper #part_name').removeClass('active')
+    #     $(this).find('.sliding-field-part').val ''
+    #     if $('.sliding-field-part').hasClass('create-fail')
+    #       $('.sliding-field-part').removeClass('create-fail')
+
+    #     $('.sliding-field-part').attr 'placeholder', 'Nazwa zadania'
+    #     $(this).find('.cancel-adding-btn2.part-cancel').removeClass 'active'
+    #     $('.add-part-btn').removeClass 'smaller-btn'
+
+    #     setTimeout (->
+    #       $addPartBtnInv.addClass('invisible')
+    #     ), 700
+    #     setTimeout (->
+    #       $addPartBtnVis.removeClass('invisible')
+    #     ), 700
+    if $(e.target).is('.cancel-adding-btn2.part-cancel')
+      $addPartBtnVis = $(e.target).parents('.parts-wrapper').find('.default-visible')
+      $partNameInput = $(e.target).parents('.parts-wrapper').find('#part_name')
+      $addPartBtnInv = $(e.target).parents('.parts-wrapper').find('.default-invisible')
+      if $('.sliding-field-part').hasClass('active')
+        $('.sliding-field-part').removeClass('active')
+        console.log 'dupa'
+        console.log $addPartBtnInv
         $partNameInput.removeClass('active')
-        $addPartBtnInv.addClass('invisible')
-        $addPartBtnVis.removeClass('invisible')
-        # $addPartBtnVis.text('')
-        # $(this).parent().find('.sliding-field-part').val ''
-        if $('.sliding-field-part').hasClass('create-fail')
-          $('.sliding-field-part').removeClass('create-fail')
-        $('.sliding-field-part').attr 'placeholder', 'Nazwa zadania'
-        $(this).parent().find('.cancel-adding-btn2').removeClass 'active'
-        $(this).parent().find('.add-part-btn').removeClass 'smaller-btn'
+        $partNameInput.val ''
+        if $partNameInput.hasClass('create-fail')
+          $partNameInput.removeClass('create-fail')
+
+        $partNameInput.attr 'placeholder', 'Nazwa zadania'
+        $(this).find('.cancel-adding-btn2.part-cancel').removeClass 'active'
+        $(this).find('.add-part-btn').removeClass 'smaller-btn'
+
         setTimeout (->
-          $addPartBtnVis.text('Dodaj zadanie')
-        ), 400
-    if $(e.target).is('.cancel-adding-btn2')
-      if $partNameInput.hasClass('active')
-        $(this).parent().find('.cancel-adding-btn2').removeClass 'active'
-        $partNameInput.removeClass('active')
-        $addPartBtnInv.addClass('invisible')
-        $addPartBtnVis.removeClass('invisible')
-        $addPartBtnVis.text('')
-        $(this).parent().find('.sliding-field-part').val ''
-        if $('.sliding-field-part').hasClass('create-fail')
-          $('.sliding-field-part').removeClass('create-fail')
-        $('.sliding-field-part').attr 'placeholder', 'Nazwa zadania'
-        $(this).parent().find('.cancel-adding-btn2').removeClass 'active'
-        $(this).parent().find('.add-part-btn').removeClass 'smaller-btn'
+          $addPartBtnInv.addClass('invisible')
+        ), 700
         setTimeout (->
-          $addPartBtnVis.text('Dodaj zadanie')
-        ), 400
+          $addPartBtnVis.removeClass('invisible')
+        ), 700
 
 # Hiding 'add clients field', when clicking outside of it or on 'cancel' btn
   $(document).click (e) ->
     $addClientBtnInv = $('#id_add-client-form .default-invisible')
     $addClientBtnVis = $('#id_add-client-form .default-visible')
     $clientNameInput = $('#id_add-client-form #client_name')
-    if $(e.target).parents('#id_add-client-form').length is 0
-      if $clientNameInput.hasClass('active')
-        $clientNameInput.removeClass('active')
-        $addClientBtnInv.addClass('invisible')
-        $addClientBtnVis.text('')
-        $addClientBtnVis.removeClass('invisible')
-        $('.add-client-btn').removeClass('green-bg')
-        $('.sliding-field-client').val ''
-        if $('.sliding-field-client').hasClass('create-fail')
-          $('.sliding-field-client').removeClass('create-fail')
-        $('.sliding-field-client').attr 'placeholder', 'Wpisz nazwę'
-        $('.cancel-adding-btn2').removeClass 'active'
-        $('.add-client-btn').removeClass 'smaller-btn'
-        setTimeout (->
-          $addClientBtnVis.text('Dodaj klienta')
-        ), 400
+    # if $(e.target).parents('#id_add-client-form').length is 0
+    #   if $clientNameInput.hasClass('active')
+    #     $clientNameInput.removeClass('active')
+    #     $addClientBtnInv.addClass('invisible')
+    #     $addClientBtnVis.text('')
+    #     $addClientBtnVis.removeClass('invisible')
+    #     $('.add-client-btn').removeClass('green-bg')
+    #     $('.sliding-field-client').val ''
+    #     if $('.sliding-field-client').hasClass('create-fail')
+    #       $('.sliding-field-client').removeClass('create-fail')
+    #     $('.sliding-field-client').attr 'placeholder', 'Wpisz nazwę'
+    #     $('.cancel-adding-btn2').removeClass 'active'
+    #     $('.add-client-btn').removeClass 'smaller-btn'
+    #     setTimeout (->
+    #       $addClientBtnVis.text('Dodaj klienta')
+    #     ), 400
     if $(e.target).is('.cancel-adding-btn2')
       if $clientNameInput.hasClass('active')
         $clientNameInput.removeClass('active')

@@ -383,6 +383,7 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
     }
   }
   .col-md-5, .col-md-7 {
+    overflow: hidden;
     background: $grayBorderColor;
     height: 38px;
     padding-right: 0;
@@ -616,6 +617,15 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   right: 0;
   font-size:12px;
   color: #bd4247;
+}
+
+.fa {
+  background: transparent;
+  border: 0;
+  &:focus {
+    background: transparent;
+    border: 0;
+  }
 }
 
 

@@ -75,10 +75,10 @@
   width: 230px;
   height: 38px;
   padding: 0;
-  border: 1px solid #fff;
+  border: 0;
   @include transition(all, 500ms);
   &.active {
-    border-color: #e1ebf1;
+    border: 1px #e1ebf1 solid;
     padding-left: 16px;
     max-width: 230px;
   }
