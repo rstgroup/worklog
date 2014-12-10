@@ -75,62 +75,6 @@
   }
 }
 
-// .sliding-field-client {
-//   position: absolute;
-//   right: 132px;
-//   max-width: 0px;
-//   width: 230px;
-//   height: 38px;
-//   padding: 0;
-//   border: 0;
-//   @include transition(all, 500ms);
-//   &.active {
-//     border: 1px #e1ebf1 solid;
-//     padding-left: 16px;
-//     max-width: 230px;
-//   }
-//   &.create-fail {
-//     background: #fccdcd;
-//   }
-// }
-
-// .sliding-field-project {
-//   position: absolute;
-//   right: 132px;
-//   max-width: 0px;
-//   width: 230px;
-//   height: 38px;
-//   padding: 0;
-//   border: 0;
-//   @include transition(all, 500ms);
-//   &.active {
-//     border: 1px #e1ebf1 solid;
-//     padding-left: 16px;
-//     max-width: 230px;
-//   }
-//   &.create-fail {
-//     background: #fccdcd;
-//   }
-// }
-
-// .sliding-field-part {
-//   max-width: 0px;
-//   width: 230px;
-//   height: 38px;
-//   padding: 0;
-//   border: 1px solid #eaf1f5;
-//   background: #fff;
-//   float: left;
-//   @include transition(all, 500ms);
-//   &.active {
-//     border-color: #e1ebf1;
-//     padding-left: 16px;
-//     max-width: 230px;
-//   }
-//   &.create-fail {
-//     background: #fccdcd;
-//   }
-// }
 
 
 .parts_wrapper {
@@ -158,6 +102,11 @@
       color: #fff;
     }
   }
+}
+
+.typeahead.dropdown-menu {
+  width: 400px;
+  font-size: 12px;
 }
 
 .dropdown-menu {
