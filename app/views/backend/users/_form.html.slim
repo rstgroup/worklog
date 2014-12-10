@@ -1,12 +1,11 @@
-a.form-toggle data-toggle="form" href="#"
-  .add-coworker-btn
-    | Dodaj pracownika
-.form_wrapper
-  = form_for [:backend, @user], html: { class: 'form-inline'} do |f|
-    .control-group
-      = f.text_field :name, placeholder: 'Imię i Nazwisko', id:"id_add-coworker-text-field", size: '25'
-      = f.text_field :email, placeholder: 'Email', id:"id_add-coworker-text-field", size: '20'
-      button.btn.add-coworker-btn.final-add-btn type='submit'
-        i.fa.fa-plus
-      a.cancel.cancel-adding-btn href="#"
-        | Anuluj
+#id_add-coworker-form
+  = form_for [:backend, @user], remote: true, html: { class: 'form-inline'} do |f|
+    .row.add-worker-row
+      = f.text_field :name, placeholder: 'Imię i Nazwisko', class: 'sliding-field worker', size: '25'
+      = f.text_field :email, placeholder: 'Email', class: 'sliding-field worker', size: '20'
+      button.add-coworker-btn
+        .plus
+          i.fa.fa-plus.p-l-3
+        .text
+          | Dodaj pracownika
+      a.cancel-adding-btn2

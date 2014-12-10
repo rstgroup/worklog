@@ -3,11 +3,11 @@
     div class=("error" if @part.errors[:name].any?)
       = hidden_field_tag :client_id, project.client_id
       = hidden_field_tag :project_id, project.id
-      = f.text_field :name, placeholder: 'Nazwa zadania', class: "sliding-field-part"
+      = f.text_field :name, placeholder: 'Nazwa zadania', class: "sliding-field part"
       button.add-part-btn
-        .default-invisible.invisible
+        .plus
           i.fa.fa-plus.p-l-3
-        .default-visible
+        .text
           | Dodaj zadanie
       a.cancel-adding-btn2.part-cancel
 

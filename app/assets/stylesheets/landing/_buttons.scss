@@ -13,47 +13,29 @@
 }
 
 .add-coworker-btn {
-  @include transition(background 500ms);
-  background: $mainBlue;
+  @include transition(all, 500ms);
   height: 38px;
-  width: 132px;
+  border: none;
+  background: $mainBlue;
+  padding: 0;
   color: #fff;
-  text-align: center;
-  padding-top: 9px;
-  border-radius: 0;
-  &:hover {
-    color: #fff;
-    background: lighten($mainBlue, 10);
-  }
-}
-
-.final-add-btn {
-  @include transition(background 500ms);
-  width: 38px;
-  padding-top: 6px;
-  border: 0;
-  &:hover {
-    color: #fff;
-    background: lighten($mainBlue, 10);
+  width: 132px;
+  float: left;
+  max-width: 132px;
+  &.smaller-btn {
+   @include transition(all, 500ms);
+   max-width: 38px;
+   height: 38px;
+   max-height: 38px;
+   white-space: nowrap;
   }
   &:focus {
-    color: #fff;
+   outline: none;
   }
-}
-.cancel-adding-btn {
-  @include transition(background 500ms);
-  background: #e74c3c;
-  width: 94px;
-  height: 38px;
-  border: 0;
-  color: #fff;
-  text-align: center;
-  padding: 10px 28px 12px;
   &:hover {
-    color: #fff;
-    background: lighten(#e74c3c, 10);
+   background: lighten($mainBlue, 10);
   }
-}
+ }
 
 a.cancel-adding-btn2 {
   display: block;

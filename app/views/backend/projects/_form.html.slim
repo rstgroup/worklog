@@ -2,10 +2,10 @@
   = form_for [:backend, @project], remote: true, html: { class: 'form-inline'} do |f|
     .row.add-project-row
       = hidden_field_tag :client_id, client.id
-      = f.text_field :name, placeholder: 'Nazwa projektu', class: "sliding-field-project"
+      = f.text_field :name, placeholder: 'Nazwa projektu', class: "sliding-field project"
       button.add-project-btn
-        .default-invisible.invisible
+        .plus
           i.fa.fa-plus.p-l-3
-        .default-visible
+        .text
           | Dodaj projekt
       a.cancel-adding-btn2.project-cancel

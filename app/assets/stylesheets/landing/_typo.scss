@@ -363,6 +363,11 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   color: #95a5a6;
 }
 
+.add-worker-row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
 .project-row {
   .project-name {
     height: 38px;
@@ -560,12 +565,19 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   }
 }
 
-
-.invisible {
+.plus {
   display: none;
 }
 
-.visible {
+.text {
+  display: block;
+}
+
+.my-invisible {
+  display: none;
+}
+
+.my-visible {
   display: block;
 }
 
@@ -573,6 +585,7 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
   background: $mainGreen !important;
 
 }
+
 
 .smaller-btn {
   width: 38px;

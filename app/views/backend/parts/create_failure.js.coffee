@@ -1,2 +1,3 @@
-$(".sliding-field-part.active").addClass 'create-fail'
-$("#project-<%= @project.id %>-content .sliding-field-part.active").attr 'placeholder', 'Nie może być puste'
+$("#project-<%= @project.id %>").find(".sliding-field.part")
+  .addClass('create-fail')
+  .attr 'placeholder', 'Nie może być puste'

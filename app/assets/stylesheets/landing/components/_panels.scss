@@ -49,56 +49,24 @@
   text-align: center;
 }
 
-.sliding-field-client {
-  position: absolute;
-  right: 132px;
-  max-width: 0px;
-  width: 230px;
-  height: 38px;
-  padding: 0;
-  border: 0;
-  @include transition(all, 500ms);
-  &.active {
-    border: 1px #e1ebf1 solid;
-    padding-left: 16px;
-    max-width: 230px;
+.sliding-field {
+  &.client, &.project {
+    position: absolute;
+    right: 132px;
   }
-  &.create-fail {
-    background: #fccdcd;
+  &.part {
+    background: #fff;
   }
-}
-
-.sliding-field-project {
-  position: absolute;
-  right: 132px;
-  max-width: 0px;
-  width: 230px;
-  height: 38px;
-  padding: 0;
-  border: 0;
-  @include transition(all, 500ms);
-  &.active {
-    border: 1px #e1ebf1 solid;
-    padding-left: 16px;
-    max-width: 230px;
-  }
-  &.create-fail {
-    background: #fccdcd;
-  }
-}
-
-.sliding-field-part {
-  // background: none;
-  max-width: 0px;
-  width: 230px;
-  height: 38px;
-  padding: 0;
-  border: 1px solid #eaf1f5;
-  background: #fff;
   float: left;
+  max-width: 0px;
+  width: 230px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-color: #e1ebf1;
   @include transition(all, 500ms);
   &.active {
-    border-color: #e1ebf1;
+    border: 1px #e1ebf1 solid;
     padding-left: 16px;
     max-width: 230px;
   }
@@ -106,6 +74,63 @@
     background: #fccdcd;
   }
 }
+
+// .sliding-field-client {
+//   position: absolute;
+//   right: 132px;
+//   max-width: 0px;
+//   width: 230px;
+//   height: 38px;
+//   padding: 0;
+//   border: 0;
+//   @include transition(all, 500ms);
+//   &.active {
+//     border: 1px #e1ebf1 solid;
+//     padding-left: 16px;
+//     max-width: 230px;
+//   }
+//   &.create-fail {
+//     background: #fccdcd;
+//   }
+// }
+
+// .sliding-field-project {
+//   position: absolute;
+//   right: 132px;
+//   max-width: 0px;
+//   width: 230px;
+//   height: 38px;
+//   padding: 0;
+//   border: 0;
+//   @include transition(all, 500ms);
+//   &.active {
+//     border: 1px #e1ebf1 solid;
+//     padding-left: 16px;
+//     max-width: 230px;
+//   }
+//   &.create-fail {
+//     background: #fccdcd;
+//   }
+// }
+
+// .sliding-field-part {
+//   max-width: 0px;
+//   width: 230px;
+//   height: 38px;
+//   padding: 0;
+//   border: 1px solid #eaf1f5;
+//   background: #fff;
+//   float: left;
+//   @include transition(all, 500ms);
+//   &.active {
+//     border-color: #e1ebf1;
+//     padding-left: 16px;
+//     max-width: 230px;
+//   }
+//   &.create-fail {
+//     background: #fccdcd;
+//   }
+// }
 
 
 .parts_wrapper {

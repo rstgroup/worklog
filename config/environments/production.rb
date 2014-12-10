@@ -20,7 +20,7 @@ KmpWorklog::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  config.action_mailer.default_url_options = { :host => 'worklog.kmpgroup.pl' }
+  config.action_mailer.default_url_options = { :host => 'quiet-depths-9538.herokuapp.com/' }
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
