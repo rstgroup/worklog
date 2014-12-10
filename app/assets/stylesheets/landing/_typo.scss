@@ -586,6 +586,16 @@ input:focus, textarea:focus, select:focus {outline:0 none;}
 
 }
 
+.my-alert {
+  margin-left: -15px;
+  width: 940px;
+}
+
+.my-alert-colors {
+  color: #99a9a9;
+  border-color: #ced6db;
+  background: $grayBorderColor;
+}
 
 .smaller-btn {
   width: 38px;

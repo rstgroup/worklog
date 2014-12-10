@@ -21,5 +21,5 @@
 
 div id="project-#{project.id}-content" class="collapse collapsible"
   ul.parts-ul.parts_wrapper
-    = render project.parts
+    = render(project.parts) || render(partial: "backend/projects/empty")
 / = render :partial => "backend/parts/form", :locals => {:project => project}

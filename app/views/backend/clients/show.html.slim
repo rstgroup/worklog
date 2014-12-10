@@ -14,13 +14,13 @@
   .row
     .col-md-12
       .projects_wrapper.border-bot.p-b-30
-        = render @client.projects
+        = render(@client.projects) || render(partial: "empty-project")
 
 .timelogs-container
   .container.p-t-20
-    .col-md-6
+    .col-md-6.m-t-5
       | Wpisy czasowe
-    .col-md-6
+    .col-md-6.m-b-20
       .btn-group.f-right
         .select-workers-btn.dropdown-toggle.p-t-8
           | Pracownicy
@@ -45,7 +45,7 @@
     .col-md-12.border-bot.p-b-15
       - @last_day = nil
       .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
-      = render @timelogs
+      = render(@timelogs) || render(partial: "empty-timelog")
       .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
 
 
