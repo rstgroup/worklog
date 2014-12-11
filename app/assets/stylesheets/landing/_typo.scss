@@ -9,7 +9,7 @@ header {
 
 a {
   color: #fff;
-  &, &:hover {
+  &, &:hover, &:focus {
     text-decoration: none;
   }
 }

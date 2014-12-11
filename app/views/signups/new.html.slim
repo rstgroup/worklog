@@ -2,15 +2,15 @@
   = form_for @signup, html: {class: 'form-inline'} do |f|
     .title-line
       = f.label 'Register new account'
-    .input-line class=("error" if @signup.errors[:company_name].any?)
+    .input-line
       = f.label :company_name, 'COMPANY NAME', class: 'my-label'
       = f.text_field :company_name, placeholder: 'Example', class: 'my-input'
 
-    .input-line class=("error" if @signup.errors[:email].any?)
+    .input-line
       = f.label :email, 'YOUR E-MAIL ADDRESS', class: 'my-label'
       = f.text_field :email, placeholder: 'example@example.com', class: 'my-input'
 
-    .input-line class=("error" if @signup.errors[:password].any?)
+    .input-line
       = f.label :password, 'YOUR PASSWORD', class: 'my-label'
       = f.password_field :password, placeholder: 'Type-in your password', class: 'my-input'
 

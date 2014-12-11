@@ -209,7 +209,7 @@ $ ->
   unless ($logInDevise).is(':empty')
     $logInDevise.parents('.input-lines').addClass('error')
 
-# Adding error class to input-line in cockpit form, if there are any errors , #cockpit, .input-line
+# Adding error class to input-line , if there are any errors
   $(".clearfix.error").parents('.input-line').addClass('error')
   $(".clearfix.error").parents('.col-md-6').addClass('error')
 

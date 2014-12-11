@@ -9,13 +9,13 @@ class Backend::UsersController < BackendController
   end
 
   def create
-    if params[:user] && params[:user][:email] && !User.find_by_email(params[:user][:email])
-      u = User.invite!(params[:user], current_user)
-      u.account_id = current_user.account_id
-      UserDecorator.decorate u
-      u.save
+    if valid_invitation_params
+      @user = User.invite!(params[:user], current_user)
+      @user.account_id = current_user.account_id
+      UserDecorator.decorate @user
+      @user.save
     else
-      render :status => 406, :text => ""
+      render 'create_failure'
     end
   end
 
@@ -50,5 +50,13 @@ class Backend::UsersController < BackendController
 
     def find_user
       @user = current_user.account.users.find(params[:id])
+    end
+
+    def valid_invitation_params
+      return false unless params[:user]
+      return false if User.find_by_email(params[:user][:email])
+      @user = User.new(email: params[:user][:email])
+      return false if !@user.valid? && @user.errors[:email].any? && @user.errors[:name].any?
+      return true
     end
 end

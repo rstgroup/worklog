@@ -57,6 +57,7 @@
   &.part {
     background: #fff;
   }
+
   float: left;
   max-width: 0px;
   width: 230px;
@@ -69,6 +70,10 @@
     border: 1px #e1ebf1 solid;
     padding-left: 16px;
     max-width: 230px;
+  }
+
+  &.worker {
+    border-right: 0;
   }
   &.create-fail {
     background: #fccdcd;
