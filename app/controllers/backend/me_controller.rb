@@ -10,12 +10,7 @@ class Backend::MeController < BackendController
 
   def update
     @user = current_user
-    if params[:user][:password].blank?
-      params[:user].delete :password
-    else
-      params[:user][:password_confirmation] = params[:user][:password]
-    end
-
+    User.my_update(params)
     if @user.update_attributes params[:user]
       sign_in(@user, :bypass => true)
       redirect_to edit_backend_me_path
