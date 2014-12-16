@@ -24,17 +24,6 @@ class Backend::UsersController < BackendController
     redirect_to backend_timelogs_path if @user.id != current_user.id
   end
 
-  def update
-    @user = current_user
-    User.my_update(params)
-    if @user.update_attributes params[:user]
-      sign_in(@user, :bypass => true)
-      redirect_to edit_backend_me_path
-    else
-      render :edit
-    end
-  end
-
   def destroy
     @user.destroy
     redirect_to backend_users_path

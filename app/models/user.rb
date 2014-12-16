@@ -83,12 +83,9 @@ class User < ActiveRecord::Base
     attributes['theme'].blank? ? "cerulean" : attributes['theme']
   end
 
-  def self.my_update(params)
-    if params[:user][:password].blank?
-      params[:user].delete :password
-    else
-      params[:user][:password_confirmation] = params[:user][:password]
-    end
+  def update_params(params)
+    params = params.except(:password) if params[:password].blank?
+    update_attributes(params)
   end
 
 end
