@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source 'http://rails-assets.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.21'
 gem "rb-readline"
 
 # Bundle edge Rails instead:
@@ -56,14 +56,15 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'json_spec'
   gem 'capybara'
   gem "spork"
   gem "timecop"
   gem 'delorean'
+  gem 'fuubar'
+  gem 'shoulda'
 end
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.0"
+  gem "rspec-rails", '~> 3.1'
   gem 'factory_girl_rails'
 end

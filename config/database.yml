@@ -3,6 +3,15 @@
 #
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
+test:
+  adapter: mysql2
+  host: 127.0.0.1
+  database: worklog_test
+  username: root
+  password: local
+  encoding: utf8
+  collation: utf8_polish_ci
+
 development:
   adapter: mysql2
   host: 127.0.0.1
