@@ -23,7 +23,7 @@ are bundled in a single package due to their heavy interdependence. This is
 unlike the relationship between the Active Record and Action Pack that is much
 more separate. Each of these packages can be used independently outside of
 Rails. You can read more about Action Pack in
-link:files/vendor/rails/actionpack/README.html.
+link:files/vendor/rails/actionpack/README.html. 
 
 
 == Getting Started
