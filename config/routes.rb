@@ -1,12 +1,15 @@
 KmpWorklog::Application.routes.draw do
+  get "landing/index"
+
   devise_for :users, :controllers => { :invitations => 'invitations' }
-  root to: 'frontend#index'
+  root to: 'landing#index'
   resources :signups
+  get '/registration', to: 'signups#new'
   namespace :backend do
     namespace :me do
       resources :timelogs
       resource :timer, only: [:start, :pause, :resume, :stop] do
-        member do 
+        member do
           post :start
           post :pause
           post :resume

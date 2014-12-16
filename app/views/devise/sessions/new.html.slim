@@ -1,0 +1,25 @@
+#id_devise-log-in
+  = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal'}) do |f|
+
+    .title-line
+      = f.label 'Log in to your account'
+
+    .input-lines
+      .input-line
+        = f.label :email, 'YOUR E-MAIL ADDRESS', class: 'my-label'
+        = f.text_field :email, placeholder: 'example@example.com', class: 'my-input'
+        .error-messages= flash[:alert]
+
+      .input-line
+        = f.label :password, 'YOUR PASSWORD', class: 'my-label'
+        = f.password_field :password, placeholder: 'Type-in your password', class: 'my-input'
+
+    .buttons-line
+      .row
+        .col-xs-6.log-in
+          = f.submit 'Log in', class: 'btn btn-block'
+        .col-xs-6.forgot-pw
+          = link_to 'Forgot password?', new_user_password_path, class: 'btn btn-block'
+br
+
+  / = render "devise/shared/links"

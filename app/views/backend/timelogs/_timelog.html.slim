@@ -1,0 +1,23 @@
+.row
+  .timelog-day class="#{'align-center' if params[:controller] == 'backend/clients' && params[:action] == 'show'}"
+    - if @last_day != timelog.worked_on
+      - @last_day = timelog.worked_on
+      .p-t-30.p-b-10 class="#{'border-bot' unless params[:controller] == 'backend/clients' && params[:action] == 'show' }"
+        b= t "d#{@last_day.cwday}", scope: :weekdays
+        '
+        b= timelog.worked_on.strftime "%d.%m.%Y"
+  .col-md-6.p-t-15
+    = timelog.name
+    br
+    .blue= link_to timelog.part.autocomplete_part.calculated_name, backend_client_path(timelog.part.project.client) rescue ""
+
+  .col-md-5.p-t-12
+    .rounded-gravatar.p-r-15
+      = image_tag timelog.user.gravatar_url
+    = timelog.user.email
+
+  .col-md-1.align-right.p-t-15
+    i.fa.fa-clock-o.p-r-3
+    = timelog.human_duration
+
+

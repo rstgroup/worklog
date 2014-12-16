@@ -1,0 +1,59 @@
+.container
+  .client-add-project-container.clients_wrapper
+    .row
+      .pull-left
+        h3= @client.name
+        br
+        .grey-text-color
+          = link_to "Klienci", backend_clients_path, class: 'link-to-clients'
+          |  / 
+          = @client.name
+      .pull-right
+        = render :partial => "backend/projects/form", :locals => {:client => @client}
+.container
+  .row
+    .col-md-12
+      .projects_wrapper.border-bot.p-b-30
+        = render(@client.projects) || render(partial: "empty-project")
+
+.timelogs-container
+  .container.p-t-20
+    .col-md-6.m-t-5
+      | Wpisy czasowe
+    .col-md-6.m-b-20
+      .btn-group.f-right
+        .select-workers-btn.dropdown-toggle.p-t-8
+          | Pracownicy
+          i.fa.fa-caret-down.p-l-5
+        ul.dropdown-menu.clearfix
+          li
+            = link_to backend_client_path(@client) do
+              | Wszyscy
+              - if params[:sort]
+                .pull-right.i.fa.fa-check-blank
+              - else
+                .pull-right.i.fa.fa-check
+          - current_user.account.users.each do |user|
+            li title="#{user.name}"
+              = link_to backend_client_path(@client, sort: {user_id: user.id}) do
+                = user.name
+                - if params[:sort] and user.id == params[:sort][:user_id].to_i
+                  .pull-right.i.fa.fa-check
+                - else
+                  .pull-right.i.fa.fa-check-blank
+    .clearfix
+    .col-md-12.border-bot.p-b-15
+      - @last_day = nil
+      .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
+      = render(@timelogs) || render(partial: "empty-timelog")
+      .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
+
+
+
+.container.division-chart-container
+  .row.m-t-30
+    .col-md-6
+      | Statystyki
+      #users_division_chart
+    .col-md-6.right.p-t-20
+      .users_wrapper_above_chart=render :collection => @client.users, :partial => "user", locals: { client: @client }

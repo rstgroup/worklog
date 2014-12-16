@@ -19,9 +19,9 @@ window.initializeChart = () ->
   data = []
   sum = 0
   $(".users_wrapper_above_chart .user_element").each (e) ->
-    sum += parseInt($.trim($(this).find("label.badge").text()))
+    sum += parseInt($.trim($(this).find(".timer").text()))
   $(".users_wrapper_above_chart .user_element").each (e) ->
-    v = parseInt(parseInt($.trim($(this).find("label.badge").text()))*100/sum)
+    v = parseInt(parseInt($.trim($(this).find(".timer").text()))*100/sum)
     l = $.trim($(this).find("span.user_name").text())
     data.push {label: l, value: v}
 
@@ -29,5 +29,7 @@ window.initializeChart = () ->
     new Morris.Donut(
       element: 'users_division_chart',
       data: data,
+      labelColor: '#99a9a9',
+      resize: true,
       formatter: (y, data) -> "#{y} %"
     )

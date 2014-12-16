@@ -1,4 +1,5 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
+source 'http://rails-assets.org'
 
 gem 'rails', '3.2.12'
 gem "rb-readline"
@@ -13,12 +14,16 @@ gem 'coffee-rails', '~> 3.2.1'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'compass-rails'
+  gem 'bootstrap-sass', '~> 3.2.0'
   gem 'turbo-sprockets-rails3'
   gem 'uglifier', '>= 1.0.3'
+  gem 'momentjs-rails', '>= 2.8.1'
+  gem 'bootstrap3-datetimepicker-rails', '~> 3.1.3'
 end
 
+
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem "haml-rails"
 gem 'pry'
 gem 'devise',           '>= 2.0.0'
@@ -31,11 +36,18 @@ gem 'virtus'
 gem "active_model_serializers"
 gem 'schema_plus'
 gem 'draper'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem 'aasm'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
+gem 'slim-rails', '~> 2.1.5'
+gem 'normalize-rails'
+gem 'font-awesome-sass'
+gem 'boxmodel-rails'
+gem 'compass-rails'
+gem 'rails-assets-bs-typeahead'
+
 
 group :development do
   gem "rails-erd"

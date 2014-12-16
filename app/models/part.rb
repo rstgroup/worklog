@@ -15,7 +15,7 @@ class Part < ActiveRecord::Base
 
   belongs_to :account
   belongs_to :project
-  has_many :timelogs
+  has_many :timelogs, dependent: :destroy
   has_one :autocomplete_part
 
   before_create :assign_to_account

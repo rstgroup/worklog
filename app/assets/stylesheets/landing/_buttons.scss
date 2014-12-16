@@ -1,0 +1,301 @@
+.create-password-btn {
+  @include transition(background 500ms);
+  background: $mainGreen;
+  color: #fff;
+  text-align: center;
+  border: 0;
+  width: 100%;
+  height: 76px;
+  &:hover {
+    color: #fff;
+    background: lighten($mainGreen, 10);
+  }
+}
+
+.add-coworker-btn {
+  @include transition(all, 500ms);
+  height: 38px;
+  border: none;
+  background: $mainBlue;
+  padding: 0;
+  color: #fff;
+  width: 132px;
+  float: left;
+  max-width: 132px;
+  &.smaller-btn {
+   @include transition(all, 500ms);
+   max-width: 38px;
+   height: 38px;
+   max-height: 38px;
+   white-space: nowrap;
+  }
+  &:focus {
+   outline: none;
+  }
+  &:hover {
+   background: lighten($mainBlue, 10);
+  }
+ }
+
+a.cancel-adding-btn2 {
+  display: block;
+  @include transition(all, 500ms);
+  background: #e74c3c;
+  max-width: 0;
+  width: 94px;
+  height: 38px;
+  border: 0;
+  color: #fff;
+  text-align: center;
+  padding: 9px 0;
+  float: right;
+  &.active {
+    max-width: 94px;
+  }
+  &:hover {
+    color: #fff;
+    background: lighten(#e74c3c, 10);
+  }
+}
+
+.pure-button {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+
+.register-btn {
+  padding: 12px 30px 10px 30px;
+  border: 2px solid #2980b9;
+  font-size: 16px;
+  line-height: 14px;
+}
+.log-in-btn {
+  font-size: 16px;
+}
+
+.reg-now-button{
+  background-color: $mainGreen;
+  border: 0;
+  color: #fff;
+  @include transition(background 500ms);
+  &:hover {
+    background: lighten($mainGreen, 10);
+  }
+
+}
+
+.learn-more-btn{
+  display: inline-block;
+  border: 2px solid #fff;
+  text-decoration: none;
+  padding: 18px 78px;
+  @include transition(background 500ms, color 500ms);
+  .fa:first-child {
+    margin-right: 18px
+  }
+  .fa:last-child {
+    margin-left: 18px
+  }
+  &:hover {
+    color: #2c81ba;
+    background: #fff;
+  }
+}
+
+.col-xs-6 {
+  .btn {
+    border: none;
+    width:100%;
+    background: #fff;
+    font-weight: $fontSizeBold;
+    border-radius: 0;
+  }
+
+
+  &.log-in {
+    padding-right: 0;
+    .btn {
+      padding: 30px 0px 26px;
+      background: $mainGreen;
+      color: #fff;
+      @include transition(background 500ms);
+      &:hover {
+        background: lighten($mainGreen, 10);
+      }
+    }
+
+  }
+
+  &.forgot-pw {
+    padding-left: 0;
+    .btn {
+      color: #7f8c8d;
+      padding: 30px 0px 26px;
+      background: #fff;
+    }
+  }
+}
+
+.btn-my-submit {
+  width: 100%;
+  border-radius: 0;
+  background: $mainGreen;
+  height: 62px;
+  font-weight: $fontSizeBold;
+  font-size: 12px;
+  color: #fff;
+  @include transition(background 500ms);
+  &:hover {
+    background: lighten($mainGreen, 10);
+    color: #fff;
+  }
+}
+
+.smaller-btn {
+    @include transition(all, 500ms);
+    max-width: 38px;
+    height: 38px;
+    max-height: 38px;
+    white-space: nowrap;
+}
+
+.add-client-btn {
+  @include transition(all, 500ms);
+  height: 38px;
+  border: none;
+  background: $mainBlue;
+  padding: 0;
+  color: #fff;
+  width: 132px;
+  float: left;
+  max-width: 132px;
+  &.smaller-btn {
+    @include transition(all, 500ms);
+    max-width: 38px;
+    height: 38px;
+    max-height: 38px;
+    white-space: nowrap;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background: lighten($mainBlue, 10);
+  }
+}
+
+.btn-remove {
+  color: #7f8c8d;
+  border: 0;
+}
+
+.add-project-btn {
+  @include transition(all, 500ms);
+  height: 38px;
+  border: none;
+  background: $mainBlue;
+  padding: 0;
+  color: #fff;
+  width: 132px;
+  float: left;
+  max-width: 132px;
+  &.smaller-btn {
+    @include transition(all, 500ms);
+    max-width: 38px;
+    height: 38px;
+    max-height: 38px;
+    white-space: nowrap;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background: lighten($mainBlue, 10);
+  }
+}
+
+.select-workers-btn {
+  text-align: center;
+  height: 38px;
+  border: none;
+  background: $mainBlue;
+  padding: 0;
+  color: #fff;
+  width: 132px;
+  &:focus {
+    outline: none;
+  }
+  @include transition(background 500ms);
+  &:hover {
+    background: lighten($mainBlue, 10);
+  }
+}
+
+.add-part-btn {
+  @include transition(all, 500ms);
+  height: 38px;
+  border: none;
+  background: $mainGreen;
+  padding: 0;
+  color: #fff;
+  max-width: 132px;
+  width: 132px;
+  float: left;
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background: lighten($mainGreen, 10);
+  }
+  &.smaller-btn {
+    @include transition(all, 500ms);
+    max-width: 38px;
+    height: 38px;
+    max-height: 38px;
+    white-space: nowrap;
+  }
+}
+
+
+.workers-btn {
+  font-family: $robotoFont;
+  width: 132px;
+  height: 38px;
+  background: $mainGreen;
+  color: #fff;
+  border-radius: 0;
+  text-align: center;
+  padding: 8px;
+  font-weight: $fontSizeLight;
+  @include transition(background 500ms);
+  &:hover {
+    background: lighten($mainGreen, 10);
+  }
+}
+
+.action_btn {
+  height: 38px;
+  border-radius: 0;
+  background: $mainBlue;
+  color: #fff;
+  &:hover {
+    color: #fff;
+    background: lighten($mainBlue, 10);
+  }
+}
+
+.edit-acc-save-btn {
+  @include transition(background 500ms);
+  background: $mainGreen;
+  color: #fff;
+  text-align: center;
+  border: 0;
+  width: 100%;
+  height: 76px;
+  &:hover {
+    color: #fff;
+    background: lighten($mainGreen, 10);
+  }
+}

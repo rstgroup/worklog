@@ -27,6 +27,6 @@ class Backend::Me::TimelogsController < BackendController
 
   private
     def find_timelogs
-      @timelogs = current_user.timelogs.paginate(per_page: 20, page: params[:page])
+      @timelogs = current_user.timelogs.paginate(per_page: 10, page: params[:page]).decorate
     end
 end

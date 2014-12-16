@@ -6,7 +6,6 @@
         = f.label :name, {:class => 'control-label'}
         .controls
           = f.text_field :name, {:class => 'input-xxlarge'}
-
       .control-group{:class => ('error' if @user.errors[:email].any?)}
         = f.label :email, {:class => 'control-label'}
         .controls

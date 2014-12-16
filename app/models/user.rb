@@ -32,16 +32,15 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :invitable
+         :recoverable, :rememberable, :trackable, :validatable, :invitable, :validate_on_invite => true
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :theme
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :theme, :company_name
   # attr_accessible :title, :body
   validates :name, presence: true, allow_blank: false, length: {within: 5..255}
-
   belongs_to :account
-  has_many :timelogs
-  has_many :partial_timelogs
+  has_many :timelogs, dependent: :destroy
+  has_many :partial_timelogs, dependent: :destroy
 
   include TimeFormattable
 

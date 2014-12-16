@@ -1,0 +1,14 @@
+.container
+  .col-md-12
+    .forgot-pw-container
+      .container
+        .forgot-pw-form
+          = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+            = devise_error_messages!
+            .header
+              | Forgot your password?
+            .input-line
+              = f.label :email, 'YOUR E-MAIL ADDRESS', class: 'my-label'
+              = f.email_field :email, :autofocus => true, class: 'my-input', placeholder: 'example@example.com'
+            = f.submit "Wyślij instrukcje do zmiany hasła", class: 'submit-btn'
+

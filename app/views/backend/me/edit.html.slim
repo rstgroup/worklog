@@ -1,0 +1,16 @@
+.container.edit-acc-container
+  #id_edit-account
+    = form_for @user, url: backend_me_path, html: { class: 'form-horizontal' } do |f|
+      .title-line
+        = f.label 'Edit your account details'
+      .input-line
+        = f.label :name, 'NAME AND SURNAME', class: 'my-label'
+        = f.text_field :name, class: 'my-input'
+      .input-line
+        = f.label :email, 'E-MAIL', class: 'my-label'
+        = f.text_field :email, class: 'my-input'
+      .input-line
+        = f.label :password, 'PASSWORD', class: 'my-label'
+        = f.password_field :password, class:'my-input'
+      .submit-line
+        = f.submit :save, class: 'edit-acc-save-btn', value: 'Update your details'

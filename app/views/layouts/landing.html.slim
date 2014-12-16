@@ -1,0 +1,97 @@
+doctype html
+html
+  head
+    title RST-IT Worklog
+    = stylesheet_link_tag "landing", :media => "all"
+    = javascript_include_tag 'landing'
+    = csrf_meta_tags
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+
+  body class="#{'bg-img' if params[:action] == 'index' && params[:controller] == 'landing'}#{'grey-bgrd' if params[:controller] == 'devise/sessions' || params[:controller] == 'signups' || params[:controller] == 'backend/me/timelogs' || (params[:controller] == 'backend/me' && params[:action] == 'edit')}"
+    header
+      .upper-header
+        .container
+            .row-fluid
+              .f-left
+                a href="https://github.com/rstgroup"
+                  | Check out our other open source projects
+                i.fa.fa-chevron-down.p-l-3
+              .f-right
+                .right-link
+                  | Check out our 
+                  a href="https://github.com/rstgroup"
+                    i.fa.fa-github github
+                  |  profile and collaborate with us!
+              br.clear
+      .lower-header
+        .container
+          .row-fluid
+            .brand-logo.f-left
+              = link_to root_path
+                i.fa.fa-shield.fa-2x.f-left.m-r-15
+                | WORKLOG by
+                br
+                small
+                  | RST SOFTWARE HOUSE
+              .clear
+            .nav.f-right
+              - if current_user
+                ul.pull-right.m-t-10
+                  li
+                    = link_to backend_me_timelogs_path
+                      | KOKPIT
+                  li
+                    = link_to backend_timelogs_path
+                      | WPISY
+                  li
+                    = link_to backend_clients_path
+                      | KLIENCI
+                  li
+                    = link_to backend_users_path
+                      | PRACOWNICY
+                  li
+                    .dropdown.current-user-dropdown
+                      a.dropdown-toggle data-toggle="dropdown" href="#"
+                        i.fa.fa-user.p-r-5
+                        = current_user.email
+                        strong.caret
+                      ul.dropdown-menu aria-labelledby="dropdownMenu1" role="menu"
+                        li
+                          = link_to edit_backend_me_path
+                            | Ustawienia konta
+                        li
+                          = link_to destroy_user_session_path, method: :delete do
+                            | Wyloguj sie
+
+              - else
+                #id_log-in-register
+                  ul
+                    li
+                      .pure-button.log-in-btn
+                        = link_to new_user_session_path
+                          | LOG IN
+                    li
+                      .pure-button.register-btn
+                        = link_to registration_path
+                          | REGISTER
+  =yield
+
+  footer
+    .container
+      .row
+        .brand.f-left
+          | This project is part of
+          |  RST Softwarehouse
+          |  Open Source something.
+          br
+          | RST Softwarehouse is a part of RST Group
+        .f-right
+          .right-footer
+            | Check out our 
+            a href="https://github.com/rstgroup"
+              i.fa.fa-github github
+            |  profile and collaborate with us!
+
+
+

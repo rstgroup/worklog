@@ -17,6 +17,6 @@ class Account < ActiveRecord::Base
   has_many :timelogs, through: :users
   has_many :autocomplete_parts
   validates :name, presence: true, allow_blank: false
- 
+
 end
- 
+

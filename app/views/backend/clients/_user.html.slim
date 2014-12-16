@@ -1,0 +1,7 @@
+.user_element.p-t-10
+  .timer.pull-right
+    i.fa.fa-clock-o.p-r-3
+    = user.time_worked_general_for_client client
+  = image_tag user.gravatar_url, :class => "rounded-gravatar"
+  span.user_name.p-l-15= user.name
+  .clearfix

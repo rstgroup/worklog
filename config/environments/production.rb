@@ -20,7 +20,7 @@ KmpWorklog::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  config.action_mailer.default_url_options = { :host => 'worklog.kmpgroup.pl' }
+  config.action_mailer.default_url_options = { :host => 'quiet-depths-9538.herokuapp.com/' }
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -56,7 +56,7 @@ KmpWorklog::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( *.css *.js )
+  config.assets.precompile += %w( landing.css landing.js *.svg *.eot *.woff *.ttf *.png *.jpg *.jpeg *.gif)
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false

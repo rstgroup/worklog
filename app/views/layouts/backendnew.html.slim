@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title RST-IT Worklog
+    = stylesheet_link_tag "landing", :media => "all"
+    = csrf_meta_tags
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+  body
+    - if current_user.nil?
+      = form_for @signup, html: {:class => 'form-inline'} do |f|
+        = f.text_field :company_name, {:class => 'input-medium', :placeholder => t(:name, scope: 'helpers.label.account')}
+        = f.text_field :email, {:class => 'input-medium', :placeholder => t(:email, scope: 'helpers.label.user')}
+        = f.password_field :password, {:class => 'input-medium', :placeholder => t(:password, scope: 'helpers.label.user')}
+        button.btn.btn-primary{:type => 'submit'}
+          i.fa.fa-signin
+          Załóż konto
+    - else
+      = link_to backend_me_timelogs_path, {:class => 'btn btn-large'} do
+        i.fa.fa-home
+        Przejdź do aplikacji

@@ -5,9 +5,17 @@ class UserDecorator < ApplicationDecorator
     UsersDecorator
   end
 
+  def has_invitations_left?
+    true
+  end
+
+  def decrement_invitation_limit!
+    return true
+  end
+
   def worked_today
     time = source.present_as_time source.worked_today
-    h.content_tag :h4, "Przepracowany dzisiaj czas: #{time}"
+    h.content_tag :h4, "#{time}", class: 'todays-act'
   end
 
   def worked_today_progress_bar
@@ -18,6 +26,10 @@ class UserDecorator < ApplicationDecorator
   end
 
   def gravatar_url
-    "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest source.email.downcase}?s=140"
+    "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest source.email.downcase}?s=30"
+  end
+
+  def gravatar_url_larger
+    "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest source.email.downcase}?s=60"
   end
 end

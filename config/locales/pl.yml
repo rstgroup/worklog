@@ -1,13 +1,13 @@
 pl:
   dupa: kupa
   weekdays:
-    d1: Poniedziałek
-    d2: Wtorek
-    d3: Środa
-    d4: Czwartek
-    d5: Piątek
-    d6: Sobota
-    d7: Niedziela
+    d1: Poniedziałek 
+    d2: Wtorek 
+    d3: Środa 
+    d4: Czwartek 
+    d5: Piątek 
+    d6: Sobota 
+    d7: Niedziela 
   helpers:
     label:
       signup:
@@ -22,6 +22,13 @@ pl:
         password: Hasło
         password_confirmation: Powtórz hasło
   activerecord:
+    models:
+      project:
+        one: projekt
+        few: projekty
+        some: projektów
+        other: projekty
+        many: projektów
     errors:
       models:
         timelog:

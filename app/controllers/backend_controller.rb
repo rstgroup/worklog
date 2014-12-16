@@ -1,5 +1,4 @@
 class BackendController < ApplicationController
-  layout 'backend'
+  layout 'landing'
   before_filter :authenticate_user!
-  
 end

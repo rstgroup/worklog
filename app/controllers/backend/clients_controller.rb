@@ -18,7 +18,8 @@ class Backend::ClientsController < BackendController
       find_clients
       initialize_forms
     else
-      render :status => 406, :text => ""
+      render 'create_failure'
+      # render :status => 406, :text => ""
     end
   end
 
@@ -26,9 +27,9 @@ class Backend::ClientsController < BackendController
     @project = Project.new
     @part = Part.new
     if params[:sort]
-      @timelogs = @client.timelogs.where(user_id: params[:sort][:user_id]).paginate(per_page: 20, page: params[:page]).decorate
+      @timelogs = @client.timelogs.where(user_id: params[:sort][:user_id]).paginate(per_page: 10, page: params[:page]).decorate
     else
-      @timelogs = @client.timelogs.paginate(per_page: 20, page: params[:page]).decorate
+      @timelogs = @client.timelogs.paginate(per_page: 10, page: params[:page]).decorate
     end
   end
 

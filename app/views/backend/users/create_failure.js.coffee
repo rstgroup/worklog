@@ -1,0 +1,1 @@
+$('.sliding-field.worker').addClass 'create-fail'

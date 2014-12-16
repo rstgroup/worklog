@@ -1,0 +1,21 @@
+.cockpit-container
+  .container
+    = render partial: 'form'
+
+.progress-bar-container
+  .container
+    .todays-activity.p-b-10
+      | Dzisiejsza aktywność: 
+      .todays-act
+        .i.fa.fa-clock-o.p-r-3
+        = current_user.worked_today
+    = current_user.worked_today_progress_bar
+
+.timelogs-container
+  .container
+    .p-t-25 Moje ostatnie wpisy czasowe
+    .col-md-12
+      - @last_day = nil
+      .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"
+      = render(@timelogs) || render(partial: 'empty')
+      .text-right= will_paginate @timelogs, :renderer => BootstrapPagination::Rails, previous_label: "Poprzednia strona", next_label: "Następna strona"

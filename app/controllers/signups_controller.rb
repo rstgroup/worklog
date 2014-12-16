@@ -1,7 +1,7 @@
 class SignupsController < ApplicationController
   before_filter :user_signed_in?
   before_filter :find_account, only: [:edit, :update]
-  layout 'devise'
+  layout 'landing'
 
   def new
     @signup = Signup.new
@@ -10,7 +10,6 @@ class SignupsController < ApplicationController
   def create
     @signup = Signup.new(params[:signup])
     if @signup.save
-      # binding.pry
       sign_in(:user, @signup.user)
       redirect_to backend_me_timelogs_path
     else
@@ -25,6 +24,7 @@ class SignupsController < ApplicationController
   def update
 
   end
+
 
   private
   def user_signed_in?

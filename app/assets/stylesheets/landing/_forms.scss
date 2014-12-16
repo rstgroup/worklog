@@ -1,0 +1,574 @@
+.invitations-form {
+  position: relative;
+  background: #fff;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  width: 374px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  #error_explanation {
+    display: none;
+  }
+  .my-label {
+    color: #bdc3c7;
+  }
+
+  .my-input {
+    color: #7f8c8d;
+    font-size: 14px;
+    border: none;
+    background: transparent;
+  }
+
+  .title-line {
+    font-weight: $fontSizeRegular;
+    font-size: 18px;
+    text-align: left;
+    padding: 30px 0 24px 16px;
+    border: 1px solid #efefef;
+
+  }
+
+  .input-line {
+    @include transition(background 500ms);
+    font-weight: $fontSizeRegular;
+    font-size: 12px;
+    text-align: left;
+    padding: 15px 16px;
+    border: 1px solid #efefef;
+    border-top: none;
+    position: relative;
+    &.focused {
+      background: #f2f6fa;
+    }
+  }
+
+  .input-line.error {
+    .my-label {
+      color: #bd4247;
+    }
+    background: #fff1f1;
+    &.focused {
+      background: #fccdcd;
+    }
+  }
+
+  .submit-line {
+    font-size: 14px;
+    font-weight: $fontSizeBold;
+    border: 1px solid #efefef;
+    border-top: none;
+  }
+
+  .help-inline {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+  }
+}
+
+
+
+.sliding-field-worker {
+  height: 38px;
+  border: 1px #e0d3cf solid;
+  padding-left: 10px;
+  color: #7f8c8d;
+  border-right: 0;
+  float: left;
+}
+
+
+
+.forgot-pw-form {
+  position: relative;
+  height: 100%;
+  font-family: $robotoFont;
+  // border: 1px solid;
+  margin-top: 150px;
+  width: 374px;
+  background: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  text-align: left;
+  .header {
+    font-weight: $fontSizeBold;
+    text-align: left;
+    color: #2b2d2e;
+    padding: 26px 14px;
+    border-bottom: 1px #ebf0f3 solid;
+    font-size: 18px;
+  }
+
+  #error_explanation {
+    display: none;
+  }
+
+  .input-line {
+    @include transition(background 500ms);
+    position: relative;
+    padding: 15px;
+    color: $mainGray;
+    &.focused {
+      background: #f2f6fa;
+    }
+  }
+
+  .my-label {
+    color: #bdc3c7;
+    display:block;
+  }
+
+  .my-input {
+    border: none;
+    background: transparent;
+    color: #7f8c8d;
+  }
+
+  .submit-btn {
+    width: 100%;
+    border-radius: 0;
+    background: $mainGreen;
+    height: 76px;
+    font-weight: $fontSizeBold;
+    font-size: 14px;
+    color: #fff;
+    border: 0;
+    @include transition(background 500ms);
+    &:hover {
+      background: lighten($mainGreen, 10);
+      color: #fff;
+    }
+  }
+
+
+  .help-inline {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 11px;
+  }
+
+  .input-line.error {
+    .my-label {
+      color: #bd4247;
+    }
+    background: #fff1f1;
+    &.focused {
+      background: #fccdcd;
+    }
+  }
+}
+
+#myregisterform {
+  margin-bottom: 30px;
+  .column {
+    @include transition(background 600ms);
+    float: left;
+    height: 70px;
+    border: 0px solid;
+    .my-label{
+      color: #bdc3c7;
+      padding: 17px 0 0 16px;
+      font-size: 12px;
+      font-weight: $fontSizeBold;
+      display: block;
+    }
+    &.my-border {
+      border-right: 1px solid;
+      border-color: #e2eef0;
+    }
+    &.white {
+      background: #fff;
+    }
+    &.input-line {
+      width: 23%;
+      &.focused {
+        background: #f2f6fa;
+        .my-input {
+          background: #f2f6fa;
+        }
+      }
+    }
+    &.submit-column {
+      width: 31%;
+      [type="submit"] {
+        width: 100%;
+        display: block;
+        border: none;
+        height: 100%;
+      }
+    }
+  }
+
+  .my-input {
+    @include transition(background 600ms);
+    padding: 0 0 0 16px;
+    border: none;
+    width: 200px;
+  }
+
+  .registering-rules {
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    color: #fff;
+    font-weight: $fontSizeLight;
+    a {
+      font-weight: $fontSizeBold;
+      text-decoration: underline;
+    }
+  }
+}
+
+#id_devise-log-in {
+  position: relative;
+  background: #fff;
+  margin-top: 200px;
+  width: 374px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  .my-label {
+    color: #bdc3c7;
+    display: block;
+  }
+
+  .my-input {
+    color: #7f8c8d;
+    font-size: 14px;
+    border: none;
+    background: transparent;
+  }
+
+  .title-line {
+    font-weight: $fontSizeRegular;
+    font-size: 18px;
+    text-align: left;
+    padding: 30px 0 24px 16px;
+    border: 1px solid #efefef;
+
+  }
+
+  .input-line {
+    @include transition(background 500ms);
+    font-weight: $fontSizeRegular;
+    font-size: 12px;
+    text-align: left;
+    padding: 15px 16px;
+    border: 1px solid #efefef;
+    border-top: none;
+    position: relative;
+    &.focused {
+      background: #f2f6fa;
+    }
+  }
+
+  .input-lines.error {
+    .my-label {
+      color: #bd4247;
+    }
+    background: #fff1f1;
+    .input-line {
+      &.focused {
+        background: #fccdcd;
+      }
+    }
+  }
+
+  .buttons-line {
+    font-size: 14px;
+    font-weight: $fontSizeBold;
+    border: 1px solid #efefef;
+    border-top: none;
+  }
+
+}
+
+#id_register {
+  position: relative;
+  background: #fff;
+  margin-top: 200px;
+  width: 374px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  .my-label {
+    color: #bdc3c7;
+    display: block;
+  }
+
+  .my-input {
+    @include transition(background 500ms);
+    color: #7f8c8d;
+    font-size: 14px;
+    border: none;
+    background: transparent;
+  }
+
+  .title-line {
+    font-weight: $fontSizeRegular;
+    font-size: 18px;
+    text-align: left;
+    padding: 30px 0 24px 16px;
+    border: 1px solid #efefef;
+
+  }
+
+  .input-line {
+    @include transition(background 500ms);
+    font-weight: $fontSizeRegular;
+    font-size: 12px;
+    text-align: left;
+    padding: 15px 16px;
+    border: 1px solid #efefef;
+    border-top: none;
+    position: relative;
+    &.focused {
+      background: #f2f6fa;
+      .my-placeholder {
+        background: #f2f6fa;
+      }
+    }
+  }
+
+  .buttons-line {
+    font-size: 14px;
+    font-weight: $fontSizeBold;
+    border: 1px solid #efefef;
+    border-top: none;
+  }
+  .registering-rules {
+    padding: 10px;
+    margin: 0;
+    font-size: 10px;
+    color: #929491;
+    font-weight: $fontSizeLight;
+    a {
+      color: #929491;
+      font-weight: $fontSizeBold;
+      text-decoration: underline;
+    }
+  }
+
+  .controls {
+    position: relative;
+  }
+  .help-inline {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 10px;
+    text-align: right;
+  }
+  .clearfix.error {
+    .my-label {
+      color: #bd4247;
+    }
+  }
+
+}
+
+
+#id_register .input-line.error {
+  background: #fff1f1;
+  &.focused {
+    background: #fccdcd;
+  }
+}
+
+#cockpit {
+  position: relative;
+  background: #fff;
+  margin-top: 16px;
+  .my-label {
+    color: #bdc3c7;
+    display: block;
+  }
+
+  .clearfix.error {
+    .my-label {
+      color: #bd4247;
+    }
+  }
+  .bordered-top {
+    border-top: 1px solid #efefef;
+  }
+
+  .my-input , .my-input2 {
+    @include transition(background 500ms);
+    color: #7f8c8d;
+    font-size: 14px;
+    border: none;
+    background: transparent;
+  }
+
+
+  .help-inline {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    text-align: right;
+  }
+
+  .input-line {
+    @include transition(background 500ms);
+    font-weight: $fontSizeRegular;
+    font-size: 12px;
+    text-align: left;
+    padding: 10px 14px;
+    border: 1px solid #efefef;
+    border-top: none;
+    max-height: 64px;
+    position: relative;
+    &.focused {
+      background: #f2f6fa;
+    }
+    &.error {
+      background: #fff1f1;
+      &.focused {
+        background: #fccdcd;
+      }
+    }
+  }
+
+  .input-line2 {
+    font-weight: $fontSizeRegular;
+    font-size: 12px;
+    text-align: left;
+    padding: 10px 14px;
+    border: 1px solid #efefef;
+    border-top: none;
+    max-height: 64px;
+    position: relative;
+    @include transition(background 500ms);
+    .row
+      .col-md-6:first-child {
+        border-right: 1px solid #efefef;
+      }
+      .col-md-6 {
+        @include transition(background 500ms);
+        .focused {
+          background: #f2f6fa
+        }
+      }
+      .col-md-6.error {
+        background: #fff1f1;
+        &.focused {
+          background: #fccdcd;
+        }
+      }
+  }
+
+  .submit-line {
+    height: 100%;
+    width: 100%;
+    font-size: 12px;
+    font-weight: $fontSizeBold;
+    border: 1px solid #efefef;
+    border-top: none;
+  }
+}
+
+
+
+
+#id_add-client-form {
+  .row{
+    position: relative;
+    padding: 0;
+  }
+  .my-buttons {
+    overflow: hidden;
+  }
+}
+
+#id_edit-account {
+  position: relative;
+  background: #fff;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  width: 374px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  #error_explanation {
+    display: none;
+  }
+  .my-label {
+    color: #bdc3c7;
+    display: block;
+  }
+
+  .my-input {
+    color: #7f8c8d;
+    font-size: 14px;
+    border: none;
+    background: transparent;
+  }
+
+  .title-line {
+    font-weight: $fontSizeRegular;
+    font-size: 18px;
+    text-align: left;
+    padding: 30px 0 24px 16px;
+    border: 1px solid #efefef;
+
+  }
+
+  .input-line {
+    @include transition(background 500ms);
+    font-weight: $fontSizeRegular;
+    font-size: 12px;
+    text-align: left;
+    padding: 15px 16px;
+    border: 1px solid #efefef;
+    border-top: none;
+    position: relative;
+
+    &.focused {
+      background: #f2f6fa;
+    }
+  }
+
+  .input-line.error {
+    .my-label {
+      color: #bd4247;
+    }
+    background: #fff1f1;
+    &.focused {
+      background: #fccdcd;
+    }
+  }
+
+  .submit-line {
+    font-size: 14px;
+    font-weight: $fontSizeBold;
+    border: 1px solid #efefef;
+    border-top: none;
+  }
+
+  .help-inline {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+  }
+}
+
+#id_add-project-form {
+  padding: 15px 15px;
+  .row {
+    position: relative;
+    padding: 0;
+ }
+
+}
