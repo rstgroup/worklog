@@ -14,6 +14,7 @@ class Backend::UsersController < BackendController
       @user.account_id = current_user.account_id
       UserDecorator.decorate @user
       @user.save
+      redirect_to backend_users_path
     else
       render 'create_failure'
     end
