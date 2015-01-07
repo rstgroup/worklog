@@ -25,9 +25,6 @@ describe User do
     end
   end
 
-  describe '#worked_today' do
-    pending 'TODO'
-  end
 
   describe "Email reminders" do
     it "receives a reminder when no timelogs were created that day" do
