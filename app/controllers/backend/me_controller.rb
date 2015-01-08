@@ -13,6 +13,7 @@ class Backend::MeController < BackendController
       sign_in(current_user, :bypass => true)
       redirect_to edit_backend_me_path
     else
+      @user = current_user
       render :edit
     end
   end

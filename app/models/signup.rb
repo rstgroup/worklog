@@ -32,7 +32,11 @@ class Signup
   def persist!
     Account.transaction do
       @account = Account.create!(name: company_name)
-      @user = @account.users.create!(name: email, email: email, password: password, password_confirmation: password)
+      @user = User.create!(name: email,
+        email: email,
+        password: password,
+        password_confirmation: password,
+        account_id: @account.id)
     end
   end
 
